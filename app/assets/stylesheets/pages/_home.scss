@@ -1,1 +1,177 @@
-// Specific CSS for your home-page
+// HOME-PAGE
+
+.body {
+  background-color: #F4F5F7;
+}
+
+// Banner Section
+
+.banner {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1553448540-fe069f7c95bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  height: 800px;
+  position: relative;
+}
+
+.banner-text {
+  text-align: center;
+  position: relative;
+  top: 320px;
+  h1 {
+    font-size: 50px;
+    letter-spacing: 2px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    padding-bottom: 20px;
+    text-shadow: 1px 1px 2px #999999;
+  }
+  p {
+    font-size: 25px;
+    font-family: 'Quicksand';
+    color: white;
+    padding-bottom: 20px;
+    text-shadow: 1px 1px 2px #999999;
+  }
+  a {
+    background-color: black;
+    width: 172px;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Quicksand';
+  }
+  a:hover {
+    background-color: grey;
+    color: white;
+    transition: 0.5s;
+  }
+}
+
+// Story Section
+
+.story {
+  background-color: #fff;
+  h1 {
+    font-family: 'Acme';
+    font-size: 60px;
+  }
+  p {
+    margin-top: 30px;
+    line-height: 2.5;
+    font-family: 'Quicksand';
+    color: #999999;
+  }
+}
+
+.story-text {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+// What to Expect Section
+
+.expect {
+  text-align: center;
+  padding: 100px 100px;
+  img {
+    float: left;
+    height: 600px;
+  }
+  h1 {
+    padding-bottom: 100px;
+    font-family: 'Acme';
+    font-size: 60px;
+  }
+}
+
+.expect-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.expect-card {
+  line-height: 2;
+  font-family: 'Quicksand';
+  margin-top: 10px;
+  h3 {
+    padding-bottom: 10px;
+    font-family: 'Acme';
+  }
+  i {
+    font-size: 40px;
+    padding-bottom: 25px;
+  }
+  p {
+    color: #999999;
+  }
+}
+
+// Catchphrase Section
+
+.catchphrase {
+  background-color: white;
+  a {
+    background-color: black;
+    width: 172px;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Quicksand';
+    margin-top: 45px;
+  }
+  a:hover {
+    background-color: grey;
+    color: white;
+    transition: 0.5s;
+  }
+  p {
+    text-align: center;
+  }
+  i {
+    font-size: 20px;
+  }
+  span {
+    font-size: 20px;
+  }
+  em {
+    font-family: 'Cookie';
+    font-size: 45px;
+  }
+}
+
+.catchphrase-content {
+  padding: 100px 200px;
+}
+
+// Footer Section
+
+.footer {
+  background-color: #F4F4F4;
+  /*opacity: 0.8;*/
+  height: 150px;
+  padding: 50px;
+}
+
+.list-inline {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.list-inline li {
+  display: inline-block;
+}
+
+.list-inline li i:hover {
+  color: grey;
+}
+
+.footer i {
+  font-size: 20px;
+  margin: 10px;
+  color: black;
+}
+
