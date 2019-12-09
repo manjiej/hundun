@@ -2,18 +2,11 @@ class SummariesController < ApplicationController
   before_action :set_summary, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :show
 
-  def tagged
-    if params[:tag].present?
-      @summaries = Summary.tagged_with(params[:tag])
-    else
-      @summaries = Summary.all
-    end
-  end
 
   # GET /summaries
   # GET /summaries.json
   def index
-    @summaries = Summary.where(user_id: current_user)
+    @summaries = Summary.where(user_id: current_user.id)
   end
 
   # GET /summaries/1
@@ -67,6 +60,14 @@ class SummariesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to summaries_url, notice: 'Summary was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def tagged
+    if params[:tag].present?
+      @summaries = Summary.tagged_with(params[:tag])
+    else
+      @summaries = Summary.all
     end
   end
 
