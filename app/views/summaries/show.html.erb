@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Article:</strong>
+  <%= @summary.article %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @summary.user %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @summary.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @summary.text %>
+</p>
+
+<%= link_to 'Edit', edit_summary_path(@summary) %> |
+<%= link_to 'Back', summaries_path %>
