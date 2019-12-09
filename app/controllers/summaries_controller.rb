@@ -1,10 +1,19 @@
 class SummariesController < ApplicationController
   before_action :set_summary, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :show
+
+  def tagged
+    if params[:tag].present?
+      @summaries = Summary.tagged_with(params[:tag])
+    else
+      @summaries = Summary.all
+    end
+  end
 
   # GET /summaries
   # GET /summaries.json
   def index
-    @summaries = Summary.all
+    @summaries = Summary.where(user_id: current_user)
   end
 
   # GET /summaries/1
@@ -69,6 +78,6 @@ class SummariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def summary_params
-      params.require(:summary).permit(:article_id, :user_id, :title, :text)
+      params.require(:summary).permit(:article_id, :user_id, :title, :text, :tag_list)
     end
 end
