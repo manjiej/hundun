@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_075818) do
+ActiveRecord::Schema.define(version: 2019_12_09_093246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,13 +24,12 @@ ActiveRecord::Schema.define(version: 2019_12_09_075818) do
   end
 
   create_table "summaries", force: :cascade do |t|
-    t.bigint "article_id"
     t.bigint "user_id"
     t.string "title"
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_summaries_on_article_id"
+    t.string "article_url"
     t.index ["user_id"], name: "index_summaries_on_user_id"
   end
 
@@ -74,7 +73,6 @@ ActiveRecord::Schema.define(version: 2019_12_09_075818) do
   end
 
   add_foreign_key "articles", "users"
-  add_foreign_key "summaries", "articles"
   add_foreign_key "summaries", "users"
   add_foreign_key "taggings", "tags"
 end

@@ -1,10 +1,11 @@
 class SummariesController < ApplicationController
   before_action :set_summary, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:show, :new, :create]
 
   # GET /summaries
   # GET /summaries.json
   def index
-    @summaries = Summary.all
+    @summaries = Summary.where(user_id: current_user.id)
   end
 
   # GET /summaries/1
@@ -14,7 +15,7 @@ class SummariesController < ApplicationController
 
   # GET /summaries/new
   def new
-    @summary = Summary.new
+    @summary = Summary.new(user_id: 11, article_url: "https://m.ftchinese.com/premium/001085449?exclusive")
   end
 
   # GET /summaries/1/edit
@@ -61,6 +62,14 @@ class SummariesController < ApplicationController
     end
   end
 
+  def tagged
+    if params[:tag].present?
+      @summaries = Summary.tagged_with(params[:tag])
+    else
+      @summaries = Summary.all
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_summary
@@ -69,6 +78,6 @@ class SummariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def summary_params
-      params.require(:summary).permit(:article_id, :user_id, :title, :text)
+      params.require(:summary).permit(:user_id, :title, :text, :article_url, :tag_list)
     end
 end
