@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: :new
+  skip_before_action :authenticate_user!, only: [:index, :new]
 
   def tagged
     if params[:tag].present?
