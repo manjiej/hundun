@@ -1,5 +1,5 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+<div class="navbar navbar-expand-sm navbar-lewagon fixed-top">
+  <%= link_to "root_path", class: "navbar-brand" do %>
     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
 
@@ -27,7 +27,9 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "ABOUT", root_path, class: "btn-home"%>
+          <%= link_to "LOGIN", new_user_session_path, class: "btn-login" %>
+          <%= link_to "SIGN UP", new_user_registration_path, class: "btn-signup" %>
         </li>
       <% end %>
     </ul>
