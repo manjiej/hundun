@@ -27,6 +27,7 @@
         </li>
       <% else %>
         <li class="nav-item">
+          <%= link_to "HOME", root_path, class: "btn-home"%>
           <%= link_to "ABOUT", root_path, class: "btn-home"%>
           <%= link_to "LOGIN", new_user_session_path, class: "btn-login" %>
           <%= link_to "SIGN UP", new_user_registration_path, class: "btn-signup" %>

@@ -7,40 +7,42 @@
 // Banner Section
 
 .banner {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1553448540-fe069f7c95bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
-  height: 800px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1526314114033-349ef6f72220?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMzk2fQ&auto=format&fit=crop&w=1696&q=80");
+  height: 1000px;
   position: relative;
+  background-size: cover;
+  background-position: center;
 }
 
 .banner-text {
   text-align: center;
   position: relative;
-  top: 320px;
+  top: 400px;
   h1 {
-    font-size: 50px;
+    font-size: 55px;
     letter-spacing: 2px;
     color: white;
     font-family: 'Montserrat';
     font-weight: bold;
     padding-bottom: 20px;
-    text-shadow: 1px 1px 2px #999999;
+    text-shadow: 1px 1px 1px black;
   }
   p {
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Quicksand';
     color: white;
     padding-bottom: 20px;
-    text-shadow: 1px 1px 2px #999999;
+    text-shadow: 1px 1px 1px black;
   }
   a {
-    background-color: black;
+    background-color: #6A7E87;
     width: 172px;
     margin: 0 auto;
     color: white;
     font-family: 'Quicksand';
   }
   a:hover {
-    background-color: grey;
+    background-color: black;
     color: white;
     transition: 0.5s;
   }
@@ -49,10 +51,13 @@
 // Story Section
 
 .story {
-  background-color: #fff;
   h1 {
     font-family: 'Acme';
     font-size: 60px;
+    color: #6A7E87;
+    span {
+      color: black;
+    }
   }
   p {
     margin-top: 30px;
@@ -73,15 +78,20 @@
 
 .expect {
   text-align: center;
-  padding: 100px 100px;
+  padding: 100px 80px 83px 0;
+  background-color: #FFFFFF;
   img {
     float: left;
-    height: 600px;
+    height: 700px;
   }
   h1 {
     padding-bottom: 100px;
     font-family: 'Acme';
     font-size: 60px;
+    color: #6A7E87;
+    span {
+      color: black;
+    }
   }
 }
 
@@ -100,6 +110,7 @@
   h3 {
     padding-bottom: 10px;
     font-family: 'Acme';
+    // color: #6A7E87;
   }
   i {
     font-size: 40px;
@@ -113,9 +124,8 @@
 // Catchphrase Section
 
 .catchphrase {
-  background-color: white;
   a {
-    background-color: black;
+    background-color: #6A7E87;
     width: 172px;
     margin: 0 auto;
     color: white;
@@ -123,7 +133,7 @@
     margin-top: 45px;
   }
   a:hover {
-    background-color: grey;
+    background-color: black;
     color: white;
     transition: 0.5s;
   }
@@ -135,6 +145,7 @@
   }
   span {
     font-size: 20px;
+    font-family: "Quicksand";
   }
   em {
     font-family: 'Cookie';
@@ -149,7 +160,7 @@
 // Footer Section
 
 .footer {
-  background-color: #F4F4F4;
+  background-color: #fff;
   /*opacity: 0.8;*/
   height: 150px;
   padding: 50px;
