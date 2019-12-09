@@ -1,25 +1,17 @@
 
-<%#= simple_form_for(@summary) do |f| %>
-  <%#= f.error_notification %>
-  <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%= simple_form_for(@summary) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <!-- <div class="form-inputs"> -->
-    <%#= f.association :article %>
-    <%#= f.association :user %>
-    <%#= f.input :title %>
-    <%#= f.input :text %>
-  <!-- </div> -->
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.input :title %>
+    <%= f.input :text %>
+    <%= f.input :article_url %>
+  </div>
 
-  <!-- <div class="form-actions"> -->
-    <%#= f.button :submit %>
-  <!-- </div> -->
-<%# end %>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
 
-<%= simple_for_for @restaurant do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :tag_list %>
-<%= f.submit %>
-
-<!-- check boxes options -->
-<%#= f.input :tag_list, as: :check_boxes, collection: ["Pass your collection here"] %>

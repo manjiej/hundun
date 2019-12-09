@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning all database.."
-Article.destroy_all
 User.destroy_all
 Summary.destroy_all
 
@@ -18,13 +17,13 @@ puts "Creating database..."
 # Article.create(url: "https://cn.engadget.com/2013/05/23/logitech-wired-ipad-keyboard/")
 # Article.create(url: "https://cn.engadget.com/2019/12/05/nasa-parker-solar-probe-results/")
 
-User.create(email: "hillary@gmail.com", password: "123123") #user_id: 38
+User.create(email: "hillary@gmail.com", password: "123123") #user_id: 11
 User.create(email: "steve@gmail.com", password: "123123")
 User.create(email: "mark@gmail.com", password: "123123")
 
-Summary.create(user_id: 38, article_url: "https://m.ftchinese.com/premium/001085449?exclusive")
-Summary.create(user_id: 38, article_url: "https://cn.engadget.com/2019/12/02/stellar-black-hole-is-larger-than-science-expected/")
-Summary.create(user_id: 38, article_url: "https://cn.engadget.com/2013/05/23/logitech-wired-ipad-keyboard/")
-Summary.create(user_id: 38, article_url: "https://cn.engadget.com/2019/12/05/nasa-parker-solar-probe-results/")
+Summary.create(user_id: 11, article_url: "https://m.ftchinese.com/premium/001085449?exclusive")
+Summary.create(user_id: 11, article_url: "https://cn.engadget.com/2019/12/02/stellar-black-hole-is-larger-than-science-expected/")
+Summary.create(user_id: 11, article_url: "https://cn.engadget.com/2013/05/23/logitech-wired-ipad-keyboard/")
+Summary.create(user_id: 11, article_url: "https://cn.engadget.com/2019/12/05/nasa-parker-solar-probe-results/")
 
 puts "Database successfully created!"
