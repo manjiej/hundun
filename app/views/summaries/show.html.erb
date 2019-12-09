@@ -10,5 +10,10 @@
   <%= @summary.text %>
 </p>
 
-<%= link_to 'Edit', edit_summary_path(@summary) %> |
+<p>
+  <strong>Url:</strong>
+  <%= @summary.article_url %>
+</p>
+
+<%= button_to 'Save to Dashboard', summaries_path(@summary) %> |
 <%= link_to 'Back', summaries_path %>

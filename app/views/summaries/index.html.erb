@@ -16,8 +16,6 @@
   <tbody>
     <% @summaries.each do |summary| %>
       <tr>
-        <td><%= summary.article %></td>
-        <td><%= summary.user %></td>
         <td><%= summary.title %></td>
         <td><%= summary.text %></td>
         <td><%= link_to 'Show', summary %></td>
@@ -30,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Summary', new_summary_path %>
+<%= link_to 'Import another article', new_summary_path %>
