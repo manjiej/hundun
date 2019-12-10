@@ -1,6 +1,7 @@
 class SummariesController < ApplicationController
   before_action :set_summary, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:show, :new, :create]
+  skip_before_action :verify_authenticity_token
 
   # GET /summaries
   # GET /summaries.json
@@ -27,7 +28,7 @@ class SummariesController < ApplicationController
   # POST /summaries
   # POST /summaries.json
   def create
-    @summary = Summary.new(summary_params)
+    @summary = Summary.new(article_url: params.dig(:summary, :article_url))
 
     respond_to do |format|
       if @summary.save
