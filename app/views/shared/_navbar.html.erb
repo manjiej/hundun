@@ -1,7 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-lewagon fixed-top">
-  <%= link_to "root_path", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+<div class="navbar navbar-expand-sm navbar-lewagon fixed-top" style= "padding: 0 15px">
+  <%#= link_to "root_path", class: "navbar-brand" do %>
+    <%= image_tag "https://image.noelshack.com/fichiers/2019/50/1/1575901771-logo-transparent.png", style: "height: 80px; width: 80px;" %>
+    <%# end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,6 @@
       <% else %>
         <li class="nav-item">
           <%= link_to "HOME", root_path, class: "btn-home"%>
-          <%= link_to "ABOUT", root_path, class: "btn-home"%>
           <%= link_to "LOGIN", new_user_session_path, class: "btn-login" %>
           <%= link_to "SIGN UP", new_user_registration_path, class: "btn-signup" %>
         </li>
