@@ -29,20 +29,21 @@
   }
   p {
     font-size: 30px;
-    font-family: 'Quicksand';
+    font-family: 'Montserrat';
     color: white;
     padding-bottom: 20px;
     text-shadow: 1px 1px 1px black;
   }
   a {
     background-color: #6A7E87;
-    width: 172px;
+    width: 188px;
     margin: 0 auto;
     color: white;
-    font-family: 'Quicksand';
+    font-family: 'Montserrat';
+    padding: 13px;
   }
   a:hover {
-    background-color: black;
+    background-color: #576870;
     color: white;
     transition: 0.5s;
   }
@@ -63,7 +64,7 @@
     margin-top: 30px;
     line-height: 2.5;
     font-family: 'Quicksand';
-    color: #999999;
+    color: black;
   }
 }
 
@@ -78,16 +79,15 @@
 
 .expect {
   text-align: center;
-  padding: 100px 80px 83px 0;
   background-color: #FFFFFF;
   img {
     float: left;
-    height: 700px;
+    height: 698px;
   }
   h1 {
-    padding-bottom: 100px;
+    padding-bottom: 30px;
     font-family: 'Acme';
-    font-size: 60px;
+    font-size: 50px;
     color: #6A7E87;
     span {
       color: black;
@@ -97,6 +97,7 @@
 
 .expect-right {
   display: flex;
+  padding: 18px;
   flex-direction: column;
   align-items: center;
   width: 500px;
@@ -110,11 +111,13 @@
   h3 {
     padding-bottom: 10px;
     font-family: 'Acme';
+    font-size: 25px;
     // color: #6A7E87;
   }
   i {
-    font-size: 40px;
+    font-size: 25px;
     padding-bottom: 25px;
+    color: #6A7E87
   }
   p {
     color: #999999;
@@ -126,14 +129,16 @@
 .catchphrase {
   a {
     background-color: #6A7E87;
-    width: 172px;
+    width: 188px;
     margin: 0 auto;
     color: white;
-    font-family: 'Quicksand';
+    font-family: 'Montserrat';
     margin-top: 45px;
+    padding: 13px;
+    text-align: center
   }
   a:hover {
-    background-color: black;
+    background-color: #576870;
     color: white;
     transition: 0.5s;
   }

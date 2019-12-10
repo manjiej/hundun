@@ -1,0 +1,15 @@
+{
+  "name": "Hundun Chrome Extension",
+  "version": "1.0",
+  "description": "Retrive current page url and send it to Hundun's website.",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["popup.js"]
+  },
+  "permissions": [
+    "activeTab", "tabs", "https://*/"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
+}

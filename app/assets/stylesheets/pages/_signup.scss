@@ -24,7 +24,7 @@
     text-align: center;
     padding-top: 70px;
     color: white;
-    font-family: 'Quicksand';
+    font-family: 'Montserrat';
     font-weight: bold;
     text-shadow: 1px 1px 1px black;
   }
@@ -32,10 +32,15 @@
 
 .signup-btn input {
   min-width: 160px;
-  height: 50px;
+  height: 45px;
   background-color: #6A7E87;
   border-radius: 25px;
   color: white;
+}
+
+.signup-btn input:hover {
+  color: white;
+  background-color: #576870;
 }
 
 .signup-inputs {
@@ -47,5 +52,8 @@
   a {
     color: #6a7e87;
     text-decoration: none;
+  }
+  a:hover {
+    color: #576870;
   }
 }
