@@ -7,11 +7,13 @@ class SummariesController < ApplicationController
   # GET /summaries.json
   def index
     @summaries = Summary.where(user_id: current_user.id)
+    @summary = @summaries.find(article_url: params[:article_url])
   end
 
   # GET /summaries/1
   # GET /summaries/1.json
   def show
+    @related_summaries = @summary.find_related_tags
   end
 
   # GET /summaries/new
@@ -22,8 +24,8 @@ class SummariesController < ApplicationController
   end
 
   # GET /summaries/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /summaries
   # POST /summaries.json
@@ -43,17 +45,17 @@ class SummariesController < ApplicationController
 
   # PATCH/PUT /summaries/1
   # PATCH/PUT /summaries/1.json
-  def update
-    respond_to do |format|
-      if @summary.update(summary_params)
-        format.html { redirect_to @summary, notice: 'Summary was successfully updated.' }
-        format.json { render :show, status: :ok, location: @summary }
-      else
-        format.html { render :edit }
-        format.json { render json: @summary.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @summary.update(summary_params)
+  #       format.html { redirect_to @summary, notice: 'Summary was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @summary }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @summary.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /summaries/1
   # DELETE /summaries/1.json
@@ -73,6 +75,16 @@ class SummariesController < ApplicationController
     end
   end
 
+  def add_tags
+    @summary
+    @summary.tag_list.add(params[])
+    @summary.save
+  end
+
+  def remove_tags
+    @summary.tag_list.remove(params[])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_summary
@@ -81,6 +93,6 @@ class SummariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def summary_params
-      params.require(:summary).permit(:user_id, :title, :text, :article_url, :tag_list)
+      params.require(:summary).permit(:title, :text, :article_url, :tag_list)
     end
 end

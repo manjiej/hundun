@@ -19,7 +19,6 @@ gem 'pismo', git: 'https://github.com/peterc/pismo'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'rack-cors'
 
-
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
