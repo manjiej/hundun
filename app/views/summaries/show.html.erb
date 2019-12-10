@@ -15,5 +15,15 @@
   <%= @summary.article_url %>
 </p>
 
-<%= button_to 'Save to Dashboard', summaries_path(@summary) %> |
+<h1><%= @summary.title %></h1>
+
+<h3>Related Summries</h3>
+<ul>
+  <% @related_summaries.each do |r| %>
+    <li><%= r.title %></li>
+    <li><%= r.text %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Save to Dashboard', summaries_path(@summary) %> |
 <%= link_to 'Back', summaries_path %>

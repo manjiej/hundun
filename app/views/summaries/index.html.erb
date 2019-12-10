@@ -5,8 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Article</th>
-      <th>User</th>
       <th>Title</th>
       <th>Text</th>
       <th colspan="3"></th>
@@ -18,14 +16,18 @@
       <tr>
         <td><%= summary.title %></td>
         <td><%= summary.text %></td>
+        <p><% summary.tag_list.each do |tag| %>
+          <%= link_to tag, tagged_path(tag: tag) %>
+        <% end %></p>
         <td><%= link_to 'Show', summary %></td>
-        <td><%= link_to 'Edit', edit_summary_path(summary) %></td>
-        <td><%= link_to 'Destroy', summary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'add tags to the summary', method: :post, remote: true, edit_summary_path(summary) %></td>
+        <td><%= link_to 'delete the summary from Dashboard', summary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<%= render 'tags' %>
 <br>
 
 <%= link_to 'Import another article', new_summary_path %>
