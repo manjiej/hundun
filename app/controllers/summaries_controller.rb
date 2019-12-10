@@ -15,7 +15,9 @@ class SummariesController < ApplicationController
 
   # GET /summaries/new
   def new
-    @summary = Summary.new(user_id: 11, article_url: "https://m.ftchinese.com/premium/001085449?exclusive")
+    @user = current_user
+    @summary = Summary.new(article_url: params[:article_url])
+    @summary.user = @user
   end
 
   # GET /summaries/1/edit
