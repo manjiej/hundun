@@ -20,12 +20,8 @@ class SummariesController < ApplicationController
   # GET /summaries/new
   def new
     @user = current_user
-<<<<<<< HEAD
-    @summary = Summary.new(article_url: params[:article_url])
-=======
     @summary = Summary.new
     @summary.user = @user
->>>>>>> cad683e94385f1d605837c615272c0a02682debe
   end
 
   # GET /summaries/1/edit
@@ -35,13 +31,7 @@ class SummariesController < ApplicationController
   # POST /summaries
   # POST /summaries.json
   def create
-        @user = current_user
-
     @summary = Summary.new(article_url: params.dig(:summary, :article_url))
-<<<<<<< HEAD
-        @summary.user = @user
-
-=======
     @user = current_user
     @summary.user = @user
 
@@ -49,8 +39,6 @@ class SummariesController < ApplicationController
     #   format.json
     #   render :partial => "summaries/show.json"
     # end
->>>>>>> cad683e94385f1d605837c615272c0a02682debe
-
     respond_to do |format|
       if @summary.save
         format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
