@@ -1,19 +1,42 @@
+
+<body>
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
+<!--   <script type="text/javascript">
+
+  </script> -->
   <%= @summary.title %>
 </p>
 
-<p>
-  <strong>Text:</strong>
-  <%= @summary.text %>
-</p>
-
-<p>
+<p id="url">
   <strong>Url:</strong>
   <%= @summary.article_url %>
 </p>
+
+<p>
+  <strong >Text:</strong>
+<!--   <script type="text/javascript">
+
+
+  const api_url = 'https://api.diffbot.com/v3/article?token=606d0b61d6cf355ed6024deabc955e33&url=<%=@summary.article_url%>';
+
+  fetch(api_url).then(data => {
+    // Work with your JSON data here..
+    console.log(data["object"][0]["text"]);
+  }).catch(err => {
+    // What do when the request fails
+    console.log('The request failed!');
+  });
+
+  </script> -->
+  <%= @summary.text %>
+</p>
+
+<!-- <script src="js/script.js"></script> -->
+
+</body>
 
 <h1><%= @summary.title %></h1>
 
@@ -25,5 +48,5 @@
   <% end %>
 </ul>
 
-<%= link_to 'Save to Dashboard', summaries_path(@summary) %> |
+<%= link_to 'Save to Dashboard', summaries_path(@summary) %>
 <%= link_to 'Back', summaries_path %>
