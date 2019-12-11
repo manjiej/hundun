@@ -31,7 +31,7 @@
 // });
 
 function sendData(data) {
-  const url = 'http://localhost:3000/summaries/new';
+  const url = 'http://localhost:3000/summaries';
   fetch(url, {
     method: 'POST',
     headers: { "Content-Type": "application/json" },

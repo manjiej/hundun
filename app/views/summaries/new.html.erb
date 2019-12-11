@@ -1,11 +1,15 @@
 <h1>New Summary</h1>
 
 <div class="container">
+  <div class="row">
+    <div class="col-6 col-offset-3">
   <%= @summary[:article_url] %>
 
   <%= render 'form', summary: @summary %>
 
   <%= link_to 'Back', summaries_path %>
 
-  <script src="../../assets/javascripts/chrome-extension/scripts/send-data.js"></script>
+  <!-- <script src="../../assets/javascripts/chrome-extension/scripts/send-data.js"></script> -->
+    </div>
+  </div>
 </div>

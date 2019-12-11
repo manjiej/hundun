@@ -17,6 +17,26 @@
 
 <p>
   <strong >Text:</strong>
+  <%= @summary.text %>
+</p>
+
+
+
+<h1><%= @summary.title %></h1>
+
+<h3>Related Summries</h3>
+<ul>
+  <% @related_summaries.each do |r| %>
+    <li><%= r.title %></li>
+    <li><%= r.text %></li>
+  <% end %>
+</ul>
+
+<%= render 'tags', summary: @summary %>
+
+<%= link_to 'Save to Dashboard', summaries_path(@summary) %>
+<%= link_to 'Back', summaries_path %>
+
 <!--   <script type="text/javascript">
 
 
@@ -31,23 +51,6 @@
   });
 
   </script> -->
-  <%= @summary.text %>
-</p>
 
 <!-- <script src="js/script.js"></script> -->
-
 </body>
-
-<h1><%= @summary.title %></h1>
-
-<h3>Related Summries</h3>
-<ul>
-  <% @related_summaries.each do |r| %>
-    <li><%= r.title %></li>
-    <li><%= r.text %></li>
-  <% end %>
-</ul>
-
-<%= link_to 'Save to Dashboard', summaries_path(@summary) %>
-<%= link_to 'Back', summaries_path %>
-

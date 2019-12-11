@@ -35,19 +35,15 @@ class SummariesController < ApplicationController
     @user = current_user
     @summary.user = @user
 
-    # respond_to do |format|
-    #   format.json
-    #   render :partial => "summaries/show.json"
-    # end
-
     respond_to do |format|
       if @summary.save
         format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
-        # format.json { render json: @summary.text, status: :unprocessable_entity }
-        format.json { render :partial => "summaries/show.json" }
+        format.json { render json: @summary.text, status: :unprocessable_entity }
+        format.js
+        # format.json #{ render :partial => "summaries/show.json" }
       else
         format.html { render :new }
-        # format.json { render :create, status: :created, location: @summary }
+        format.json { render :create, status: :created, location: @summary }
       end
     end
   end
@@ -71,7 +67,7 @@ class SummariesController < ApplicationController
   def destroy
     @summary.destroy
     respond_to do |format|
-      format.html { redirect_to summaries_url, notice: 'Summary was successfully destroyed.' }
+      format.html { redirect_to summaries_url, notice: 'Summary was successfully removed from Dashboard' }
       format.json { head :no_content }
     end
   end
