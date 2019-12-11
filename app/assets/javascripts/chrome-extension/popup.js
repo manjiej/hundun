@@ -16,7 +16,6 @@
 
 // button.addEventListener('click', redirect);
 
-// let button = document.querySelector("#send-data");
 // let vv = document.getElementById("summary_article_url");
 // let url = window.location.href;
 
@@ -30,12 +29,14 @@
 //   });
 // });
 
+let button = document.querySelector("#send-data");
+
 function sendData(data) {
   const url = 'http://localhost:3000/summaries';
   fetch(url, {
     method: 'POST',
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({article_url: window.location.href})
+    body: JSON.stringify({"article_url": window.location.href})
     })
     .then(response => response.json())
     .then((data) => {

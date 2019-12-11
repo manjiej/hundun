@@ -35,6 +35,7 @@ class SummariesController < ApplicationController
     @user = current_user
     @summary.user = @user
 
+
     respond_to do |format|
       if @summary.save
         format.html { redirect_to @summary, notice: 'Summary was successfully created.' }

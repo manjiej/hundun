@@ -1,10 +1,9 @@
-<div class="import-container">
 
   <%= simple_form_for(@summary) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
+    <div class="form-inputs import-input">
       <%= f.input :article_url %>
     </div>
 
@@ -13,7 +12,6 @@
     </div>
   <% end %>
 
-</div>
 
 
 
