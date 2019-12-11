@@ -6,8 +6,9 @@ class SummariesController < ApplicationController
   # GET /summaries
   # GET /summaries.json
   def index
-    @summaries = Summary.where(user_id: current_user.id)
-    @summary = @summaries.find(article_url: params[:article_url])
+    @user = current_user
+    @user.summaries = Summary.all
+    # @summary = @summaries.find(params[:id])
   end
 
   # GET /summaries/1
@@ -19,7 +20,12 @@ class SummariesController < ApplicationController
   # GET /summaries/new
   def new
     @user = current_user
+<<<<<<< HEAD
     @summary = Summary.new(article_url: params[:article_url])
+=======
+    @summary = Summary.new
+    @summary.user = @user
+>>>>>>> cad683e94385f1d605837c615272c0a02682debe
   end
 
   # GET /summaries/1/edit
@@ -32,16 +38,27 @@ class SummariesController < ApplicationController
         @user = current_user
 
     @summary = Summary.new(article_url: params.dig(:summary, :article_url))
+<<<<<<< HEAD
         @summary.user = @user
 
+=======
+    @user = current_user
+    @summary.user = @user
+
+    # respond_to do |format|
+    #   format.json
+    #   render :partial => "summaries/show.json"
+    # end
+>>>>>>> cad683e94385f1d605837c615272c0a02682debe
 
     respond_to do |format|
       if @summary.save
         format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
-        format.json { render :show, status: :created, location: @summary }
+        # format.json { render json: @summary.text, status: :unprocessable_entity }
+        format.json { render :partial => "summaries/show.json" }
       else
         format.html { render :new }
-        format.json { render json: @summary.errors, status: :unprocessable_entity }
+        # format.json { render :create, status: :created, location: @summary }
       end
     end
   end
@@ -70,7 +87,12 @@ class SummariesController < ApplicationController
     end
   end
 
+  def favorite
+
+  end
+
   def tagged
+    @user = current_user
     if params[:tag].present?
       @summaries = Summary.tagged_with(params[:tag])
     else
@@ -96,6 +118,6 @@ class SummariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def summary_params
-      params.require(:summary).permit(:title, :text, :article_url, :tag_list)
+      params.require(:summary).permit(:user_id, :title, :text, :article_url, :tag_list)
     end
 end

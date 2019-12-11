@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   # resources :articles
 
   resources :summaries
+  #   member do
+  #     post
+  # end
 
 
 end
