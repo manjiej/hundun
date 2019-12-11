@@ -8,7 +8,7 @@
 }
 
 .navbar-lewagon .navbar-collapse a {
-  padding: 40px;
+  // padding: 40px;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -20,4 +20,15 @@
   font-size: 15px;
   color: white;
   text-decoration: none;
+}
+
+.navbar-active {
+  display: flex;
+  li {
+    padding: 0 25px;
+  }
+}
+
+.dropdown-menu a {
+  color: black;
 }

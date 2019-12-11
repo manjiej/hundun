@@ -56,6 +56,9 @@
     font-family: 'Acme';
     font-size: 60px;
     color: #6A7E87;
+    width: 180px;
+    margin: 0 auto;
+    border-bottom: 3px solid black;
     span {
       color: black;
     }
@@ -82,13 +85,15 @@
   background-color: #FFFFFF;
   img {
     float: left;
-    height: 698px;
+    height: 694px;
   }
   h1 {
-    padding-bottom: 30px;
     font-family: 'Acme';
     font-size: 50px;
     color: #6A7E87;
+    width: 230px;
+    border-bottom: 3px solid black;
+    margin: 0 auto;
     span {
       color: black;
     }
