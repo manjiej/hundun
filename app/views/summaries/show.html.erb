@@ -1,12 +1,8 @@
-
 <body>
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
-<!--   <script type="text/javascript">
-
-  </script> -->
   <%= @summary.title %>
 </p>
 
@@ -20,11 +16,10 @@
   <%= @summary.text %>
 </p>
 
-
-
 <h1><%= @summary.title %></h1>
 
 <h3>Related Summries</h3>
+
 <ul>
   <% @related_summaries.each do |r| %>
     <li><%= r.title %></li>
@@ -33,9 +28,11 @@
 </ul>
 
 <%= render 'tags', summary: @summary %>
-
 <%= link_to 'Save to Dashboard', summaries_path(@summary) %>
 <%= link_to 'Back', summaries_path %>
+<%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
+<%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
+</body>
 
 <!--   <script type="text/javascript">
 
@@ -53,4 +50,4 @@
   </script> -->
 
 <!-- <script src="js/script.js"></script> -->
-</body>
+

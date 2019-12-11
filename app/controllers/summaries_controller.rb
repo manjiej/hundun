@@ -1,3 +1,6 @@
+require "net/http"
+require "uri"
+
 class SummariesController < ApplicationController
   before_action :set_summary, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:show, :new, :create]
@@ -14,6 +17,7 @@ class SummariesController < ApplicationController
   # GET /summaries/1
   # GET /summaries/1.json
   def show
+    @slogan = params[:slogan]
     @related_summaries = @summary.find_related_tags
   end
 
@@ -32,9 +36,10 @@ class SummariesController < ApplicationController
   # POST /summaries.json
   def create
     @summary = Summary.new(article_url: params.dig(:summary, :article_url))
-    @user = current_user
-    @summary.user = @user
 
+    uri = URI("https://aip.baidubce.com/rpc/2.0/nlp/v1/news_summary?charset=UTF-8&access_token=24.1ea3089fa3c4d91ea21b83759caeaae1.2592000.1578482131.282335-17980393")
+    response = Net::HTTP::Post.new(uri)
+    data = response.set_form_data("title" => Summary.find(6).title, "content" => Summary.find(6).text)
 
     respond_to do |format|
       if @summary.save
