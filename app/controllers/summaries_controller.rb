@@ -1,12 +1,15 @@
 class SummariesController < ApplicationController
   before_action :set_summary, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:show, :new, :create]
+  skip_before_action :verify_authenticity_token
+
 
   # GET /summaries
   # GET /summaries.json
   def index
-    @summaries = Summary.where(user_id: current_user.id)
-    @summary = @summaries.find(article_url: params[:article_url])
+    @user = current_user
+    @user.summaries = Summary.all
+    # @summary = @summaries.find(params[:id])
   end
 
   # GET /summaries/1
@@ -18,7 +21,7 @@ class SummariesController < ApplicationController
   # GET /summaries/new
   def new
     @user = current_user
-    @summary = Summary.new(article_url: params[:article_url])
+    @summary = Summary.new
     @summary.user = @user
   end
 
@@ -29,17 +32,24 @@ class SummariesController < ApplicationController
   # POST /summaries
   # POST /summaries.json
   def create
-    @summary = Summary.new(summary_params)
+    @user = current_user
+    @summary = Summary.new(article_url: params.dig(:summary, :article_url))
+    @summary.user = @user
 
     respond_to do |format|
-      if @summary.save
-        format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
-        format.json { render :show, status: :created, location: @summary }
-      else
-        format.html { render :new }
-        format.json { render json: @summary.errors, status: :unprocessable_entity }
-      end
+      format.json
+      render :partial => "summaries/show.json"
     end
+
+    # respond_to do |format|
+      # if @summary.save
+        # format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
+        # format.json { render json: @summary.text, status: :unprocessable_entity }
+      # else
+        # format.html { render :new }
+        # format.json { render :create, status: :created, location: @summary }
+      # end
+    # end
   end
 
   # PATCH/PUT /summaries/1
@@ -66,7 +76,12 @@ class SummariesController < ApplicationController
     end
   end
 
+  def favorite
+
+  end
+
   def tagged
+    @user = current_user
     if params[:tag].present?
       @summaries = Summary.tagged_with(params[:tag])
     else
@@ -92,6 +107,6 @@ class SummariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def summary_params
-      params.require(:summary).permit(:title, :text, :article_url, :tag_list)
+      params.require(:summary).permit(:user_id, :title, :text, :article_url, :tag_list)
     end
 end
