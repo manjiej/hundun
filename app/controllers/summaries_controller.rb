@@ -3,7 +3,6 @@ class SummariesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :new, :create]
   skip_before_action :verify_authenticity_token
 
-
   # GET /summaries
   # GET /summaries.json
   def index
