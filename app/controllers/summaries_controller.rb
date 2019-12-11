@@ -31,24 +31,25 @@ class SummariesController < ApplicationController
   # POST /summaries
   # POST /summaries.json
   def create
-    @user = current_user
     @summary = Summary.new(article_url: params.dig(:summary, :article_url))
+    @user = current_user
     @summary.user = @user
 
-    respond_to do |format|
-      format.json
-      render :partial => "summaries/show.json"
-    end
-
     # respond_to do |format|
-      # if @summary.save
-        # format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
-        # format.json { render json: @summary.text, status: :unprocessable_entity }
-      # else
-        # format.html { render :new }
-        # format.json { render :create, status: :created, location: @summary }
-      # end
+    #   format.json
+    #   render :partial => "summaries/show.json"
     # end
+
+    respond_to do |format|
+      if @summary.save
+        format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
+        # format.json { render json: @summary.text, status: :unprocessable_entity }
+        format.json { render :partial => "summaries/show.json" }
+      else
+        format.html { render :new }
+        # format.json { render :create, status: :created, location: @summary }
+      end
+    end
   end
 
   # PATCH/PUT /summaries/1
