@@ -16,25 +16,26 @@
 
 // button.addEventListener('click', redirect);
 
-let button = document.querySelector("#send-data");
-const input = document.getElementById("summary_article_url");
+// let button = document.querySelector("#send-data");
+// let vv = document.getElementById("summary_article_url");
+// let url = window.location.href;
 
-function fetchData() {
-  const url = window.location.href;
-  return url;
-}
+// function fetchData() {
+//   url = window.location.href;
+// }
 
-button.addEventListener('click', (event) => {
-  fetchData();
-  window.open("http://localhost:3000/summaries/new")
-});
+// chrome.browserAction.onClicked.addListener((tab) => {
+//   chrome.tabs.executeScript({
+//     code: 'vv.innerValue = url'
+//   });
+// });
 
 function sendData(data) {
   const url = 'http://localhost:3000/summaries/new';
   fetch(url, {
     method: 'POST',
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
+    body: JSON.stringify({article_url: window.location.href})
     })
     .then(response => response.json())
     .then((data) => {
@@ -42,7 +43,15 @@ function sendData(data) {
   })
 }
 
-input.innerHTML = 'Fred Flinstone';
+button.addEventListener('click', () => {
+  sendData();
+});
+
+// input.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   // postMessage(newMessage());
+//   sendData(fetchData());
+// });
 
 
 
