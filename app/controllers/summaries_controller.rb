@@ -20,7 +20,6 @@ class SummariesController < ApplicationController
   def new
     @user = current_user
     @summary = Summary.new(article_url: params[:article_url])
-    @summary.user = @user
   end
 
   # GET /summaries/1/edit
@@ -30,7 +29,11 @@ class SummariesController < ApplicationController
   # POST /summaries
   # POST /summaries.json
   def create
+        @user = current_user
+
     @summary = Summary.new(article_url: params.dig(:summary, :article_url))
+        @summary.user = @user
+
 
     respond_to do |format|
       if @summary.save
