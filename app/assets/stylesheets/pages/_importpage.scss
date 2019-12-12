@@ -1,30 +1,40 @@
 .import-container {
-  padding-top: 200px;
-  // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // // width: 800px;
-  // height: 100vh;
+  padding-top: 210px;
+  background-image: url("https://image.noelshack.com/fichiers/2019/50/4/1576168096-newspaper1.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  // width: 800px;
+  height: 100vh;
+  background-position: bottom 90px right 690px;
   font-family: "Quicksand";
   a {
     color: black;
   }
 }
 
+.import-content {
+  float: right;
+  width: 750px;
+}
+
 .import-title {
   text-align: center;
   padding-bottom: 10px;
-    h1 {
-    font-family: "Quicksand";
+    h3 {
+    font-family: "Anton";
+    font-size: 35px;
     padding-bottom: 20px;
+    color: #4c6875;
   }
     p {
     font-size: 20px;
+    font-style: italic;
+    font-family: "Francois One"
   }
 }
 
 .import-input {
-  width: 40%;
+  width: 70%;
   margin: 0 auto;
 }
 
