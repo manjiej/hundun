@@ -1,41 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="dashboard">
 
-<h1>Summaries</h1>
+  <h1 style="text-align: center">My Summaries</h1>
+  <div class="dashboard-container">
 
-<% @sample = Summary.first %>
-<%= @sample.title %>
-<%= @sample.text %>
-
-
-
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <%# @sample = Summary.first %>
+  <%#= @sample.title %>
+  <%#= @sample.text %>
 
 
     <% @user.summaries.each do |summary| %>
-    <div class="card">
-        <td><%= summary.title %></td>
-        <td><%= summary.text %></td>
+    <div class="dashboard-card">
+      <h3><%= summary.title %></h3>
+      <p><%= summary.text %></p>
         <%= render 'tags', summary: summary %>
-        <p><% summary.tag_list.each do |tag| %>
-          <%= link_to tag, tagged_path(tag: tag) %>
-        <% end %></p>
-        <td><%= link_to 'Show', summary %></td>
+      <p><% summary.tag_list.each do |tag| %>
+        <%= link_to tag, tagged_path(tag: tag) %>
+      <% end %></p>
+      <%= link_to 'Show', summary %>
 
         <!-- 1. by click the link, a form will pop up to let user key in the tag they want for the summary -->
-        <td><%= link_to 'add tags to the summary', tagged_path, remote: true %></td>
-        <td><%= link_to 'delete the summary from Dashboard', summary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%= link_to 'Add Tags', tagged_path, remote: true %>
+      <%= link_to 'Delete your summary', summary, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
-      </tr>
-    <% end %>
+      <% end %>
 
+  </div>
 
+  <br>
 
-<br>
+  <%= link_to 'Import another article', new_summary_path %>
 
-<%= link_to 'Import another article', new_summary_path %>
+</div>

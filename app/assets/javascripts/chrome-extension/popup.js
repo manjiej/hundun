@@ -31,6 +31,7 @@
 
 let button = document.querySelector("#send-data");
 
+
 const getTabUrl = () => {
   return new Promise(resolve => {
     chrome.tabs.query({'active': true, 'currentWindow': true}, (tabs) => {
@@ -43,13 +44,15 @@ const getTabUrl = () => {
 const fetchData = async () => {
   getTabUrl().then(tabUrl => {
     const url = 'http://localhost:3000/summaries'
-    const body = JSON.stringify({"article_url": tabUrl, "chrome_extension": true})
-    console.log(body)
+    const body = JSON.stringify({"article_url": tabUrl})
     fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      headers: { 'Content-Type': 'application/json'},
       body
-    }).then(response => response.json()).then(data => console.log(data))
+    }).then(response => response.json()).then((data) => {
+      let redirectUrl = data[0].url
+      window.open(redirectUrl)
+    })
   })
 }
 
