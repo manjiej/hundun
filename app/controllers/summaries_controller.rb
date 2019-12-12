@@ -1,4 +1,5 @@
 require 'summarize'
+require 'digest'
 
 class SummariesController < ApplicationController
   before_action :set_summary, only: [:show, :edit, :update, :destroy]
@@ -15,7 +16,6 @@ class SummariesController < ApplicationController
   # GET /summaries/1
   # GET /summaries/1.json
   def show
-    @slogan = params[:slogan]
     @related_summaries = @summary.find_related_tags
   end
 
@@ -32,20 +32,30 @@ class SummariesController < ApplicationController
 
   # POST /summaries
   # POST /summaries.json
+
+  def digest
+    title = params.dig(:summary, :title)
+    text = params.dig(:summary, :text)
+
+    @summary.Summary.all
+
+    digested_text = Digest.digested title text
+    @summary.digest = digested_text
+  end
+
   def create
     article_url = params.dig(:summary, :article_url)
-    @summary = Summary.new(article_url: article_url)
+    digest = params.dig(:summary, :digest)
+    @summary = Summary.new(article_url: article_url, digest: digest)
 
-    digested_summary = Summarize.digest article_url
-    @summary.title = digested_summary["title"]
-    @summary.text = digested_summary["text"]
+    scraped_article = Scrape.scraped article_url
+    @summary.title = scraped_article["title"]
+    @summary.text = scraped_article["text"]
+
+    digest
 
     @user = current_user
     @summary.user = @user
-
-    uri = URI("https://aip.baidubce.com/rpc/2.0/nlp/v1/news_summary?charset=UTF-8&access_token=24.1ea3089fa3c4d91ea21b83759caeaae1.2592000.1578482131.282335-17980393")
-    response = Net::HTTP::Post.new(uri)
-    data = response.set_form_data("title" => Summary.find(6).title, "content" => Summary.find(6).text)
 
     respond_to do |format|
       if @summary.save
@@ -116,6 +126,6 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def summary_params
-      params.require(:summary).permit(:user_id, :title, :text, :article_url, :tag_list)
+      params.require(:summary).permit(:user_id, :title, :text, :article_url, :tag_list, :digest)
     end
 end
