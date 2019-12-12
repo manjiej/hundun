@@ -1,4 +1,5 @@
 require 'summarize'
+require 'digest'
 
 class SummariesController < ApplicationController
   before_action :set_summary, only: [:show, :edit, :update, :destroy]
@@ -34,26 +35,24 @@ class SummariesController < ApplicationController
   def create
     article_url = params.dig(:summary, :article_url)
     @summary = Summary.new(article_url: article_url)
-
     scraped_summary = Scrape.scrape(article_url)
+
     @summary.title = scraped_summary["title"]
     @summary.text = scraped_summary["text"]
-    # @summary.image = scraped_summary["images"][0].url
 
-    # if scraped_summary["text"].exist?
-    #   Digest.digest
-    # end
+    title = scraped_summary["title"]
+    text = scraped_summary["text"]
+
+    @summary.digest = Scrape.fetch(title, text)
 
     @user = current_user
     @summary.user = @user
 
-
     respond_to do |format|
       if @summary.save
-        # format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
         format.json { render json: ["title": @summary.title, "text": @summary.text, "url": "http://localhost:3000/summaries/#{@summary.id}", "image": "https://i.guim.co.uk/img/media/5e1ef6b193b314b29c8ed6b04472f51908ceb355/334_278_2639_1583/master/2639.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=beec8327bfdc6099c9feed3cc76a74ef"] }
+        format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
         format.js
-        # format.json #{ render :partial => "summaries/show.json" }
       else
         format.html { render :new }
         format.json { render :create, status: :created, location: @summary }

@@ -4,8 +4,46 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h2>HI</h2>
-    <button id="send-data">SUMMARIZE</button>
+
+    <div class="ldBar"></div>
+
+
+    <div id="myItem1">
+      <div class="extension-container" id="loading">
+        <div class="extension-header">
+          <img src="/images/logo_trans_hundun.png" alt="Hundun logo">
+        </div>
+
+        <div class="extension-content">
+          <h2>Get the summary of your web articles the fastest way.</h2>
+          <p>Click below to summarize your web article!</p>
+
+          <p><button id="send-data">SUMMARIZE</button></p>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      /* construct manually */
+      var bar1 = new ldBar("#myItem1");
+      /* ldBar stored in the element */
+      var bar2 = document.getElementById('myItem1').ldBar;
+      bar1.set(60);
+    </script>
+
     <script type="text/javascript" src="popup.js"></script>
+    <script type="text/javascript" src="loading-bar.js"></script>
+   <!--  <script type="text/javascript">
+      function showIcon() {
+        document.getElementById('loading').style.display ='block';
+      }
+
+      function hideIcon() {
+        document.getElementById('loading').style.display ='none';
+      }
+    </script> -->
+
+    </div>
   </body>
 </html>
