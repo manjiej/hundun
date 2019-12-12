@@ -8,10 +8,8 @@ class SummariesController < ApplicationController
   # GET /summaries
   # GET /summaries.json
   def index
-    # @user = current_user
-    # @user.summaries = Summary.all
-    @summary = Summary.first
-    # @summary = @summaries.find(params[:id])
+    @user = current_user
+    @user.summaries = Summary.all
   end
 
   # GET /summaries/1
@@ -44,43 +42,40 @@ class SummariesController < ApplicationController
     @user = current_user
     @summary.user = @user
 
-    # respond_to do |format|
-    #   format.json
-    #   render :partial => "summaries/show.json"
-    # end
 
     respond_to do |format|
       if @summary.save
         format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
-        # # format.json { render json: @summary.text, status: :unprocessable_entity }
-        format.json { render :partial => "summaries/show.json" }
+        format.json { render json: @summary.text, status: :unprocessable_entity }
+        format.js
+        # format.json #{ render :partial => "summaries/show.json" }
       else
         format.html { render :new }
-        # format.json { render :create, status: :created, location: @summary }
+        format.json { render :create, status: :created, location: @summary }
       end
     end
   end
 
   # PATCH/PUT /summaries/1
   # PATCH/PUT /summaries/1.json
-  # def update
-  #   respond_to do |format|
-  #     if @summary.update(summary_params)
-  #       format.html { redirect_to @summary, notice: 'Summary was successfully updated.' }
-  #       format.json { render :show, status: :ok, location: @summary }
-  #     else
-  #       format.html { render :edit }
-  #       format.json { render json: @summary.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  def update
+    respond_to do |format|
+      if @summary.update(summary_params)
+        format.html { redirect_to summaries_url, notice: 'Summary was successfully updated.' }
+        format.js { head :no_content } #returning no content!!!
+      else
+        format.html { render :edit }
+        format.json { render json: @summary.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # DELETE /summaries/1
   # DELETE /summaries/1.json
   def destroy
     @summary.destroy
     respond_to do |format|
-      format.html { redirect_to summaries_url, notice: 'Summary was successfully destroyed.' }
+      format.html { redirect_to summaries_url, notice: 'Summary was successfully removed from Dashboard' }
       format.json { head :no_content }
     end
   end
@@ -88,6 +83,8 @@ class SummariesController < ApplicationController
   def favorite
 
   end
+
+private
 
   def tagged
     @user = current_user
@@ -100,7 +97,7 @@ class SummariesController < ApplicationController
 
   def add_tags
     @summary
-    @summary.tag_list.add(params[])
+    @summary.tag_list.add(params[:tag])
     @summary.save
   end
 
@@ -108,7 +105,6 @@ class SummariesController < ApplicationController
     @summary.tag_list.remove(params[])
   end
 
-  private
     # Use callbacks to share common setup or constraints between actions.
     def set_summary
       @summary = Summary.find(params[:id])

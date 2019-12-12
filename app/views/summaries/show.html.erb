@@ -18,17 +18,6 @@
 
 </div>
 
-<h3>Related Summaries</h3>
-<ul>
-  <% @related_summaries.each do |r| %>
-    <li><%= r.title %></li>
-    <li><%= r.text %></li>
-  <% end %>
-</ul>
-
-<%= link_to 'Save to Dashboard', summaries_path(@summary) %>
-<%= link_to 'Back', summaries_path %>
-
 
 <!--   <script type="text/javascript">
 
@@ -46,3 +35,40 @@
   </script> -->
 
 <!-- <script src="js/script.js"></script> -->
+
+
+
+
+<h1><%= @summary.title %></h1>
+
+<h3>Related Summries</h3>
+<ul>
+  <% @related_summaries.each do |r| %>
+    <li><%= r.title %></li>
+    <li><%= r.text %></li>
+  <% end %>
+</ul>
+
+
+<%= render 'tags', summary: @summary %>
+
+<%= link_to 'Save to Dashboard', summaries_path(@summary) %>
+<%= link_to 'Back', summaries_path %>
+
+<!--   <script type="text/javascript">
+
+
+  const api_url = 'https://api.diffbot.com/v3/article?token=606d0b61d6cf355ed6024deabc955e33&url=<%=@summary.article_url%>';
+
+  fetch(api_url).then(data => {
+    // Work with your JSON data here..
+    console.log(data["object"][0]["text"]);
+  }).catch(err => {
+    // What do when the request fails
+    console.log('The request failed!');
+  });
+
+  </script> -->
+
+<!-- <script src="js/script.js"></script> -->
+
