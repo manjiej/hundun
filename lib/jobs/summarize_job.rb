@@ -2,13 +2,12 @@ require 'uri'
 require 'net/http'
 # require 'pry-byebug'
 
-class SummarizeJob < ApplicationJob
+class SummarizeJob < ActiveJob::Base
   queue_as :default
 
   def perform
 
     summaries = Summary.where("title": "")
-
     summaries.each do |summary|
         @summary = summary
         @data = data
@@ -21,7 +20,7 @@ class SummarizeJob < ApplicationJob
 
   end
 
-private
+  private
 
   def data
     JSON.parse(response)

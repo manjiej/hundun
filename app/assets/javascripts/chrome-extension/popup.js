@@ -31,22 +31,32 @@
 
 let button = document.querySelector("#send-data");
 
-function sendData(data) {
-  const url = 'http://localhost:3000/summaries/new';
-  fetch(url, {
-    method: 'POST',
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({"article_url": window.location.href})
+const getTabUrl = () => {
+  return new Promise(resolve => {
+    chrome.tabs.query({'active': true, 'currentWindow': true}, (tabs) => {
+      let url = tabs[0].url
+      resolve(url)
     })
-    .then(response => response.json())
-    .then((data) => {
-      console.log(data);
+  })
+}
+
+const fetchData = async () => {
+  getTabUrl().then(tabUrl => {
+    const url = 'http://localhost:3000/summaries'
+    const body = JSON.stringify({"article_url": tabUrl, "chrome_extension": true})
+    console.log(body)
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body
+    }).then(response => response.json()).then(data => console.log(data))
   })
 }
 
 button.addEventListener('click', () => {
-  sendData();
+  fetchData();
 });
+
 
 // input.addEventListener('submit', (event) => {
 //   event.preventDefault();

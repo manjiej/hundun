@@ -1,3 +1,5 @@
+require 'summarize'
+
 class SummariesController < ApplicationController
   before_action :set_summary, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:show, :new, :create]
@@ -6,8 +8,9 @@ class SummariesController < ApplicationController
   # GET /summaries
   # GET /summaries.json
   def index
-    @user = current_user
-    @user.summaries = Summary.all
+    # @user = current_user
+    # @user.summaries = Summary.all
+    @summary = Summary.first
     # @summary = @summaries.find(params[:id])
   end
 
@@ -31,7 +34,13 @@ class SummariesController < ApplicationController
   # POST /summaries
   # POST /summaries.json
   def create
-    @summary = Summary.new(article_url: params.dig(:summary, :article_url))
+    article_url = params.dig(:summary, :article_url)
+    @summary = Summary.new(article_url: article_url)
+
+    digested_summary = Summarize.digest article_url
+    @summary.title = digested_summary["title"]
+    @summary.text = digested_summary["text"]
+
     @user = current_user
     @summary.user = @user
 
@@ -39,10 +48,11 @@ class SummariesController < ApplicationController
     #   format.json
     #   render :partial => "summaries/show.json"
     # end
+
     respond_to do |format|
       if @summary.save
         format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
-        # format.json { render json: @summary.text, status: :unprocessable_entity }
+        # # format.json { render json: @summary.text, status: :unprocessable_entity }
         format.json { render :partial => "summaries/show.json" }
       else
         format.html { render :new }
