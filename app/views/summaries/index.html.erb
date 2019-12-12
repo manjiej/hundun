@@ -21,11 +21,13 @@
     <div class="card">
         <td><%= summary.title %></td>
         <td><%= summary.text %></td>
+        <%= render 'tags', summary: summary %>
         <p><% summary.tag_list.each do |tag| %>
           <%= link_to tag, tagged_path(tag: tag) %>
         <% end %></p>
         <td><%= link_to 'Show', summary %></td>
-        <td><%= link_to 'add tags to the summary', method: :post, remote: true %></td>
+        <!-- 1. by click the link, a form will pop up to let user key in the tag they want for the summary -->
+        <td><%= link_to 'add tags to the summary', tagged_path, remote: true %></td>
         <td><%= link_to 'delete the summary from Dashboard', summary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </div>
       </tr>
@@ -33,7 +35,6 @@
 
 
 
-<%#= render 'tags', summary: @summaries %>
 <br>
 
 <%= link_to 'Import another article', new_summary_path %>

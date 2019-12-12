@@ -8,7 +8,6 @@ class SummariesController < ApplicationController
   def index
     @user = current_user
     @user.summaries = Summary.all
-    # @summary = @summaries.find(params[:id])
   end
 
   # GET /summaries/1
@@ -51,17 +50,17 @@ class SummariesController < ApplicationController
 
   # PATCH/PUT /summaries/1
   # PATCH/PUT /summaries/1.json
-  # def update
-  #   respond_to do |format|
-  #     if @summary.update(summary_params)
-  #       format.html { redirect_to @summary, notice: 'Summary was successfully updated.' }
-  #       format.json { render :show, status: :ok, location: @summary }
-  #     else
-  #       format.html { render :edit }
-  #       format.json { render json: @summary.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  def update
+    respond_to do |format|
+      if @summary.update(summary_params)
+        format.html { redirect_to summaries_url, notice: 'Summary was successfully updated.' }
+        format.js { head :no_content } #returning no content!!!
+      else
+        format.html { render :edit }
+        format.json { render json: @summary.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # DELETE /summaries/1
   # DELETE /summaries/1.json
@@ -77,6 +76,8 @@ class SummariesController < ApplicationController
 
   end
 
+private
+
   def tagged
     @user = current_user
     if params[:tag].present?
@@ -88,7 +89,7 @@ class SummariesController < ApplicationController
 
   def add_tags
     @summary
-    @summary.tag_list.add(params[])
+    @summary.tag_list.add(params[:tag])
     @summary.save
   end
 
@@ -96,7 +97,6 @@ class SummariesController < ApplicationController
     @summary.tag_list.remove(params[])
   end
 
-  private
     # Use callbacks to share common setup or constraints between actions.
     def set_summary
       @summary = Summary.find(params[:id])
