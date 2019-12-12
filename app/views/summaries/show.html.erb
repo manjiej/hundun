@@ -51,6 +51,23 @@
 <!-- <script src="js/script.js"></script> -->
 
 
+<<<<<<< HEAD
+=======
+<h3>Related Summries</h3>
+<ul>
+  <% @related_summaries.each do |r| %>
+    <li><%= r.title %></li>
+    <li><%= r.text %></li>
+  <% end %>
+</ul>
+
+
+<%= render 'tags', summary: @summary %>
+
+<%= link_to 'Save to Dashboard', summaries_path(@summary) %>
+<%= link_to 'Back', summaries_path %>
+
+>>>>>>> b0d3c77b515d4a6a7b63261aa07688f0a6e17b77
 <!--   <script type="text/javascript">
 
 

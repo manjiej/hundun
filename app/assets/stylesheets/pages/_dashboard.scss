@@ -1,0 +1,24 @@
+.dashboard {
+  margin-top: 100px;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Quicksand";
+  justify-content: center;
+}
+
+.dashboard-card {
+  width: 300px;
+  margin: 30px;
+  border: 1px solid #a6b7bf;
+  border-radius: 15px 50px 30px;
+  padding: 20px;
+  h3 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 10px;
+  }
+}

@@ -36,9 +36,13 @@ class SummariesController < ApplicationController
     article_url = params.dig(:summary, :article_url)
     @summary = Summary.new(article_url: article_url)
 
-    digested_summary = Summarize.digest article_url
-    @summary.title = digested_summary["title"]
-    @summary.text = digested_summary["text"]
+    scraped_summary = Scrape.scrape article_url
+    @summary.title = scraped_summary["title"]
+    @summary.text = scraped_summary["text"]
+
+    # if scraped_summary["text"].exist?
+    #   Summarize.digest
+    # end
 
     @user = current_user
     @summary.user = @user
