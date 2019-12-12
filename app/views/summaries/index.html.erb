@@ -1,19 +1,9 @@
 <div class="dashboard">
 
-  <h1 style="text-align: center">My Summaries</h1>
+  <h1 style="text-align: center">My Digests</h1>
   <div class="dashboard-container">
 
 <!-- show all the tags in the tag_list -->
-
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-
 
     <% @user.summaries.each do |summary| %>
     <div class="dashboard-card">
@@ -22,8 +12,7 @@
       <p><% summary.tag_list.each do |tag| %>
         <%= link_to tag, tagged_path(tag: tag) %>
       <% end %></p>
-      <%= render 'tags', summary: summary %>
-      <%= link_to 'Show', summary %>
+      <%= link_to 'Explore more', summary %>
 
         <!-- 1. by click the link, a form will pop up to let user key in the tag they want for the summary -->
       <%= link_to 'Add Tags', tagged_path, remote: true %>
