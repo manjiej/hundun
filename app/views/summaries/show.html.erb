@@ -14,8 +14,8 @@
     </p>
 
     <p>
-      <strong >Text:</strong>
-      <%= @summary.text %>
+      <strong>Digest: </strong>
+      <%= @summary.digest %>
     </p>
 
 
@@ -56,15 +56,15 @@
 
 <ul>
   <% @related_summaries.each do |r| %>
-    <li><%= r.title %></li>
-    <li><%= r.text %></li>
+    <%= link_to r.tag_list, summary_path %>
+    <br>
   <% end %>
 </ul>
 
 
 <%= render 'tags', summary: @summary %>
 
-<%= link_to 'Save to Dashboard', summaries_path(@summary) %>
+<%= link_to 'Save to Dashboard', summaries_path %>
 <%= link_to 'Back', summaries_path %>
 <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
 <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
