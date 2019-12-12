@@ -16,4 +16,5 @@ button#send-data {
   cursor: pointer;
   color: white;
   outline: none !important;
+  font-family: "Quicksand"
 }
