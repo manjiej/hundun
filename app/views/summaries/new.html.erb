@@ -1,18 +1,20 @@
 <div class="import-container">
+
+  <div class="import-title">
+    <h2>Get the summary of your web articles the fastest way</h1>
+    <p>Go explore!</p>
+  </div>
+
   <h1>New Summary</h1>
 
-<div class="container">
-  <div class="row">
-    <div class="col-6 col-offset-3">
-  <%= @summary[:article_url] %>
+  <div class="container">
 
-  <%= render 'form', summary: @summary %>
+    <%= @summary[:article_url] %>
 
-  <%= link_to 'Back', summaries_path %>
+    <%= render 'form', summary: @summary %>
 
-  <!-- <script src="../../assets/javascripts/chrome-extension/scripts/send-data.js"></script> -->
+    <%= link_to 'Back', summaries_path %>
 
-</div>
-</div>
-</div>
+  </div>
+
 </div>

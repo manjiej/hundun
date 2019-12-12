@@ -1,5 +1,4 @@
-require "net/http"
-require "uri"
+require 'summarize'
 
 class SummariesController < ApplicationController
   before_action :set_summary, only: [:show, :edit, :update, :destroy]
@@ -11,7 +10,6 @@ class SummariesController < ApplicationController
   def index
     @user = current_user
     @user.summaries = Summary.all
-    # @summary = @summaries.find(params[:id])
   end
 
   # GET /summaries/1
@@ -35,7 +33,15 @@ class SummariesController < ApplicationController
   # POST /summaries
   # POST /summaries.json
   def create
-    @summary = Summary.new(article_url: params.dig(:summary, :article_url))
+    article_url = params.dig(:summary, :article_url)
+    @summary = Summary.new(article_url: article_url)
+
+    digested_summary = Summarize.digest article_url
+    @summary.title = digested_summary["title"]
+    @summary.text = digested_summary["text"]
+
+    @user = current_user
+    @summary.user = @user
 
     uri = URI("https://aip.baidubce.com/rpc/2.0/nlp/v1/news_summary?charset=UTF-8&access_token=24.1ea3089fa3c4d91ea21b83759caeaae1.2592000.1578482131.282335-17980393")
     response = Net::HTTP::Post.new(uri)
@@ -56,17 +62,17 @@ class SummariesController < ApplicationController
 
   # PATCH/PUT /summaries/1
   # PATCH/PUT /summaries/1.json
-  # def update
-  #   respond_to do |format|
-  #     if @summary.update(summary_params)
-  #       format.html { redirect_to @summary, notice: 'Summary was successfully updated.' }
-  #       format.json { render :show, status: :ok, location: @summary }
-  #     else
-  #       format.html { render :edit }
-  #       format.json { render json: @summary.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  def update
+    respond_to do |format|
+      if @summary.update(summary_params)
+        format.html { redirect_to summaries_url, notice: 'Summary was successfully updated.' }
+        format.js { head :no_content } #returning no content!!!
+      else
+        format.html { render :edit }
+        format.json { render json: @summary.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # DELETE /summaries/1
   # DELETE /summaries/1.json
@@ -82,6 +88,8 @@ class SummariesController < ApplicationController
 
   end
 
+private
+
   def tagged
     @user = current_user
     if params[:tag].present?
@@ -93,7 +101,7 @@ class SummariesController < ApplicationController
 
   def add_tags
     @summary
-    @summary.tag_list.add(params[])
+    @summary.tag_list.add(params[:tag])
     @summary.save
   end
 
@@ -101,7 +109,6 @@ class SummariesController < ApplicationController
     @summary.tag_list.remove(params[])
   end
 
-  private
     # Use callbacks to share common setup or constraints between actions.
     def set_summary
       @summary = Summary.find(params[:id])

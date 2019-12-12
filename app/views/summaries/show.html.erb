@@ -1,9 +1,9 @@
-<body>
-<p id="notice"><%= notice %></p>
+
+<div class="summarized-container">
 
 <p>
-  <strong>Title:</strong>
-  <%= @summary.title %>
+  <h1><strong>Title:
+  <%= @summary.title %></strong></h1>
 </p>
 
 <p id="url">
@@ -16,7 +16,25 @@
   <%= @summary.text %>
 </p>
 
-<h1><%= @summary.title %></h1>
+</div>
+
+
+<!--   <script type="text/javascript">
+
+
+  const api_url = 'https://api.diffbot.com/v3/article?token=606d0b61d6cf355ed6024deabc955e33&url=<%=@summary.article_url%>';
+
+  fetch(api_url).then(data => {
+    // Work with your JSON data here..
+    console.log(data["object"][0]["text"]);
+  }).catch(err => {
+    // What do when the request fails
+    console.log('The request failed!');
+  });
+
+  </script> -->
+
+<!-- <script src="js/script.js"></script> -->
 
 <h3>Related Summries</h3>
 
@@ -27,7 +45,9 @@
   <% end %>
 </ul>
 
+
 <%= render 'tags', summary: @summary %>
+
 <%= link_to 'Save to Dashboard', summaries_path(@summary) %>
 <%= link_to 'Back', summaries_path %>
 <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->

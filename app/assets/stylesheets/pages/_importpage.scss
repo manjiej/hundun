@@ -1,9 +1,52 @@
 .import-container {
   padding-top: 200px;
-  background-image: url("https://images.unsplash.com/photo-1495020689067-958852a7765e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+  // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // // width: 800px;
+  // height: 100vh;
+  font-family: "Quicksand";
+  a {
+    color: black;
+  }
 }
 
+.import-title {
+  text-align: center;
+  padding-bottom: 10px;
+    h1 {
+    font-family: "Quicksand";
+    padding-bottom: 20px;
+  }
+    p {
+    font-size: 20px;
+  }
+}
+
+.import-input {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.import-btn {
+   text-align: center;
+}
+
+.import-btn input {
+  min-width: 160px;
+  height: 45px;
+  background-color: #6A7E87;
+  color: white;
+  margin-top: 20px;
+  font-family: 'Montserrat';
+}
+
+.import-btn input:hover {
+  color: white;
+  background-color: #576870;
+}
+
+.new_summary a {
+  color: black;
+}
 
