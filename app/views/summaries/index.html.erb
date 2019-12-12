@@ -19,10 +19,10 @@
     <div class="dashboard-card">
       <h3><%= summary.title %></h3>
       <p><%= summary.text %></p>
-        <%= render 'tags', summary: summary %>
       <p><% summary.tag_list.each do |tag| %>
         <%= link_to tag, tagged_path(tag: tag) %>
       <% end %></p>
+      <%= render 'tags', summary: summary %>
       <%= link_to 'Show', summary %>
 
         <!-- 1. by click the link, a form will pop up to let user key in the tag they want for the summary -->
