@@ -2,6 +2,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
+
 class Scrape
   def self.scrape url
     response = Net::HTTP.get(URI("https://api.diffbot.com/v3/article?token=606d0b61d6cf355ed6024deabc955e33&url=#{URI.encode(url)}"))
@@ -18,5 +19,5 @@ class Scrape
 
     JSON.parse(response.body)['summary']
   end
-
 end
+

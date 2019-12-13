@@ -6,7 +6,6 @@ class SummarizeJob < ActiveJob::Base
   queue_as :default
 
   def perform
-
     summaries = Summary.where("title": "")
     summaries.each do |summary|
         @summary = summary
@@ -17,7 +16,6 @@ class SummarizeJob < ActiveJob::Base
           "text": @data["objects"][0]["text"]
         )
     end
-
   end
 
   private
@@ -33,6 +31,4 @@ class SummarizeJob < ActiveJob::Base
   def response
     Net::HTTP.get(url)
   end
-
-
 end

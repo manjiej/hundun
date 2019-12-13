@@ -33,14 +33,16 @@ class SummariesController < ApplicationController
 
   # POST /summaries
   # POST /summaries.json
+
   def create
     article_url = params.dig(:summary, :article_url)
     @summary = Summary.new(article_url: article_url)
 
-    scraped_summary = Scrape.scrape article_url
+    scraped_summary = Scrape.scrape(article_url)
 
     @summary.title = scraped_summary["title"]
     @summary.text = scraped_summary["text"]
+    @summary.image = scraped_summary["images"][0]["url"]
 
     title = scraped_summary["title"]
     text = scraped_summary["text"]
@@ -119,6 +121,6 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def summary_params
-      params.require(:summary).permit(:user_id, :title, :text, :article_url, :tag_list)
+      params.require(:summary).permit(:user_id, :title, :text, :article_url, :tag_list, :digest)
     end
 end
