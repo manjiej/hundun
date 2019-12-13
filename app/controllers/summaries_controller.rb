@@ -37,7 +37,7 @@ class SummariesController < ApplicationController
     article_url = params.dig(:summary, :article_url)
     @summary = Summary.new(article_url: article_url)
 
-    scraped_summary = Scrape.scrape(article_url)
+    scraped_summary = Scrape.scrape article_url
 
     @summary.title = scraped_summary["title"]
     @summary.text = scraped_summary["text"]
