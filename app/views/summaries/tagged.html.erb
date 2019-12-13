@@ -1,18 +1,10 @@
-<%= @summaries %>
 
-<p>test</p>
-
-<% @user.summaries.each do |summary| %>
+<% @summaries.each do |summary| %>
   <h2><%= summary.title %></h2>
+  <h2><%#= summary.text %></h2>
   <p><% summary.tag_list.each do |tag| %>
     <%= link_to tag, tagged_path(tag: tag) %>
   <% end %></p>
 <% end %>
 
-<form action="/summaries" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="text" name="title" placeholder="Title">
-  <input type="text" name="text" placeholder="Text">
-  <input type="text" name="tags" placeholder="Tags">
-  <input type="submit">
-</form>
+<%= link_to "All summaries", summaries_path %>

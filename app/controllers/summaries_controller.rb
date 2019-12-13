@@ -16,6 +16,7 @@ class SummariesController < ApplicationController
   # GET /summaries/1
   # GET /summaries/1.json
   def show
+    @summary = Summary.find(params[:id])
     @related_summaries = @summary.find_related_tags
   end
 
@@ -35,7 +36,8 @@ class SummariesController < ApplicationController
   def create
     article_url = params.dig(:summary, :article_url)
     @summary = Summary.new(article_url: article_url)
-    scraped_summary = Scrape.scrape(article_url)
+
+    scraped_summary = Scrape.scrape article_url
 
     @summary.title = scraped_summary["title"]
     @summary.text = scraped_summary["text"]
@@ -88,10 +90,8 @@ class SummariesController < ApplicationController
 
   end
 
-private
 
   def tagged
-    @user = current_user
     if params[:tag].present?
       @summaries = Summary.tagged_with(params[:tag])
     else
@@ -108,6 +108,8 @@ private
   def remove_tags
     @summary.tag_list.remove(params[])
   end
+
+private
 
     # Use callbacks to share common setup or constraints between actions.
     def set_summary
