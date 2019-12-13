@@ -4,7 +4,7 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs import-input">
-      <%= f.input :article_url %>
+      <%= f.input :article_url, placeholder: "Paste your article url here" %>
     </div>
 
     <div class="form-actions import-btn">

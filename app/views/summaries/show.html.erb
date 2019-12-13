@@ -1,23 +1,19 @@
 
 
 <div class="summarized-container">
-  <div id="isItLoaded">
-
+  <div class="summarized-title">
     <p>
-      <h1><strong>Title:
-      <%= @summary.title %></strong></h1>
+      <h1><strong><%= @summary.title %></strong></h1>
     </p>
+  </div>
 
-    <p id="url">
+<!--     <p id="url">
       <strong>Url:</strong>
       <%= @summary.article_url %>
-    </p>
-
-    <p>
-      <strong>Digest: </strong>
-      <%= @summary.digest %>
-    </p>
-
+    </p> -->
+  <div class="summarized-text">
+    <p><%= @summary.digest %></p>
+  </div>
 
 <p>
   <strong >Digest:</strong>
@@ -27,7 +23,6 @@
 
 
   </div>
-
 </div>
 
 
@@ -48,27 +43,37 @@
 
 <!-- <script src="js/script.js"></script> -->
 
-<<<<<<< HEAD
-=======
 
->>>>>>> ff4583034d642688307d821603180a2745a9995d
 <h3>Related Summries</h3>
 
 <ul>
   <% @related_summaries.each do |r| %>
     <%= link_to r.tag_list, summary_path %>
+
+<div class="related-sum-container">
+
+<h3>Other users also read those articles....</h3>
+<div class="related-sum-articles">
+  <p><% @related_summaries.each do |r| %>
+    <%= link_to r.title, summary_path %>
     <br>
-  <% end %>
-</ul>
+  <% end %></p>
+</div>
+</div>
 
+  <%= render 'tags', summary: @summary %>
 
-<%= render 'tags', summary: @summary %>
 
 <%= link_to 'Save to Dashboard', summaries_path %>
 <%= link_to 'Back', summaries_path %>
 <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
 <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
 </body>
+
+<div class="related-sum-links">
+  <%= link_to 'Save to Dashboard', summaries_path(@summary) %>
+  <%= link_to 'Back', summaries_path %>
+</div>
 
 <!--   <script type="text/javascript">
 

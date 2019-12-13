@@ -1,0 +1,71 @@
+.summarized-container {
+  display: flex;
+  padding: 140px 50px 50px 50px;
+}
+
+.summarized-title {
+  width: 30%;
+  padding-right: 80px;
+  h1 {
+    line-height: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Paytone One"
+  }
+}
+
+.summarized-text {
+  column-count: 3;
+  column-gap: 40px;
+  justify-content: center;
+  text-align: justify;
+  margin: auto 0;
+  p {
+    line-height: 2.5em;
+    font-family: "Zilla Slab"
+  }
+}
+
+.related-sum-container h3 {
+  text-align: center;
+  font-family: "Quicksand";
+  border-top: 1px solid black;
+  width: 300px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  padding-top: 40px
+}
+
+.summary_tag_list {
+  width: 30%;
+}
+
+.related-sum-articles {
+  text-align: center;
+}
+
+.tag-list-input {
+  position: relative;
+  left: 35%;
+  right: 50%;
+}
+
+.related-sum-links {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 100px;
+    a {
+    background-color: #354D62;
+    width: 174px;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Montserrat';
+    padding: 10px;
+    text-decoration: none;
+    }
+  a:hover {
+    background-color: #576870;
+    color: white;
+    transition: 0.5s;
+  }
+}

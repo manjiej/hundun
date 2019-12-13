@@ -13,9 +13,9 @@
     "default_popup": "popup.html"
   },
   "icons": {
-    "16": "images/hundun_ext.png",
-    "32": "images/hundun_ext.png",
-    "48": "images/hundun_ext.png",
-    "128": "images/hundun_ext.png"
+    "16": "images/circle-hundun-digest.png",
+    "32": "images/circle-hundun-digest.png",
+    "48": "images/circle-hundun-digest.png",
+    "128": "images/circle-hundun-digest.png"
   }
 }

@@ -19,23 +19,23 @@
   position: relative;
   top: 400px;
   h1 {
-    font-size: 55px;
-    letter-spacing: 2px;
+    font-size: 70px;
+    letter-spacing: 4px;
     color: white;
-    font-family: 'Montserrat';
+    font-family: 'Anton';
     font-weight: bold;
     padding-bottom: 20px;
     text-shadow: 1px 1px 1px black;
   }
   p {
     font-size: 30px;
-    font-family: 'Montserrat';
+    font-family: 'Francois One';
     color: white;
     padding-bottom: 20px;
     text-shadow: 1px 1px 1px black;
   }
   a {
-    background-color: #6A7E87;
+    background-color: #354D62;
     width: 174px;
     margin: 0 auto;
     color: white;
@@ -47,13 +47,16 @@
     color: white;
     transition: 0.5s;
   }
+  span {
+    color: #354D62;
+  }
 }
 
 // Story Section
 
 .story {
   h1 {
-    font-family: 'Acme';
+    font-family: 'Anton';
     font-size: 60px;
     color: #6A7E87;
     width: 180px;
@@ -88,7 +91,7 @@
     height: 694px;
   }
   h1 {
-    font-family: 'Acme';
+    font-family: 'Anton';
     font-size: 50px;
     color: #6A7E87;
     width: 230px;
@@ -115,7 +118,7 @@
   margin-top: 10px;
   h3 {
     padding-bottom: 10px;
-    font-family: 'Acme';
+    font-family: 'Francois One';
     font-size: 25px;
     // color: #6A7E87;
   }
@@ -133,7 +136,7 @@
 
 .catchphrase {
   a {
-    background-color: #6A7E87;
+    background-color: #354D62;
     width: 174px;
     margin: 0 auto;
     color: white;

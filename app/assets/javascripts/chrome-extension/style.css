@@ -1,6 +1,6 @@
 body {
   width: 330px;
-  height: 280px;
+  height: 600px;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -9,19 +9,20 @@ body {
 }
 
 button#send-data {
-  background: #FF9868;
+  background: #354D62;
   padding: 10px;
   font-size: 1em;
   border: 0;
   border-radius: 50px;
   cursor: pointer;
   color: white;
+  font-weight: bold;
   outline: none !important;
   font-family: "Quicksand";
 }
 
 button#send-data:hover {
-    background-color: #ce6635;
+    background-color: #557189;
     color: white;
     transition: 0.5s;
 }
@@ -41,7 +42,7 @@ button#send-data:hover {
 
 .extension-container p {
   font-size: 13px;
-  color: #FF9868;
+  color: #7ea09f;
 }
 .extension-header {
   text-align: center;
@@ -51,6 +52,7 @@ button#send-data:hover {
   text-align: center;
   margin-top: 40px;
 }
+
 
 /*#loading{
 
