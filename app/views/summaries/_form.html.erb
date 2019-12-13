@@ -1,5 +1,5 @@
 
-  <%= simple_form_for(@summary) do |f| %>
+  <%= simple_form_for(@summary, :html => { :onsubmit => "loading()" }) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -11,6 +11,16 @@
       <%= f.button :submit %>
     </div>
   <% end %>
+
+  <script type="text/javascript">
+
+    loading = () => {
+    const container = document.getElementById("loader");
+
+    container.innerHTML = "<img src='https://image.noelshack.com/fichiers/2019/50/5/1576207438-spin.gif'>"
+    }
+
+  </script>
 
 
 
