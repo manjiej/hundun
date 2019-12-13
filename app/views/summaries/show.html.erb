@@ -54,8 +54,9 @@
 
 <h3>Other users also read those articles....</h3>
 <div class="related-sum-articles">
+  <%= @related_summaries %>
   <p><% @related_summaries.each do |r| %>
-    <%= link_to r.title, summary_path %>
+    <%= link_to r.title, summary_path(anchor: ) %>
     <br>
   <% end %></p>
 </div>
