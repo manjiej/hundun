@@ -92,6 +92,7 @@ class SummariesController < ApplicationController
 
 
   def tagged
+    @summary
     if params[:tag].present?
       @summaries = Summary.tagged_with(params[:tag])
     else

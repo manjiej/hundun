@@ -1,32 +1,10 @@
-<<<<<<< HEAD
 
-<div class="container">
-  <div class="category">
-    <h2>Category</h2>
-    <p>placeholder</p>
-    <p>placeholder</p>
-    <p>placeholder</p>
-    <p>placeholder</p>
-    <p>placeholder</p>
-    <p>placeholder</p>
-    <%= link_to "technology", tagged_path(tag: "technology") %>
-
-
-
-  </div>
-
-
-  <div class="dashboard">
-=======
 <div class="dashboard">
   <div class="dashboard-title">
     <h1>My Digests</h1>
   </div>
   <div class="dashboard-container">
->>>>>>> 721f3cf4804e2bb804a1506b998a57b91aa37633
 
-    <h1 style="text-align: center">My Digests</h1>
-    <div class="dashboard-container">
 
     <% @user.summaries.each do |summary| %>
     <div class="dashboard-card">
@@ -42,10 +20,6 @@
     </div>
       <% end %>
 
-          <!-- 1. by click the link, a form will pop up to let user key in the tag they want for the summary -->
-        <%= link_to 'Delete your summary', summary, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
-        <% end %>
 
     </div>
 
