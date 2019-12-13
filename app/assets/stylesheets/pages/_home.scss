@@ -145,6 +145,8 @@
   p {
     font-family: "Quicksand";
     padding-top: 20px;
+    line-height: 2;
+    color: #999999
   }
   i {
     font-size: 60px;
@@ -152,6 +154,10 @@
   }
   i:hover {
     color: #354D62;
+  }
+  .download {
+    color: black;
+    font-size: 20px;
   }
 }
 
