@@ -19,17 +19,6 @@
 <h3>Other users also read those articles....</h3>
   <div class="related-sum-articles">
     <p><% @related_summaries.each do |r| %>
-      <%= link_to r.title, summary_path %>
-      <br>
-    <% end %></p>
-  </div>
-
-
-<div class="related-sum-container">
-
-<h3>Other users also read those articles....</h3>
-  <div class="related-sum-articles">
-    <p><% @related_summaries.each do |r| %>
       <li><%= r.tag_list %></li>
       <%= link_to r.title, summary_path %>
       <br>
