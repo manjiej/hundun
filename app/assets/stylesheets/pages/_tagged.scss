@@ -1,0 +1,43 @@
+.tagged {
+  margin-top: 100px;
+}
+
+.tagged-title {
+  h1 {
+  text-align: center;
+  font-family: "Anton";
+  text-transform: uppercase;
+  font-size: 223px;
+  border-bottom: 3px solid black;
+  width: 1100px;
+  margin: 0 auto;
+  }
+}
+
+.tagged-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Quicksand";
+  justify-content: center;
+}
+
+.tagged-card {
+  width: 650px;
+  margin: 30px;
+  border: 1px solid grey;
+  // border-radius: 15px 50px 30px;
+  margin-top: 100px;
+  padding: 20px;
+  h3 {
+    font-size: 20px;
+    font-family: "Paytone One";
+    text-align: center;
+  }
+  p {
+    padding-top: 40px;
+    font-size: 12px;
+    text-align: justify;
+    font-family: "Zilla Slab";
+    line-height: 2em;
+  }
+}
