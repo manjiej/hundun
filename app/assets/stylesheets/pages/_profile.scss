@@ -1,4 +1,4 @@
-.login-container {
+.profile-container {
   padding-top: 150px;
   width: 670px;
   margin: 0 auto;
@@ -6,14 +6,14 @@
   height: 500px;
 }
 
-.login-form {
+.profile-form {
   background-color: white;
   border-radius: 10px;
   margin-bottom: 150px;
 }
 
-.login-title {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1565636291143-9cc6c6f87445?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+.profile-title {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1574957747984-82c7fa4eef46?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
   height: 180px;
   border-radius: 10px 10px 0 0;
   background-repeat: no-repeat;
@@ -25,13 +25,16 @@
     padding-top: 70px;
     color: white;
     font-family: 'Francois One';
-    letter-spacing: 1.5px;
     font-weight: bold;
     text-shadow: 1px 1px 1px black;
   }
 }
 
-.login-btn input {
+.profile-btn {
+  padding-left: 40px
+}
+
+.profile-btn input {
   min-width: 160px;
   height: 45px;
   background-color: #6A7E87;
@@ -39,17 +42,18 @@
   color: white;
 }
 
-.login-btn input:hover {
+.profile-btn input:hover {
   color: white;
   background-color: #576870;
 }
 
-.login-inputs {
-  padding: 70px;
+.profile-inputs {
+  padding: 50px 50px 20px 50px;
 }
 
-.login-links {
+.profile-links {
   margin-top: 20px;
+  padding: 0 0 30px 40px;
   a {
     color: #6a7e87;
     text-decoration: none;
@@ -57,5 +61,7 @@
   a:hover {
     color: #576870;
   }
+  p {
+    margin-bottom: 10px;
+  }
 }
-

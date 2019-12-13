@@ -1,26 +1,22 @@
 <div class="dashboard">
-
-  <h1 style="text-align: center">My Summaries</h1>
+  <div class="dashboard-title">
+    <h1>My Digests</h1>
+  </div>
   <div class="dashboard-container">
 
-  <%# @sample = Summary.first %>
-  <%#= @sample.title %>
-  <%#= @sample.text %>
-
+<!-- show all the tags in the tag_list -->
 
     <% @user.summaries.each do |summary| %>
     <div class="dashboard-card">
       <h3><%= summary.title %></h3>
       <p><%= summary.text %></p>
-        <%= render 'tags', summary: summary %>
-      <p><% summary.tag_list.each do |tag| %>
+      <p>Tags: <% summary.tag_list.each do |tag| %>
         <%= link_to tag, tagged_path(tag: tag) %>
       <% end %></p>
-      <%= link_to 'Show', summary %>
-
-        <!-- 1. by click the link, a form will pop up to let user key in the tag they want for the summary -->
-      <%= link_to 'Add Tags', tagged_path, remote: true %>
-      <%= link_to 'Delete your summary', summary, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div class="dashboard-links">
+        <p><%= link_to 'Explore more', summary %></p>
+        <p><%= link_to 'Delete your summary', summary, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
     </div>
       <% end %>
 

@@ -1,18 +1,15 @@
-<div class="profile-container">
-  <div class="profile-form">
-    <div class="profile-title">
+<div class="registration-container">
+  <div class="registration-form">
 
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
-    </div>
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
 
-      <div class="form-inputs profile-inputs">
-
-        <div style="display:flex">
-            <%= f.input :photo, autofocus: true %>
-          </div>
+      <div class="form-inputs registration-inputs">
+      <div style="display:flex">
+        <%= f.input :photo, autofocus: true %>
+      </div>
         <%= f.input :email, required: true, autofocus: true %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -32,17 +29,18 @@
                     input_html: { autocomplete: "current-password" } %>
       </div>
 
-      <div class="form-actions profile-btn">
-        <%= f.button :submit, "Update" %>
+      <div class="form-actions">
+        <%= f.button :submit, "Update", class: "btn btn-dark" %>
       </div>
     <% end %>
+    <div class="cancel-account">
 
-    <div class="profile-links">
-      <h3 style="font-family: 'Francois One'">Cancel my account</h3>
-        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-        <%= link_to "Back", :back %>
+    <h3>Cancel my account</h3>
+
+    <p class="unhappy">Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "cancel-btn"%></p>
+
     </div>
-
+    <p><%= link_to "Back", :back, class: "back-btn" %></p>
 
   </div>
 </div>

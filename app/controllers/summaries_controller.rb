@@ -16,6 +16,7 @@ class SummariesController < ApplicationController
   # GET /summaries/1
   # GET /summaries/1.json
   def show
+    @summary = Summary.find(params[:id])
     @related_summaries = @summary.find_related_tags
   end
 
@@ -91,10 +92,8 @@ class SummariesController < ApplicationController
 
   end
 
-private
 
   def tagged
-    @user = current_user
     if params[:tag].present?
       @summaries = Summary.tagged_with(params[:tag])
     else
@@ -111,6 +110,8 @@ private
   def remove_tags
     @summary.tag_list.remove(params[])
   end
+
+private
 
     # Use callbacks to share common setup or constraints between actions.
     def set_summary

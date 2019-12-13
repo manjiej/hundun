@@ -2,6 +2,18 @@
   margin-top: 100px;
 }
 
+.dashboard-title {
+  h1 {
+  text-align: center;
+  font-family: "Anton";
+  text-transform: uppercase;
+  font-size: 250px;
+  border-bottom: 3px solid black;
+  width: 1100px;
+  margin: 0 auto;
+  }
+}
+
 .dashboard-container {
   display: flex;
   flex-wrap: wrap;
@@ -10,15 +22,35 @@
 }
 
 .dashboard-card {
-  width: 300px;
+  width: 650px;
   margin: 30px;
-  border: 1px solid #a6b7bf;
-  border-radius: 15px 50px 30px;
+  border: 1px solid grey;
+  // border-radius: 15px 50px 30px;
+  margin-top: 100px;
   padding: 20px;
   h3 {
     font-size: 20px;
+    font-family: "Paytone One";
+    text-align: center;
   }
   p {
-    font-size: 10px;
+    padding-top: 40px;
+    font-size: 12px;
+    text-align: justify;
+    font-family: "Zilla Slab";
+    line-height: 2em;
+  }
+}
+
+.dashboard-links {
+  display: flex;
+  justify-content: center;
+  a {
+    padding-right: 10px;
+    font-size: 15px;
+    color: black;
+  }
+  a {
+    text-align: center;
   }
 }
