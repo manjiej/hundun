@@ -1,20 +1,63 @@
 body {
-  width: 400px;
-  height: 400px;
+  width: 330px;
+  height: 600px;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
 }
 
 button#send-data {
-  background: #6A7E87;
+  background: #354D62;
   padding: 10px;
   font-size: 1em;
   border: 0;
   border-radius: 50px;
   cursor: pointer;
   color: white;
+  font-weight: bold;
   outline: none !important;
-  font-family: "Quicksand"
+  font-family: "Quicksand";
 }
+
+button#send-data:hover {
+    background-color: #557189;
+    color: white;
+    transition: 0.5s;
+}
+
+.extension-container img {
+  width: 90px;
+  height: 90px;
+}
+
+.extension-container {
+  font-family: "Quicksand";
+}
+
+.extension-container h2 {
+  color: #395477;
+}
+
+.extension-container p {
+  font-size: 13px;
+  color: #7ea09f;
+}
+.extension-header {
+  text-align: center;
+}
+
+.extension-content {
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+/*#loading{
+
+text-indent:-9999px
+background-image:url('loading.gif');
+display:none;
+
+}*/

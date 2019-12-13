@@ -4,8 +4,48 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h2>HI</h2>
-    <button id="send-data">SUMMARIZE</button>
+
+    <div class="ldBar"></div>
+
+
+    <div id="myItem1">
+      <div class="extension-container" id="loading">
+        <div class="extension-header">
+          <img src="https://image.noelshack.com/fichiers/2019/50/4/1576176423-digest-logo-transparent.png" alt="Hundun logo" style="margin-bottom: 30px;">
+        </div>
+
+        <img src="https://image.noelshack.com/fichiers/2019/50/4/1576167118-newspaper.png" alt="newspaper" style="width: 314; height: 246px; text-align: center">
+
+        <div class="extension-content">
+          <h2>Get the summary of your web articles the fastest way.</h2>
+          <p><strong>Click below</strong> to summarize your web article!</p>
+
+          <p><button id="send-data">SUMMARIZE</button></p>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      /* construct manually */
+      var bar1 = new ldBar("#myItem1");
+      /* ldBar stored in the element */
+      var bar2 = document.getElementById('myItem1').ldBar;
+      bar1.set(60);
+    </script>
+
     <script type="text/javascript" src="popup.js"></script>
+    <script type="text/javascript" src="loading-bar.js"></script>
+   <!--  <script type="text/javascript">
+      function showIcon() {
+        document.getElementById('loading').style.display ='block';
+      }
+
+      function hideIcon() {
+        document.getElementById('loading').style.display ='none';
+      }
+    </script> -->
+
+    </div>
   </body>
 </html>

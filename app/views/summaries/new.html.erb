@@ -1,19 +1,21 @@
 <div class="import-container">
 
-  <div class="import-title">
-    <h2>Get the summary of your web articles the fastest way</h1>
-    <p>Go explore!</p>
+  <div class="import-content">
+    <div class="import-title">
+      <h3>Extract the summary of your web articles<br> the fastest way</h3>
+      <p>Go explore!</p>
+    </div>
+
+    <div class="container">
+
+      <%= @summary[:article_url] %>
+
+      <%= render 'form', summary: @summary %>
+
+      <%#= link_to 'Back', summaries_path %>
+
+    </div>
+
   </div>
-
-  <div class="container">
-
-    <%= @summary[:article_url] %>
-
-    <%= render 'form', summary: @summary %>
-
-    <%= link_to 'Back', summaries_path %>
-
-  </div>
-
 </div>
 
