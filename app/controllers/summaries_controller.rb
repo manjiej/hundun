@@ -33,16 +33,6 @@ class SummariesController < ApplicationController
   # POST /summaries
   # POST /summaries.json
 
-  def digest
-    title = params.dig(:summary, :title)
-    text = params.dig(:summary, :text)
-
-    @summary.Summary.all
-
-    digested_text = Digest.digested title text
-    @summary.digest = digested_text
-  end
-
   def create
     article_url = params.dig(:summary, :article_url)
     @summary = Summary.new(article_url: article_url)
@@ -51,6 +41,7 @@ class SummariesController < ApplicationController
 
     @summary.title = scraped_summary["title"]
     @summary.text = scraped_summary["text"]
+    @summary.image = scraped_summary["images"][0]["url"]
 
     title = scraped_summary["title"]
     text = scraped_summary["text"]

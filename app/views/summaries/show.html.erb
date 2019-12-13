@@ -7,89 +7,30 @@
     </p>
   </div>
 
-<!--     <p id="url">
-      <strong>Url:</strong>
-      <%= @summary.article_url %>
-    </p> -->
   <div class="summarized-text">
     <p><%= @summary.digest %></p>
   </div>
 
-<p>
-  <strong >Digest:</strong>
-  <%= @summary.digest %>
-</p>
+  <img src="<%= @summary.image %>" alt="banner image">
 
-
-
-  </div>
 </div>
-
-
-<!--   <script type="text/javascript">
-
-
-  const api_url = 'https://api.diffbot.com/v3/article?token=606d0b61d6cf355ed6024deabc955e33&url=<%=@summary.article_url%>';
-
-  fetch(api_url).then(data => {
-    // Work with your JSON data here..
-    console.log(data["object"][0]["text"]);
-  }).catch(err => {
-    // What do when the request fails
-    console.log('The request failed!');
-  });
-
-  </script> -->
-
-<!-- <script src="js/script.js"></script> -->
-
-
-<h3>Related Summries</h3>
-
-<ul>
-  <% @related_summaries.each do |r| %>
-    <%= link_to r.tag_list, summary_path %>
 
 <div class="related-sum-container">
 
 <h3>Other users also read those articles....</h3>
-<div class="related-sum-articles">
-  <%= @related_summaries %>
-  <p><% @related_summaries.each do |r| %>
-    <%= link_to r.title, summary_path(anchor: ) %>
-    <br>
-  <% end %></p>
-</div>
+  <div class="related-sum-articles">
+
+    <p><% @related_summaries.each do |r| %>
+      <%= link_to r.title, @summary %>
+      <br>
+    <% end %></p>
+  </div>
+
 </div>
 
   <%= render 'tags', summary: @summary %>
-
-
-<%= link_to 'Save to Dashboard', summaries_path %>
-<%= link_to 'Back', summaries_path %>
-<%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
-<%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
-</body>
 
 <div class="related-sum-links">
   <%= link_to 'Save to Dashboard', summaries_path(@summary) %>
   <%= link_to 'Back', summaries_path %>
 </div>
-
-<!--   <script type="text/javascript">
-
-
-  const api_url = 'https://api.diffbot.com/v3/article?token=606d0b61d6cf355ed6024deabc955e33&url=<%=@summary.article_url%>';
-
-  fetch(api_url).then(data => {
-    // Work with your JSON data here..
-    console.log(data["object"][0]["text"]);
-  }).catch(err => {
-    // What do when the request fails
-    console.log('The request failed!');
-  });
-
-  </script> -->
-
-<!-- <script src="js/script.js"></script> -->
-
