@@ -53,6 +53,12 @@ button#send-data:hover {
   margin-top: 40px;
 }
 
+#popup-loader img {
+  width: 23px;
+  height: 23px;
+  margin-left: 47%;
+}
+
 
 /*#loading{
 

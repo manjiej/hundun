@@ -1,6 +1,6 @@
-<div class="import-container">
+<div class="import-container" id="import-container">
 
-  <div class="import-content">
+  <div class="import-content" id="import-content">
     <div class="import-title">
       <h3>Extract the summary of your web articles<br> the fastest way</h3>
       <p>Go explore!</p>
@@ -12,10 +12,15 @@
 
       <%= render 'form', summary: @summary %>
 
+      <div id="loader">
+      </div>
+
       <%#= link_to 'Back', summaries_path %>
 
     </div>
 
   </div>
 </div>
+
+
 

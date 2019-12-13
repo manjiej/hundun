@@ -57,6 +57,8 @@ const fetchData = async () => {
 }
 
 button.addEventListener('click', () => {
+  const container = document.getElementById("popup-loader");
+  container.innerHTML = "<img src='https://image.noelshack.com/fichiers/2019/50/5/1576207438-spin.gif'>"
   fetchData();
 });
 
