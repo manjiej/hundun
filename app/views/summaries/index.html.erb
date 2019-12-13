@@ -5,7 +5,6 @@
   </div>
   <div class="dashboard-container">
 
-
     <% @user.summaries.each do |summary| %>
     <div class="dashboard-card">
       <h3><%= summary.title %></h3>
@@ -24,8 +23,9 @@
     </div>
 
     <br>
-
-    <%= link_to 'Import another article', new_summary_path %>
+    <div class="dashboard-import">
+      <%= link_to 'Import another article', new_summary_path %>
+    </div>
 
 </div>
 </div>
