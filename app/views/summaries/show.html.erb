@@ -1,13 +1,11 @@
 
-
 <div class="summarized-container">
   <div id="isItLoaded">
 
-<p>
-  <h1><strong>
-  <%= @summary.title %></strong></h1>
-</p>
-
+    <p>
+      <h1><strong>
+      <%= @summary.title %></strong></h1>
+    </p>
 
     <p id="url">
       <strong>Url:</strong>
@@ -26,7 +24,7 @@
 <h3>Related Summries</h3>
 <ul>
   <% @related_summaries.each do |r| %>
-    <li><%= r.title %></li>
+    <li><%#=link_to r.title %></li>
     <li><%= r.tag_list %></li>
   <% end %>
 </ul>
