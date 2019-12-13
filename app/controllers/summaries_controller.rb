@@ -42,7 +42,7 @@ class SummariesController < ApplicationController
 
     @summary.title = scraped_summary["title"]
     @summary.text = scraped_summary["text"]
-    @summary.image = scraped_summary["images"][0]["url"]
+    # @summary.image = scraped_summary["images"][0]["url"]
 
     title = scraped_summary["title"]
     text = scraped_summary["text"]
