@@ -1,30 +1,23 @@
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<p>place</p>
-<% @summaries.each do |summary| %>
-  <h2><%= summary.title %></h2>
-  <h2><%= summary.text %></h2>
-  <p><% summary.tag_list.each do |tag| %>
-    <%= link_to tag, tagged_path(tag: tag) %>
-  <% end %></p>
-<% end %>
 
-<%= link_to "All summaries", summaries_path %>
+<div class="tagged">
+  <div class="tagged-title">
+    <h1>#ECONOMICS</h1>
+  </div>
+
+  <div class="tagged-container">
+
+    <% @summaries.each do |summary| %>
+    <div class="tagged-card">
+      <h3><%= summary.title %></h3>
+      <p><%= summary.text %></p>
+      <p><% summary.tag_list.each do |tag| %>
+        <%= link_to tag, tagged_path(tag: tag) %>
+      <% end %></p>
+    </div>
+    <% end %>
+
+  </div>
+
+  <%= link_to "All summaries", summaries_path %>
+
+</div>

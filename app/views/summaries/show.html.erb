@@ -7,10 +7,6 @@
     </p>
   </div>
 
-<!--     <p id="url">
-      <strong>Url:</strong>
-      <%= @summary.article_url %>
-    </p> -->
   <div class="summarized-text">
     <p><%= @summary.digest %></p>
   </div>
@@ -19,28 +15,9 @@
 </div>
 
 
-<!--   <script type="text/javascript">
-
-
-  const api_url = 'https://api.diffbot.com/v3/article?token=606d0b61d6cf355ed6024deabc955e33&url=<%=@summary.article_url%>';
-
-  fetch(api_url).then(data => {
-    // Work with your JSON data here..
-    console.log(data["object"][0]["text"]);
-  }).catch(err => {
-    // What do when the request fails
-    console.log('The request failed!');
-  });
-
-  </script> -->
-
-<!-- <script src="js/script.js"></script> -->
-
-<!-- Recommend related summaries by tags -->
-
 <div class="related-sum-container">
 
-  <h3>Other users also read those articles....</h3>
+<h3>Other users also read those articles...</h3>
   <div class="related-sum-articles">
     <p><% @related_summaries.each do |r| %>
       <%= link_to r.title, summary_path(article_url: r.article_url) %>
@@ -55,20 +32,3 @@
   <%= link_to 'Back to Dashboard', summaries_path(@summary) %>
   <%= link_to 'Back', summaries_path %>
 </div>
-
-<!--   <script type="text/javascript">
-
-
-  const api_url = 'https://api.diffbot.com/v3/article?token=606d0b61d6cf355ed6024deabc955e33&url=<%=@summary.article_url%>';
-
-  fetch(api_url).then(data => {
-    // Work with your JSON data here..
-    console.log(data["object"][0]["text"]);
-  }).catch(err => {
-    // What do when the request fails
-    console.log('The request failed!');
-  });
-
-  </script> -->
-
-<!-- <script src="js/script.js"></script> -->

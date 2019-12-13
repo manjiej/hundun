@@ -21,19 +21,22 @@
   text-align: justify;
   margin: auto 0;
   p {
-    line-height: 2.5em;
+    line-height: 2.2em;
     font-family: "Zilla Slab"
   }
 }
 
 .related-sum-container h3 {
   text-align: center;
-  font-family: "Quicksand";
+  font-family: "Anton";
+  text-transform: uppercase;
+  letter-spacing: 1px;
   border-top: 1px solid black;
   width: 300px;
   margin: 0 auto;
-  padding-bottom: 40px;
-  padding-top: 40px
+  padding-bottom: 50px;
+  padding-top: 20px;
+  font-size: 50px;
 }
 
 .summary_tag_list {
@@ -42,6 +45,10 @@
 
 .related-sum-articles {
   text-align: center;
+    a {
+    color: black;
+    font-family: "Zilla Slab"
+  }
 }
 
 .tag-list-input {
