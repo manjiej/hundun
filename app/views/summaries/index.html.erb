@@ -3,9 +3,6 @@
     <h1>My Digests</h1>
   </div>
   <div class="dashboard-container">
-
-<!-- show all the tags in the tag_list -->
-
     <% @user.summaries.each do |summary| %>
     <div class="dashboard-card">
       <h3><%= summary.title %></h3>
@@ -20,10 +17,12 @@
     </div>
       <% end %>
 
-  </div>
+    </div>
 
-  <br>
+    <br>
+    <div class="dashboard-import">
+      <%= link_to 'Import another article', new_summary_path %>
+    </div>
 
-  <%= link_to 'Import another article', new_summary_path %>
-
+</div>
 </div>

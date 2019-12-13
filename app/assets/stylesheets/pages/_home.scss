@@ -128,7 +128,7 @@
     color: #6A7E87
   }
   p {
-    color: #999999;
+    color: black;
   }
 }
 
@@ -141,10 +141,13 @@
     font-family: "Francois One";
     padding-bottom: 20px;
     text-transform: uppercase;
+    color: #354D62;
   }
   p {
     font-family: "Quicksand";
     padding-top: 20px;
+    line-height: 2;
+    color: black;
   }
   i {
     font-size: 60px;
@@ -152,6 +155,11 @@
   }
   i:hover {
     color: #354D62;
+  }
+  .download {
+    color: black;
+    font-size: 25px;
+    font-family:"Francois One";
   }
 }
 

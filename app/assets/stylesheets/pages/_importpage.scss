@@ -5,7 +5,7 @@
   background-size: auto;
   // width: 800px;
   height: 100vh;
-  background-position: bottom 90px right 690px;
+  background-position: bottom 170px right 690px;
   font-family: "Quicksand";
   a {
     color: black;
@@ -15,6 +15,8 @@
 .import-content {
   float: right;
   width: 750px;
+  position: relative;
+  top: 70px;
 }
 
 .import-title {
