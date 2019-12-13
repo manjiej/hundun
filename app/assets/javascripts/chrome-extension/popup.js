@@ -43,7 +43,8 @@ const getTabUrl = () => {
 
 const fetchData = async () => {
   getTabUrl().then(tabUrl => {
-    const url = 'http://localhost:3000/summaries'
+    // const url = 'http://localhost:3000/summaries'
+    const url = 'https://hundundigest.herokuapp.com/summaries'
     const body = JSON.stringify({"article_url": tabUrl})
     fetch(url, {
       method: 'POST',
