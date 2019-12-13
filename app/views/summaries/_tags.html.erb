@@ -1,8 +1,8 @@
 <div class="tag-list-input">
 <%= simple_form_for(summary, remote: true) do |f| %>
-  <%= summary.tag_list %>
-  <br>
-  <%= f.input :tag_list, label: "Please add your tag, separated using ','" %>
-  <%= f.submit "add the tag"%>
+  <%= f.input :tag_list, label: "tags", placeholder: "Please add your tag, separated using ','" %>
+  <%#= f.submit "add the tag", :class: "signup-btn" %>
+  <%= f.button :submit, "add the tag", :class => "related-sum-links" %>
+
 <% end %>
 </div>
