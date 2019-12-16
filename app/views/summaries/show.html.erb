@@ -20,7 +20,7 @@
 <h3>Other users also read those articles...</h3>
   <div class="related-sum-articles">
     <p><% @related_summaries.each do |r| %>
-      <%= link_to r.title, summary_path(id: params[:id]) %>
+      <%= link_to r.title, summary_path(id: r.id) %>
       <br>
     <% end %></p>
   </div>
