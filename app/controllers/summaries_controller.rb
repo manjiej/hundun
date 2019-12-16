@@ -17,7 +17,7 @@ class SummariesController < ApplicationController
   # GET /summaries/1.json
   def show
     @summary = Summary.find(params[:id])
-    @related_summaries = @summary.find_related_tags
+    @related_summaries = @summary.find_related_categories
   end
 
   # GET /summaries/new

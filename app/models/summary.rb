@@ -4,6 +4,6 @@ class Summary < ApplicationRecord
 
   validates :article_url, presence: true
 
-  acts_as_taggable_on :tags
+  acts_as_taggable_on :categories
 
 end

@@ -1,31 +1,42 @@
 
-<div class="dashboard">
-  <div class="dashboard-title">
-    <h1>My Digests</h1>
+<div class="container" style="display:flex">
+
+  <div class="category">
+    <p>Economics</p>
+    <p>Politics</p>
+    <p>Environment</p>
+    <p>Culture</p>
+    <p>Technology</p>
+    <p>Education</p>
+    <p>Society</p>
+    <p>Language</p>
   </div>
-  <div class="dashboard-container">
 
-    <% @user.summaries.each do |summary| %>
-    <div class="dashboard-card">
-      <h3><%= summary.title %></h3>
-      <p><%= summary.text %></p>
-      <p>Tags: <% summary.tag_list.each do |tag| %>
-        <%= link_to tag, tagged_path(tag: tag) %>
-      <% end %></p>
-      <div class="dashboard-links">
-        <p><%= link_to 'Explore more', summary %></p>
-        <p><%= link_to 'Delete your summary', summary, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      </div>
+  <div class="dashboard">
+    <div class="dashboard-title">
+      <h1>My Digests</h1>
     </div>
-      <% end %>
 
+    <div class="dashboard-container">
 
+      <% @user.summaries.each do |summary| %>
+      <div class="dashboard-card">
+        <h3><%= summary.title %></h3>
+        <p><%= summary.text %></p>
+        <p>Tags: <% summary.category_list.each do |tag| %>
+          <%= link_to tag, tagged_path(tag: tag) %>
+        <% end %></p>
+        <div class="dashboard-links">
+          <p><%= link_to 'Explore more', summary %></p>
+          <p><%= link_to 'Delete your summary', summary, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+      </div>
+        <% end %>
     </div>
 
     <br>
     <div class="dashboard-import">
       <%= link_to 'Import another article', new_summary_path %>
     </div>
-
-</div>
+  </div>
 </div>
