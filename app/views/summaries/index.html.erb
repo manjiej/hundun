@@ -1,15 +1,14 @@
 
-<div class="container" style="display:flex">
+<div class="container", style="display:flex">
 
   <div class="category">
-    <p>Economics</p>
-    <p>Politics</p>
-    <p>Environment</p>
-    <p>Culture</p>
-    <p>Technology</p>
-    <p>Education</p>
-    <p>Society</p>
-    <p>Language</p>
+    <%= link_to "Economics", tagged_path(tag: "Economics") %>
+    <%= link_to "Politics", tagged_path(tag: "Politics") %>
+    <%= link_to "Environment", tagged_path(tag: "Environment") %>
+    <%= link_to "Technology", tagged_path(tag: "Technology") %>
+    <%= link_to "Culture", tagged_path(tag: "Culture") %>
+    <%= link_to "Education", tagged_path(tag: "Education") %>
+    <%= link_to "Society", tagged_path(tag: "Society") %>
   </div>
 
   <div class="dashboard">

@@ -11,7 +11,7 @@
     <div class="tagged-card">
       <h3><%= summary.title %></h3>
       <p><%= summary.text %></p>
-      <p><% summary.tag_list.each do |tag| %>
+      <p><% summary.category_list.each do |tag| %>
         <%= link_to tag, tagged_path(tag: tag) %>
       <% end %></p>
     </div>

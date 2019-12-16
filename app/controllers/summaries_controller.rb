@@ -94,7 +94,6 @@ class SummariesController < ApplicationController
 
 
   def tagged
-    @summary
     if params[:tag].present?
       @summaries = Summary.tagged_with(params[:tag])
     else
@@ -103,7 +102,6 @@ class SummariesController < ApplicationController
   end
 
   def add_tags
-    @summary
     @summary.tag_list.add(params[:tag])
     @summary.save
   end
@@ -121,6 +119,6 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def summary_params
-      params.require(:summary).permit(:user_id, :title, :text, :article_url, :tag_list, :digest)
+      params.require(:summary).permit(:user_id, :title, :text, :article_url, :category_list, :digest)
     end
 end
