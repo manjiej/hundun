@@ -9,13 +9,23 @@
   text-transform: uppercase;
   font-size: 250px;
   border-bottom: 3px solid black;
-  width: 1100px;
+  width: 80%;
   margin: 0 auto;
   }
 }
 
+.category {
+  text-align: center;
+  padding-top: 85px;
+  a {
+    font-family: "Anton";
+    font-size: 20px;
+    margin: 5px;
+  }
+}
+
 .dashboard-text {
-  padding-bottom: 70px
+  padding-bottom: 70px;
 }
 
 .dashboard-container {
@@ -29,12 +39,12 @@
   width: 600px;
   margin: 30px;
   border: 1px solid grey;
-  margin-top: 100px;
+  margin-top: 85px;
   padding: 20px;
   position: relative;
   h3 {
     font-size: 30px;
-    font-family: "Paytone One";
+    font-family: "Anton";
     text-align: center;
     padding-bottom: 40px;
   }
@@ -74,16 +84,67 @@
     padding: 0;
     margin: 0;
     font-family: "Anton";
+    letter-spacing: 0.15px;
   }
 }
 
 .dashboard-import {
   font-family: "Anton";
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   padding-bottom: 45px;
   a {
     color: black;
+  }
+}
+
+// Media Queries
+
+// iPad and Laptop
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+  .dashboard-title {
+    h1 {
+
+    font-size: 150px;
+    width: 90%;
+    }
+  }
+  .dashboard-import {
+    font-size: 20px;
+  }
+}
+
+// Smartphone
+
+@media (min-width: 320px)
+and (max-width: 480px) {
+  .dashboard-title {
+    h1 {
+    font-size: 70px;
+    width: 90%;
+    }
+  }
+  .dashboard-card {
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
+  .dashboard-import {
+    font-size: 15px;
+  }
+
+  .category {
+    a {
+      font-size: 15px;
+      margin: 5px;
+    }
   }
 }
 

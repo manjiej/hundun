@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: #6A7E87;
+  background-color: #354D62;
   // background-color: transparent;
   // background-color: rgba(5, 5, 5, 0.05);
 }
@@ -18,8 +18,7 @@
 }
 
 .nav-item a {
-  font-family: 'Paytone One';
-  font-size: 17px;
+  font-size: 14px;
   // color: #354d62;
   text-decoration: none;
   color: white;
@@ -37,3 +36,28 @@
 .dropdown-menu a {
   color: black;
 }
+
+// Media Queries
+// iPad and Laptop
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+  .nav-item {
+    a {
+      font-size: 13px;
+    }
+  }
+}
+
+// Smartphone
+
+@media (min-width: 320px)
+and (max-width: 480px) {
+  .navbar-lewagon {
+    justify-content: start;
+  }
+}
+
+

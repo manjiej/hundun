@@ -17,7 +17,7 @@
 
 <div class="related-sum-container">
 <h3>Other users also read those articles...</h3>
-  <p class = "tag" style="text-align: center; font-family:'Zilla Slab';">Find more about: <strong><% @summary.tag_list.each do |tag| %>
+  <p class = "tag" style="text-align: center; font-family:'Zilla Slab';">Find more about: <strong><% @summary.category_list.each do |tag| %>
     <%= link_to tag, tagged_path(tag: tag) %></strong>
   <% end %></p>
   <div class="related-sum-articles">
