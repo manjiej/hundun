@@ -28,8 +28,9 @@
     text-shadow: 1px 1px 1px black;
   }
   p {
-    font-size: 40px;
-    font-family: 'Francois One';
+    font-size: 20px;
+    font-family: 'Anton';
+    letter-spacing: 1px;
     color: white;
     padding-bottom: 20px;
     text-shadow: 1px 1px 1px black;
@@ -86,9 +87,9 @@
 .expect {
   text-align: center;
   background-color: #FFFFFF;
+  display: flex;
   img {
-    float: left;
-    height: 694px;
+    height: auto;
   }
   h1 {
     font-family: 'Anton';
@@ -109,7 +110,7 @@
   flex-direction: column;
   align-items: center;
   width: 500px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .expect-card {
@@ -120,7 +121,7 @@
     padding-bottom: 10px;
     font-family: 'Francois One';
     font-size: 25px;
-    // color: #6A7E87;
+    color: #354D62;
   }
   i {
     font-size: 25px;

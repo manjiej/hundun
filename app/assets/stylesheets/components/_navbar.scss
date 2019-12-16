@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: #6A7E87;;
+  // background-color: #6A7E87;;
+  // background-color: transparent;
+  background-color: rgba(5, 5, 5, 0.05);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -17,9 +19,12 @@
 
 .nav-item a {
   font-family: 'Quicksand';
-  font-size: 15px;
-  color: white;
+  font-size: 17px;
+  // color: #354d62;
   text-decoration: none;
+  // color: white;
+  color: #6A7E87;
+  font-weight: bold;
 }
 
 .navbar-active {

@@ -4,8 +4,8 @@
 }
 
 .summarized-title {
-  width: 30%;
-  padding-right: 80px;
+  width: 50%;
+  padding-right: 30px;
   h1 {
     line-height: 1.5em;
     text-align: center;
@@ -32,11 +32,17 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   border-top: 1px solid black;
-  width: 300px;
+  width: 350px;
   margin: 0 auto;
   padding-bottom: 50px;
   padding-top: 20px;
   font-size: 50px;
+}
+
+.related-sum-container {
+  .tag a {
+    color: black;
+  }
 }
 
 .summary_tag_list {

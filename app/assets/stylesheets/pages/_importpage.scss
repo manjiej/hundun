@@ -1,11 +1,13 @@
 .import-container {
-  padding-top: 210px;
-  background-image: url("https://image.noelshack.com/fichiers/2019/50/4/1576168096-newspaper1.png");
+  padding-top: 150px;
+  // background-image: url("https://image.noelshack.com/fichiers/2019/50/4/1576168096-newspaper1.png");
   background-repeat: no-repeat;
   background-size: auto;
+  background-position: center;
   // width: 800px;
   height: 100vh;
-  background-position: bottom 170px right 690px;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1520764588094-8fc067746a8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+  // background-position: bottom 170px right 690px;
   font-family: "Quicksand";
   a {
     color: black;
@@ -13,31 +15,40 @@
 }
 
 .import-content {
-  float: right;
-  width: 750px;
-  position: relative;
-  top: 70px;
+  // background-color: rgba(250, 250, 250, 0.7);
+  width: 900px;
+  margin: 0 auto;
+  padding: 50px;
+  // background-color: transparent;
 }
 
 .import-title {
   text-align: center;
   padding-bottom: 10px;
     h3 {
-    font-family: "Anton";
-    font-size: 35px;
+    font-family: "Lato";
+    font-size: 60px;
     padding-bottom: 20px;
-    color: #4c6875;
+    // color: #4c6875;
+    text-shadow: 1px 1px 1px black;
+    color: white;
   }
     p {
-    font-size: 20px;
-    font-style: italic;
-    font-family: "Francois One"
+    font-size: 25px;
+    color: white;
+    font-family: "Lato";
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 1px black;
+
   }
 }
 
 .import-input {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
+  label {
+    color: white;
+  }
 }
 
 .import-btn {

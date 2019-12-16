@@ -10,14 +10,15 @@
   <div class="summarized-text">
     <p><%= @summary.digest %></p>
   </div>
-
-
 </div>
 
 
 <div class="related-sum-container">
 
 <h3>Other users also read those articles...</h3>
+  <p class = "tag" style="text-align: center; font-family:'Zilla Slab'; color: black;">Category: <strong><% @summary.tag_list.each do |tag| %>
+    <%= link_to tag, tagged_path(tag: tag) %></strong>
+  <% end %></p>
   <div class="related-sum-articles">
     <p><% @related_summaries.each do |r| %>
       <%= link_to r.title, summary_path(article_url: r.article_url) %>
@@ -29,6 +30,6 @@
   <%= render 'tags', summary: @summary %>
 
 <div class="related-sum-links">
-  <%= link_to 'Back to Dashboard', summaries_path(@summary) %>
-  <%= link_to 'Back', summaries_path %>
+  <%= link_to 'Go to Dashboard', summaries_path(@summary) %>
+  <%= link_to 'Back', new_summary_path %>
 </div>
