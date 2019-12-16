@@ -1,6 +1,5 @@
 
 <div class="summarized-container">
-
   <div class="summarized-title">
     <p>
       <h1><strong><%= @summary.title %></strong></h1>
@@ -10,6 +9,9 @@
   <div class="summarized-text">
     <p><%= @summary.digest %></p>
   </div>
+
+  <img src="<%= @summary.image %>" alt="banner image">
+
 </div>
 
 
@@ -21,7 +23,7 @@
   <% end %></p>
   <div class="related-sum-articles">
     <p><% @related_summaries.each do |r| %>
-      <%= link_to r.title, summary_path(article_url: r.article_url) %>
+      <%= link_to r.title, summary_path(id: params[:id]) %>
       <br>
     <% end %></p>
   </div>

@@ -1,8 +1,10 @@
+
 <div class="dashboard">
   <div class="dashboard-title">
     <h1>My Digests</h1>
   </div>
   <div class="dashboard-container">
+
     <% @user.summaries.each do |summary| %>
     <div class="dashboard-card">
       <h3><%= summary.title %></h3>
@@ -16,6 +18,7 @@
       </div>
     </div>
       <% end %>
+
 
     </div>
 

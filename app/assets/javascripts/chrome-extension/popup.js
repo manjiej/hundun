@@ -69,6 +69,3 @@ button.addEventListener('click', () => {
 //   // postMessage(newMessage());
 //   sendData(fetchData());
 // });
-
-
-
