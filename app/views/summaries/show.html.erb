@@ -1,5 +1,4 @@
 
-<div class="summarized-container">
   <div class="summarized-title">
     <p>
       <h1><strong><%= @summary.title %></strong></h1>
@@ -10,20 +9,20 @@
     <p><%= @summary.digest %></p>
   </div>
 
-  <img src="<%= @summary.image %>" alt="banner image">
 
+
+<div class="summarized-img">
+  <img src="<%= @summary.image %>" alt="banner image">
 </div>
 
-
 <div class="related-sum-container">
-
 <h3>Other users also read those articles...</h3>
-  <p class = "tag" style="text-align: center; font-family:'Zilla Slab'; color: black;">Category: <strong><% @summary.tag_list.each do |tag| %>
+  <p class = "tag" style="text-align: center; font-family:'Zilla Slab';">Find more about: <strong><% @summary.tag_list.each do |tag| %>
     <%= link_to tag, tagged_path(tag: tag) %></strong>
   <% end %></p>
   <div class="related-sum-articles">
     <p><% @related_summaries.each do |r| %>
-      <%= link_to r.title, summary_path(id: params[:id]) %>
+      <%= link_to r.title, summary_path(id: r.id) %>
       <br>
     <% end %></p>
   </div>

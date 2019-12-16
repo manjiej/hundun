@@ -19,5 +19,13 @@ class Scrape
 
     JSON.parse(response.body)['summary']
   end
+
+  # def self.fetch(title, text)
+  #   client = AylienTextApi::Client.new(app_id: "be9a83d3", app_key: "206c497a0db2ce007a91b7743a581900")
+  #   summary = client.summarize(title: title, text: text, sentences_number: 2)
+  #   parsed_summary = JSON.parse(summary)
+  #   # puts "this is showing the sentence:",
+  #   parsed_summary["sentences"][0]
+  # end
 end
 
