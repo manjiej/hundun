@@ -17,7 +17,7 @@ class SummariesController < ApplicationController
   # GET /summaries/1.json
   def show
     @summary = Summary.find(params[:id])
-    @related_summaries = @summary.find_related_tags
+    @related_summaries = @summary.find_related_categories
   end
 
   # GET /summaries/new
@@ -42,7 +42,7 @@ class SummariesController < ApplicationController
 
     @summary.title = scraped_summary["title"]
     @summary.text = scraped_summary["text"]
-    @summary.image = scraped_summary["images"][0]["url"]
+    # @summary.image = scraped_summary["images"][0]["url"]
 
     title = scraped_summary["title"]
     text = scraped_summary["text"]
@@ -54,7 +54,7 @@ class SummariesController < ApplicationController
 
     respond_to do |format|
       if @summary.save
-        format.json { render json: ["title": @summary.title, "text": @summary.text, "url": "http://localhost:3000/summaries/#{@summary.id}", "image": "https://i.guim.co.uk/img/media/5e1ef6b193b314b29c8ed6b04472f51908ceb355/334_278_2639_1583/master/2639.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=beec8327bfdc6099c9feed3cc76a74ef"] }
+        format.json { render json: ["title": @summary.title, "text": @summary.text, "url": "https://hundundigest.herokuapp.com/summaries/#{@summary.id}", "image": "https://i.guim.co.uk/img/media/5e1ef6b193b314b29c8ed6b04472f51908ceb355/334_278_2639_1583/master/2639.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=beec8327bfdc6099c9feed3cc76a74ef"] }
         format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
         format.js
       else
@@ -94,7 +94,6 @@ class SummariesController < ApplicationController
 
 
   def tagged
-    @summary
     if params[:tag].present?
       @summaries = Summary.tagged_with(params[:tag])
     else
@@ -103,7 +102,6 @@ class SummariesController < ApplicationController
   end
 
   def add_tags
-    @summary
     @summary.tag_list.add(params[:tag])
     @summary.save
   end
@@ -121,6 +119,6 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def summary_params
-      params.require(:summary).permit(:user_id, :title, :text, :article_url, :tag_list, :digest)
+      params.require(:summary).permit(:user_id, :title, :text, :article_url, :category_list, :digest)
     end
 end

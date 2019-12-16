@@ -1,10 +1,20 @@
 
-<div class="dashboard">
-  <div class="dashboard-title">
-    <h1>My Digests</h1>
+  <div class="category">
+    <%= link_to "Economics", tagged_path(tag: "Economics") %>
+    <%= link_to "Politics", tagged_path(tag: "Politics") %>
+    <%= link_to "Environment", tagged_path(tag: "Environment") %>
+    <%= link_to "Technology", tagged_path(tag: "Technology") %>
+    <%= link_to "Culture", tagged_path(tag: "Culture") %>
+    <%= link_to "Education", tagged_path(tag: "Education") %>
+    <%= link_to "Society", tagged_path(tag: "Society") %>
   </div>
-  <div class="dashboard-container">
 
+  <div class="dashboard">
+    <div class="dashboard-title">
+      <h1>My Digests</h1>
+    </div>
+
+    <div class="dashboard-container">
     <% @user.summaries.each do |summary| %>
     <div class="dashboard-card">
       <div class="dashboard-text">
@@ -24,9 +34,8 @@
       <% end %>
   </div>
     <br>
-<div class="dashboard-import">
-  <%= link_to 'Import another article', new_summary_path %>
-</div>
-
+  <div class="dashboard-import">
+    <%= link_to 'Import another article', new_summary_path %>
+  </div>
 </div>
 
