@@ -22,32 +22,49 @@
 }
 
 .tagged-card {
-  width: 650px;
+  width: 600px;
   margin: 30px;
   border: 1px solid grey;
   // border-radius: 15px 50px 30px;
   margin-top: 100px;
   padding: 20px;
+  position: relative;
   h3 {
-    font-size: 20px;
+    font-size: 25px;
     font-family: "Paytone One";
     text-align: center;
+    padding-bottom: 40px;
   }
   p {
-    padding-top: 40px;
-    font-size: 12px;
+    font-size: 16px;
     text-align: justify;
     font-family: "Zilla Slab";
-    line-height: 2em;
+    --lh: 2em;
+    --max-lines: 5;
+    max-height: calc(var(--lh) * var(--max-lines));
+    overflow: scroll;
   }
+  a {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.tagged-text {
+  padding-bottom: 50px;
 }
 
 .tagged-links {
   font-family: "Anton";
   text-align: center;
   font-size: 30px;
-  padding-bottom: 45px;
+  padding: 70px;
   a {
     color: black;
   }
+}
+
+.tagged-bottom {
+  position: absolute;
+  bottom: 0;
 }

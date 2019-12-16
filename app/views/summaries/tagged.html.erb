@@ -1,19 +1,22 @@
 
 <div class="tagged">
   <div class="tagged-title">
-    <h1>#<%= params[:tag] %></h1>
-    <h1></h1>
+    <h1>#<%= params[:tag]%></h1>
   </div>
 
   <div class="tagged-container">
 
     <% @summaries.each do |summary| %>
     <div class="tagged-card">
-      <h3><%= summary.title %></h3>
-      <p><%= summary.text %></p>
-      <p><% summary.category_list.each do |tag| %>
+      <div class="tagged-text">
+        <h3><%= summary.title %></h3>
+        <p><%= summary.text %></p>
+      </div>
+      <div class="tagged-bottom">
+        <p>Tags: <% summary.tag_list.each do |tag| %>
         <%= link_to tag, tagged_path(tag: tag) %>
       <% end %></p>
+      </div>
     </div>
     <% end %>
 
