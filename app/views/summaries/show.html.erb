@@ -32,3 +32,10 @@
   <%= link_to 'Back to Dashboard', summaries_path(@summary) %>
   <%= link_to 'Back', summaries_path %>
 </div>
+
+<%= select_tag "timezone", options_from_collection_for_select(
+      ActiveSupport::TimeZone.all.
+        map { |tz| tz.tzinfo }.
+        sort_by { |tzinfo| tzinfo.name },
+      :name, :name),
+      class: 'select2' %>

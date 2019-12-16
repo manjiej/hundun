@@ -1,6 +1,7 @@
 <div class="tag-list-input">
 <%= simple_form_for(summary, remote: true) do |f| %>
   <%= f.input :category_list, label: "Category", placeholder: "Please add your tag, separated using ','"%>
+  <%= f.select :category_list, label: "Category", placeholder: "Please add your tag, separated using ','"%>
   <%#= f.input :category_list, collection: User::LANGUAGE, prompt: :translate %>
   <%= f.button :submit, "Add the category", :class => "btn-outline-secondary" %>
 <% end %>
