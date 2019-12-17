@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 2019_12_16_151045) do
     t.string "article_url"
     t.text "digest"
     t.text "image"
-    t.text "article_author"
-    t.text "publish_date"
-    t.text "site_name"
+    t.string "article_author"
+    t.string "publish_date"
+    t.string "site_name"
     t.string "tag_cloud"
     t.index ["user_id"], name: "index_summaries_on_user_id"
   end

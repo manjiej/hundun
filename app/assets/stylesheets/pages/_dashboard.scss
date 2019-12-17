@@ -17,15 +17,23 @@
 .category {
   text-align: center;
   padding-top: 85px;
+  padding-bottom: 50px;
   a {
     font-family: "Anton";
     font-size: 20px;
     margin: 5px;
+    letter-spacing: 0.5px;
   }
 }
 
 .dashboard-text {
-  padding-bottom: 70px;
+  padding-bottom: 40px;
+  position: relative;
+  p::first-letter {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(53, 77, 98);
+  }
 }
 
 .dashboard-container {
@@ -37,54 +45,98 @@
 
 .dashboard-card {
   width: 600px;
-  margin: 30px;
-  border: 1px solid grey;
-  margin-top: 85px;
-  padding: 20px;
+  margin: 34px;
+  border-bottom: 1px solid rgba(53, 77, 98, 0.3);
+  margin-top: 0px;
+  padding: 25px;
   position: relative;
   h3 {
     font-size: 30px;
-    font-family: "Anton";
+    font-family: "Lato";
+    font-weight: bold;
     text-align: center;
     padding-bottom: 40px;
+    letter-spacing: 0.5px;
+    line-height: 1.2em;
+    a {
+      color: rgb(53, 77, 98);
+    }
+    a:hover {
+    color: #5582aa;
+    text-decoration: none;
+    }
   }
   p {
-    font-size: 16px;
+    font-size: 19px;
     text-align: justify;
-    font-family: "Zilla Slab";
+    font-family: "Amiri";
+    line-height: 1.5em;
+    // letter-spacing: -0.5px;
     --lh: 2em;
-    --max-lines: 5;
+    --max-lines: 2;
     max-height: calc(var(--lh) * var(--max-lines));
-    overflow: scroll;
+    overflow: hidden;
   }
+}
+
+.ellipsis {
+  position: absolute;
+  right: 50%;
+  bottom: 10px;
+  color: grey;
 }
 
 .stick-bottom {
   position: absolute;
   bottom: 0;
+  right: 0;
   margin-bottom: 20px;
+  visibility: hidden;
   a {
-    color: black;
     font-weight: bold;
   }
+}
+
+.dashboard-site-name {
+  position: absolute;
+  bottom: 0;
+  left: 25px;
+}
+
+.dashboard-card:hover > .stick-bottom {
+  visibility: visible;
 }
 
 .dashboard-links {
   display: flex;
   justify-content: center;
   a {
-    padding-right: 10px;
-    font-size: 15px;
-    color: black;
-  }
-  a {
+    padding-right: 25px;
+    font-size: 13px;
+    color: rgb(53, 77, 98);
     text-align: center;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #5582aa;
   }
   p {
     padding: 0;
     margin: 0;
-    font-family: "Anton";
     letter-spacing: 0.15px;
+    font-family: "Lato"
+  }
+}
+
+.dashboard-tag p {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  a {
+    color: #999;
+  }
+  a:hover {
+    color: grey;
+    text-decoration: none;
   }
 }
 
