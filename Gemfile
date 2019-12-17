@@ -19,7 +19,7 @@ gem 'pismo', git: 'https://github.com/peterc/pismo'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'rack-cors'
 
-gem 'dotenv-rails', groups: [:development, :test]
+# gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 

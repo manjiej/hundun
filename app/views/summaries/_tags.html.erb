@@ -1,35 +1,16 @@
-<div class="tag-list-input">
-<%= simple_form_for(summary, remote: true) do |f| %>
-  <%= f.input :category_list, label: "Category", :input_html => { :multiple => true }, placeholder: "Please add your tag, separated using ','"%>
-  <%= f.input :category_list do %>
-    <%= f.select :category_list, ActsAsTaggableOn::Tag.all.map { |r| [r.name, r.id, { class: r.id }] }, include_blank: true %>
-  <% end %>
-  <%#= f.select :category_list, label: "Category", placeholder: "Please add your tag, separated using ','"%>
-  <%#= f.input :category_list, collection: User::LANGUAGE, prompt: :translate %>
-  <%= f.button :submit, "Add the category", :class => "btn-outline-secondary" %>
-<% end %>
+<!-- <div class="tag-list-input">
+    <%#= f.select :category_list, ActsAsTaggableOn::Tag.all.map { |r| [r.name, r.name, { class: 'select2', multiple: "multiple"}] }, include_blank: true %>
+      <%#= f.input :category_list, placeholder: t(:select_user_from_list),
+          default_class_name: :user, default_text_column: [:id, :firstname, :lastname] %>
+    <%# end %>
 </div>
+ -->
 
-<%= select_tag "timezone", options_from_collection_for_select(
-      ActsAsTaggableOn::Tag.all,
-      :name, :name),
-      class: 'select2' %>
+<%= simple_form_for(summary, remote: true) do |f| %>
+  <%= select_tag "timezone", options_from_collection_for_select(
+    ActsAsTaggableOn::Tag.all.map { |tag| tag }.sort_by { |tag| tag.name }, :name, :name), class: 'select2 tag-container', multiple: "multiple"%>
+    <%#= f.input :category_list%>
+  <%= f.button :submit, "Add the category", :class => "btn-outline-secondary", :id => "submit-tag"%>
+<% end %>
 
 <% @tags = [] %>
-<% ActsAsTaggableOn::Tag.all.each do |tag| %>
-  <% @tags << tag.name %>
-<% end %>
-
-<script>
-  $(document).ready( function () {
-  $("summary_category_list").select2({tags:[
-  <% @tags.each do |tag| %>
-    <% if tag.equal? @tags.last %>
-      <%= "'#{tag}'".html_safe %>
-    <% else %>
-      <%= "'#{tag}',".html_safe %>
-    <% end %>
-  <% end %>
-  ]});
-});
-</script>
