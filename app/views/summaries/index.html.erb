@@ -22,7 +22,7 @@
         <p><%= summary.text %></p>
       </div>
       <div class="stick-bottom">
-        <p>Tags: <% summary.tag_list.each do |tag| %>
+        <p>Tags: <% summary.category_list.each do |tag| %>
           <%= link_to tag, tagged_path(tag: tag) %>
         <% end %></p>
         <div class="dashboard-links">
