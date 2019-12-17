@@ -18,6 +18,8 @@ gem 'webpacker'
 gem 'pismo', git: 'https://github.com/peterc/pismo'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'rack-cors'
+gem 'aylien_news_api'
+gem 'aylien_text_api'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.9.1'

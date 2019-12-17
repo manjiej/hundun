@@ -38,16 +38,23 @@ class SummariesController < ApplicationController
     article_url = params.dig(:summary, :article_url)
     @summary = Summary.new(article_url: article_url)
 
-    scraped_summary = Scrape.scrape(article_url)
+    scraped_summary = Summarize.scrape(article_url)
 
     @summary.title = scraped_summary["title"]
     @summary.text = scraped_summary["text"]
+
     # @summary.image = scraped_summary["images"][0]["url"]
 
     title = scraped_summary["title"]
     text = scraped_summary["text"]
 
-    @summary.digest = Scrape.fetch(title, text)
+    @summary.digest = Summarize.digest(title, text)
+    # @summary.article_author = Summarize.info(article_url)[:author]
+    @summary.publish_date = Summarize.info(article_url)[:publishDate]
+    @summary.image = scraped_summary["images"][0]["url"]
+    @summary.site_name = scraped_summary["siteName"]
+
+    @summary.tag_cloud = Summarize.keyword(article_url)
 
     @user = current_user
     @summary.user = @user
