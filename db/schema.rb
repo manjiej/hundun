@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_13_073030) do
+ActiveRecord::Schema.define(version: 2019_12_16_151045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 2019_12_13_073030) do
     t.string "article_url"
     t.text "digest"
     t.text "image"
+    t.text "article_author"
+    t.text "publish_date"
+    t.text "site_name"
+    t.string "tag_cloud"
     t.index ["user_id"], name: "index_summaries_on_user_id"
   end
 

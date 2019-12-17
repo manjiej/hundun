@@ -10,10 +10,10 @@
     <p><%= @summary.digest %></p>
   </div>
 
-  <img src="<%= @summary.image %>" alt="banner image">
-
+  <%= if @summary.image =! nil%>
+    <img src="<%= @summary.image %>" alt="banner image">
+  <%= end %>
 </div>
-
 
 <div class="related-sum-container">
 
@@ -26,9 +26,59 @@
   </div>
 </div>
 
-  <%= render 'tags', summary: @summary %>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="group" style="width: 100%; height: 100%; overflow: visible;"><desc>JavaScript chart by amCharts</desc><defs><clipPath id="id-30"><rect width="589" height="600"></rect></clipPath><linearGradient id="gradient-id-53" x1="1%" x2="99%" y1="59%" y2="41%"><stop stop-color="#474758" offset="0"></stop><stop stop-color="#474758" stop-opacity="1" offset="0.75"></stop><stop stop-color="#3cabff" stop-opacity="1" offset="0.755"></stop></linearGradient><clipPath id="id-78"></clipPath><filter id="filter-id-35" width="200%" height="200%" x="-50%" y="-50%"><feGaussianBlur result="blurOut" in="SourceGraphic" stdDeviation="1.5"></feGaussianBlur><feOffset result="offsetBlur" dx="1" dy="1"></feOffset><feFlood flood-color="#000000" flood-opacity="0.5"></feFlood><feComposite in2="offsetBlur" operator="in"></feComposite><feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter><filter id="filter-id-50" width="120%" height="120%" x="-10%" y="-10%"><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><filter id="filter-id-83" width="200%" height="200%" x="-50%" y="-50%"><feGaussianBlur result="blurOut" in="SourceGraphic" stdDeviation="1.5"></feGaussianBlur><feOffset result="offsetBlur" dx="1" dy="1"></feOffset><feFlood flood-color="#000000" flood-opacity="0.5"></feFlood><feComposite in2="offsetBlur" operator="in"></feComposite><feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><g><g fill="#ffffff" fill-opacity="0"><rect width="589" height="600"></rect></g><g><g role="widget" clip-path="url(&quot;#id-30&quot;)" font-family="Courier New" opacity="1" aria-describedby="id-22-description"><g><g fill="#000000" id="id-93" font-size="20" font-weight="800" transform="translate(84,0)"><g style="user-select: none;"><text x="0" y="23" dy="-6.21"><tspan>Most Popular Tags From Your article</tspan></text></g></g><g fill="#000000" id="id-91" transform="translate(204,23)"><g style="user-select: none;"><text x="0" y="23" dy="-6.21"><tspan>(click to open)</tspan></text></g></g><g transform="translate(0,46)"><g><g><g><g><g><g role="group" aria-describedby="id-73-description"><g><g clip-path="url(&quot;#id-78&quot;)"><g></g></g><g></g><g></g><g transform="translate(294.5,277)"><g><g fill-opacity="0.1" stroke-opacity="1" stroke="#000000"></g><g fill="#000000" font-size="110.80000000000001" style="cursor: pointer;"><g display="none"></g></g></g></g></g><desc id="id-73-description">Series</desc></g></g></g><g><g><g><g></g></g></g></g></g></g></g></g></g><desc id="id-22-description">Chart</desc></g><g><g><g role="tooltip" visibility="hidden" opacity="0"><g fill="#ffffff" fill-opacity="0.9" stroke-width="1" stroke-opacity="1" stroke="#ffffff" filter="url(&quot;#filter-id-35&quot;)" style="pointer-events: none;" transform="translate(0,6)"><path d="M3,0 L3,0 L0,-6 L13,0 L21,0 a3,3 0 0 1 3,3 L24,8 a3,3 0 0 1 -3,3 L3,11 a3,3 0 0 1 -3,-3 L0,3 a3,3 0 0 1 3,-3"></path></g><g><g fill="#ffffff" style="pointer-events: none;" transform="translate(12,6)"><g transform="translate(0,7)" display="none"></g></g></g></g><g visibility="hidden" display="none" style="pointer-events: none;"><g fill="#ffffff" opacity="1"><rect width="589" height="600"></rect></g><g><g transform="translate(294.5,300)"><g><g stroke-opacity="1" fill="#f3f3f3" fill-opacity="0.8"><g><g><path d=" M53,0  a53,53,0,0,1,-106,0 a53,53,0,0,1,106,0 M42,0  a42,42,0,0,0,-84,0 a42,42,0,0,0,84,0 L42,0 "></path></g></g></g><g stroke-opacity="1" fill="#000000" fill-opacity="0.2"><g><g><path d=" M50,0  a50,50,0,0,1,-100,0 a50,50,0,0,1,100,0 M45,0  a45,45,0,0,0,-90,0 a45,45,0,0,0,90,0 L45,0 "></path></g></g></g><g fill="#000000" fill-opacity="0.4"><g transform="translate(-25.5,-13.5)" style="user-select: none;"><text x="0" y="27" dy="-7.29"><tspan>100%</tspan></text></g></g></g></g></g></g><g opacity="0.3" aria-labelledby="id-50-title" filter="url(&quot;#filter-id-50&quot;)" style="cursor: pointer;" transform="translate(0,579)"><g fill="#ffffff" opacity="0"><rect width="66" height="21"></rect></g><g><g shape-rendering="auto" fill="none" stroke-opacity="1" stroke-width="1.7999999999999998" stroke="#3cabff"><path d=" M15,15  C17.4001,15 22.7998,15.0001 27,15 C31.2002,14.9999 33.2999,6 36,6 C38.7001,6 38.6999,10.5 40.5,10.5 C42.3001,10.5 42.2999,6 45,6 C47.7001,6 50.9999,14.9999 54,15 C57.0002,15.0001 58.7999,15 60,15"></path></g><g shape-rendering="auto" fill="none" stroke-opacity="1" stroke-width="1.7999999999999998" stroke="url(&quot;#gradient-id-53&quot;)"><path d=" M6,15  C8.2501,15 9.7498,15.0001 15,15 C20.2502,14.9999 20.7748,3.6 27,3.6 C33.2252,3.6 33.8998,14.9999 39.9,15 C45.9002,15.0001 45.9748,15 51,15 C56.0252,15 57.7499,15 60,15"></path></g></g><title id="id-50-title">Chart created using amCharts library</title></g><g role="tooltip" visibility="hidden" opacity="0"><g fill="#ffffff" fill-opacity="0.9" stroke-width="1" stroke-opacity="1" stroke="#ffffff" filter="url(&quot;#filter-id-83&quot;)" style="pointer-events: none;" transform="translate(0,6)"><path d="M3,0 L3,0 L0,-6 L13,0 L21,0 a3,3 0 0 1 3,3 L24,8 a3,3 0 0 1 -3,3 L3,11 a3,3 0 0 1 -3,-3 L0,3 a3,3 0 0 1 3,-3"></path></g><g><g fill="#ffffff" style="pointer-events: none;" transform="translate(12,6)"><g transform="translate(0,7)" display="none"></g></g></g></g></g></g></g></g></svg>
 
-<div class="related-sum-links">
+<%= render 'tags', summary: @summary %>
+
+<!-- <div class="related-sum-links">
   <%= link_to 'Back to Dashboard', summaries_path(@summary) %>
   <%= link_to 'Back', summaries_path %>
+</div> -->
+
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/plugins/wordCloud.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/moonrisekingdom.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+<div id="chartdiv">
+  <script>
+      // Themes begin
+      am4core.useTheme(am4themes_moonrisekingdom);
+      am4core.useTheme(am4themes_animated);
+      // Themes end
+      var chart = am4core.create("chartdiv", am4plugins_wordCloud.WordCloud);
+      chart.fontFamily = "Courier New";
+      var series = chart.series.push(new am4plugins_wordCloud.WordCloudSeries());
+      series.randomness = 0.1;
+      series.rotationThreshold = 0.5;
+
+      series.data = <%= raw @summary.tag_cloud %>;
+
+      series.dataFields.word = "label";
+      series.dataFields.value = "count";
+
+      series.heatRules.push({
+       "target": series.labels.template,
+       "property": "fill",
+       "min": am4core.color("#0000CC"),
+       "max": am4core.color("#CC00CC"),
+       "dataField": "value"
+      });
+
+      series.labels.template.url = "https://stackoverflow.com/questions/tagged/{word}";
+      series.labels.template.urlTarget = "_blank";
+      series.labels.template.tooltipText = "{word}: {value}";
+
+      var hoverState = series.labels.template.states.create("hover");
+      hoverState.properties.fill = am4core.color("#FF0000");
+
+      var subtitle = chart.titles.create();
+      subtitle.text = "(click to open)";
+
+      var title = chart.titles.create();
+      title.text = "Most Popular Tags From Your article";
+      title.fontSize = 20;
+      title.fontWeight = "800";
+  </script>
 </div>
