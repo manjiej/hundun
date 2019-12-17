@@ -7,9 +7,9 @@
   text-align: center;
   font-family: "Anton";
   text-transform: uppercase;
-  font-size: 223px;
+  font-size: 198px;
   border-bottom: 3px solid black;
-  width: 1100px;
+  width: 80%;
   margin: 0 auto;
   }
 }
@@ -22,32 +22,93 @@
 }
 
 .tagged-card {
-  width: 650px;
+  width: 600px;
   margin: 30px;
   border: 1px solid grey;
   // border-radius: 15px 50px 30px;
-  margin-top: 100px;
+  margin-top: 85px;
   padding: 20px;
+  position: relative;
   h3 {
-    font-size: 20px;
-    font-family: "Paytone One";
+    font-size: 25px;
+    font-family: "Anton";
     text-align: center;
+    padding-bottom: 40px;
   }
   p {
-    padding-top: 40px;
-    font-size: 12px;
+    font-size: 16px;
     text-align: justify;
     font-family: "Zilla Slab";
-    line-height: 2em;
+    --lh: 2em;
+    --max-lines: 5;
+    max-height: calc(var(--lh) * var(--max-lines));
+    overflow: scroll;
   }
+  a {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.tagged-text {
+  padding-bottom: 50px;
 }
 
 .tagged-links {
   font-family: "Anton";
   text-align: center;
-  font-size: 30px;
-  padding-bottom: 45px;
+  font-size: 25px;
+  padding: 70px;
   a {
     color: black;
   }
 }
+
+.tagged-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+// Media Queries
+
+// iPad and Laptop
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+  .tagged-title {
+    h1 {
+    font-size: 130px;
+    width: 90%;
+    }
+  }
+  .tagged-links {
+    font-size: 20px;
+  }
+}
+
+// Smartphone
+
+@media (min-width: 320px)
+and (max-width: 480px) {
+  .tagged-title {
+    h1 {
+    font-size: 60px;
+    width: 90%;
+    }
+  }
+  .tagged-card {
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
+  .tagged-links {
+    font-size: 15px;
+  }
+}
+
+

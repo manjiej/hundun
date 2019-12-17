@@ -1,28 +1,41 @@
-<div class="dashboard">
-  <div class="dashboard-title">
-    <h1>My Digests</h1>
+
+
+  <div class="dashboard">
+    <div class="dashboard-title">
+      <h1>My Digests</h1>
+    </div>
+  <div class="category">
+    <%= link_to "Economics", tagged_path(tag: "Economics"), class:"btn btn-outline-dark" %>
+    <%= link_to "Politics", tagged_path(tag: "Politics"), class:"btn btn-outline-dark" %>
+    <%= link_to "Environment", tagged_path(tag: "Environment"), class:"btn btn-outline-dark" %>
+    <%= link_to "Technology", tagged_path(tag: "Technology"), class:"btn btn-outline-dark" %>
+    <%= link_to "Culture", tagged_path(tag: "Culture"), class:"btn btn-outline-dark" %>
+    <%= link_to "Education", tagged_path(tag: "Education"), class:"btn btn-outline-dark" %>
+    <%= link_to "Society", tagged_path(tag: "Society"), class:"btn btn-outline-dark" %>
   </div>
-  <div class="dashboard-container">
+
+    <div class="dashboard-container">
     <% @user.summaries.each do |summary| %>
     <div class="dashboard-card">
-      <h3><%= summary.title %></h3>
-      <p><%= summary.text %></p>
-      <p>Tags: <% summary.tag_list.each do |tag| %>
-        <%= link_to tag, tagged_path(tag: tag) %>
-      <% end %></p>
-      <div class="dashboard-links">
-        <p><%= link_to 'Explore more', summary %></p>
-        <p><%= link_to 'Delete your summary', summary, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <div class="dashboard-text">
+        <h3><%= summary.title %></h3>
+        <p><%= summary.text %></p>
+      </div>
+      <div class="stick-bottom">
+        <p>Tags: <% summary.category_list.each do |tag| %>
+          <%= link_to tag, tagged_path(tag: tag) %>
+        <% end %></p>
+        <div class="dashboard-links">
+            <p><%= link_to 'Explore more', summary %></p>
+            <p><%= link_to 'Delete this summary', summary, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
       </div>
     </div>
       <% end %>
-
-    </div>
-
+  </div>
     <br>
-    <div class="dashboard-import">
-      <%= link_to 'Import another article', new_summary_path %>
-    </div>
+  <div class="dashboard-import">
+    <%= link_to 'Import another article', new_summary_path %>
+  </div>
+</div>
 
-</div>
-</div>

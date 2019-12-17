@@ -6,9 +6,12 @@
     <div class="form-inputs import-input">
       <%= f.input :article_url, placeholder: "Paste your article url here" %>
     </div>
-
-    <div class="form-actions import-btn">
-      <%= f.button :submit %>
+    <div class="import-bottom">
+      <div class="form-actions import-btn">
+        <%= f.button :submit %>
+      </div>
+      <div id="loader">
+      </div>
     </div>
   <% end %>
 
@@ -17,7 +20,8 @@
     loading = () => {
     const container = document.getElementById("loader");
 
-    container.innerHTML = "<img src='https://image.noelshack.com/fichiers/2019/50/5/1576207438-spin.gif'>"
+    // container.innerHTML = "<img src='https://image.noelshack.com/fichiers/2019/51/1/1576471668-spin-hundun.gif'>"
+    container.innerHTML = "<img src='/assets/spin-2.gif'>"
     }
 
   </script>

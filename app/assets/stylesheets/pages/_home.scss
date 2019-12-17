@@ -17,19 +17,20 @@
 .banner-text {
   text-align: center;
   position: relative;
-  top: 400px;
+  top: 350px;
   h1 {
-    font-size: 70px;
-    letter-spacing: 4px;
+    font-size: 60px;
+    letter-spacing: 1px;
     color: white;
-    font-family: 'Anton';
+    font-family: 'Lato';
     font-weight: bold;
     padding-bottom: 20px;
     text-shadow: 1px 1px 1px black;
   }
   p {
-    font-size: 40px;
-    font-family: 'Francois One';
+    font-size: 20px;
+    font-family: 'Lato';
+    // letter-spacing: 1px;
     color: white;
     padding-bottom: 20px;
     text-shadow: 1px 1px 1px black;
@@ -39,7 +40,7 @@
     width: 174px;
     margin: 0 auto;
     color: white;
-    font-family: 'Montserrat';
+    font-family: 'Lato';
     padding: 10px;
   }
   a:hover {
@@ -58,7 +59,7 @@
   h1 {
     font-family: 'Anton';
     font-size: 60px;
-    color: #6A7E87;
+    color: #354d62;
     width: 180px;
     margin: 0 auto;
     border-bottom: 3px solid black;
@@ -75,7 +76,7 @@
 }
 
 .story-text {
-    width: 300px;
+    width: 560px;
     text-align: center;
     margin: 0 auto;
     padding: 100px 0;
@@ -86,14 +87,14 @@
 .expect {
   text-align: center;
   background-color: #FFFFFF;
+  display: flex;
   img {
-    float: left;
-    height: 694px;
+    height: auto;
   }
   h1 {
     font-family: 'Anton';
     font-size: 50px;
-    color: #6A7E87;
+    color: #354d62;
     width: 230px;
     border-bottom: 3px solid black;
     margin: 0 auto;
@@ -105,11 +106,10 @@
 
 .expect-right {
   display: flex;
-  padding: 18px;
   flex-direction: column;
   align-items: center;
   width: 500px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .expect-card {
@@ -120,7 +120,7 @@
     padding-bottom: 10px;
     font-family: 'Francois One';
     font-size: 25px;
-    // color: #6A7E87;
+    color: #354D62;
   }
   i {
     font-size: 25px;
@@ -151,15 +151,15 @@
   }
   i {
     font-size: 60px;
-    color: #6A7E87;
+    color: #354D62;
   }
   i:hover {
-    color: #354D62;
+    color: #6A7E87;
   }
   .download {
     color: black;
     font-size: 25px;
-    font-family:"Francois One";
+    font-family: "Francois One";
   }
 }
 
@@ -171,7 +171,7 @@
     width: 174px;
     margin: 0 auto;
     color: white;
-    font-family: 'Montserrat';
+    font-family: 'Lato';
     margin-top: 45px;
     padding: 10px;
     text-align: center
@@ -230,4 +230,66 @@
   margin: 10px;
   color: black;
 }
+
+// Media Queries
+
+// iPad and Laptop
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+  .expect {
+    display: block;
+    img {
+      width: 100%;
+    }
+  }
+  .banner-text {
+    h1 {
+      font-size: 58px;
+    }
+  }
+
+}
+
+// Smartphone
+
+@media (min-width: 320px)
+and (max-width: 480px) {
+  .banner {
+    height: 700px;
+  }
+  .banner-text {
+    top: 200px;
+  }
+  .expect {
+    display: block;
+    img {
+      width: 100%;
+    }
+  }
+  .banner-text {
+    h1 {
+      font-size: 40px;
+    }
+  }
+  .story-text {
+    width: 100%;
+  }
+  .expect-right {
+    width: 100%;
+  }
+  .catchphrase-content {
+    padding: 15px;
+    em {
+      font-size: 30px;
+    }
+  }
+  .chrome-extension {
+    padding: 15px;
+  }
+}
+
+
 

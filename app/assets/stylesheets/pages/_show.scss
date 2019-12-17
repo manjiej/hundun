@@ -1,16 +1,16 @@
-.summarized-container {
-  display: flex;
-  padding: 140px 50px 50px 50px;
-}
+
 
 .summarized-title {
-  width: 30%;
-  padding-right: 80px;
+  width: 50%;
+  /* padding-right: 30px; */
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
   h1 {
     line-height: 1.5em;
     text-align: center;
     text-transform: uppercase;
-    font-family: "Paytone One"
+    font-family: "Anton"
   }
 }
 
@@ -19,25 +19,37 @@
   column-gap: 40px;
   justify-content: center;
   text-align: justify;
-  margin: auto 0;
+  margin: auto;
+  padding: 50px 150px 50px 150px;
   p {
     line-height: 2.2em;
     font-family: "Zilla Slab"
   }
 }
 
+// .summarized-img {
+//   margin: 0 auto
+//   width: 40%;
+// }
+
 .related-sum-container h3 {
   text-align: center;
   font-family: "Anton";
   text-transform: uppercase;
-  letter-spacing: 1px;
-  border-top: 1px solid black;
-  width: 300px;
+  letter-spacing: 0.8px;
+  width: 350px;
   margin: 0 auto;
   padding-bottom: 50px;
-  padding-top: 20px;
-  font-size: 50px;
+  padding-top: 60px;
+  font-size: 40px;
 }
+
+.related-sum-container {
+  .tag a {
+    color: black;
+  }
+}
+
 
 .summary_tag_list {
   width: 30%;
@@ -51,11 +63,11 @@
   }
 }
 
-.tag-list-input {
-  position: relative;
-  left: 35%;
-  right: 50%;
-}
+// .tag-list-input {
+//   position: relative;
+//   left: 35%;
+//   right: 50%;
+// }
 
 .related-sum-links {
   text-align: center;
@@ -77,7 +89,41 @@
   }
 }
 
+
 #chartdiv {
   width: 100%;
   height: 600px;
+}
+ // Media Queries
+
+ // iPad and Laptop
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+  .summarized-text {
+    column-count: 2;
+    padding: 40px;
+  }
+  .summarized-img {
+    width: 50%;
+  }
+}
+
+// Smartphone
+
+@media (min-width: 320px)
+and (max-width: 480px) {
+  .summarized-text {
+    column-count: 1;
+    padding: 10px;
+  }
+
+  .summarized-title {
+    width: 100%
+  }
+  .summarized-img {
+    width: 100%;
+  }
 }
