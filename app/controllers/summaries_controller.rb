@@ -42,10 +42,8 @@ class SummariesController < ApplicationController
 
     @summary.title = scraped_summary["title"]
     @summary.text = scraped_summary["text"]
-<<<<<<< HEAD
-=======
+
     # @summary.image = scraped_summary["images"][0]["url"]
->>>>>>> eebf0bf1ebec2d24d28692e86c3b1c8547af1b8a
 
     title = scraped_summary["title"]
     text = scraped_summary["text"]

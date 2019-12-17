@@ -15,15 +15,17 @@
 }
 
 .summarized-text {
-  column-count: 3;
+  column-count: 2;
   column-gap: 40px;
   justify-content: center;
   text-align: justify;
   margin: auto;
   padding: 50px 150px 50px 150px;
   p {
-    line-height: 2.2em;
-    font-family: "Zilla Slab"
+    line-height: 2.0em;
+    // font-family: "Zilla Slab";
+    font-weight: 400;
+    font-family: 'Fanwood Text';
   }
 }
 
@@ -91,7 +93,7 @@
 
 
 #chartdiv {
-  width: 100%;
+  width: 100vw;
   height: 600px;
 }
  // Media Queries

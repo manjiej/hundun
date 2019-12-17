@@ -38,7 +38,7 @@ class Summarize
   def self.digest(title, text)
     client = AylienTextApi::Client.new(app_id: "be9a83d3", app_key: "206c497a0db2ce007a91b7743a581900")
     summary = client.summarize(title: title, text: text, sentences_number: 4)
-    summary[:sentences].join("/n")
+    summary[:sentences].join(" ")
   end
 
   def self.info url
