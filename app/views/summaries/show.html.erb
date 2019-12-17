@@ -11,27 +11,6 @@
     <img src="<%= @summary.image %>" alt="banner image">
   </div> -->
 
-<div class="related-sum-container">
-<h3>Other users also read those articles...</h3>
-  <p class = "tag" style="text-align: center; font-family:'Zilla Slab';">
-    Find more about:
-    <% @summary.category_list.each do |tag| %>
-      <strong><%= link_to tag, tagged_path(tag: tag) %></strong>
-    <% end %>
-  </p>
-
-  <div class="related-sum-articles">
-    <p>
-      <% @related_summaries.each do |r| %>
-        <%= link_to r.title, summary_path(id: r.id) %>
-        <br>
-      <% end %>
-    </p>
-  </div>
-</div>
-
-<%= render 'tags', summary: @summary %>
-
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/plugins/wordCloud.js"></script>
@@ -41,14 +20,13 @@
 <div id="chartdiv">
   <script>
       // Themes begin
-      am4core.useTheme(am4themes_moonrisekingdom);
       am4core.useTheme(am4themes_animated);
 
       // Themes end
       var chart = am4core.create("chartdiv", am4plugins_wordCloud.WordCloud);
-      chart.fontFamily = "Courier New";
+      chart.fontFamily = "Lato";
       var series = chart.series.push(new am4plugins_wordCloud.WordCloudSeries());
-      series.randomness = 0.1;
+      series.randomness = 0;
       series.rotationThreshold = 0.5;
 
       series.data = <%= raw @summary.tag_cloud %>;
@@ -59,8 +37,8 @@
       series.heatRules.push({
        "target": series.labels.template,
        "property": "fill",
-       "min": am4core.color("#0000CC"),
-       "max": am4core.color("#CC00CC"),
+       "min": am4core.color("#4f8fc6"),
+       "max": am4core.color("#354d62"),
        "dataField": "value"
       });
 
@@ -69,17 +47,36 @@
       series.labels.template.tooltipText = "{word}: {value}";
 
       var hoverState = series.labels.template.states.create("hover");
-      hoverState.properties.fill = am4core.color("#FF0000");
+      hoverState.properties.fill = am4core.color("#FC7978");
 
       var subtitle = chart.titles.create();
-      subtitle.text = "(click to open Wikipedia)";
+      subtitle.text = "(Click to open Wikipedia)";
 
       var title = chart.titles.create();
-      title.text = "Most Popular Tags From Your article";
+      title.text = "Most Popular Tags From Your Article";
       title.fontSize = 20;
       title.fontWeight = "800";
+      title.color= am4core.color("#FC7978");
   </script>
 </div>
+
+<div class="related-sum-container">
+<h3>Other users also read those articles...</h3>
+
+  <div class="related-sum-articles">
+      <% @related_summaries.each do |r| %>
+        <p><%= link_to r.title, summary_path(id: r.id) %></p>
+        <br>
+      <% end %>
+  </div>
+  <p class = "tag" style="text-align: center; font-family: 'Fanwood Text';">
+    Find more about:
+    <% @summary.category_list.each do |tag| %>
+      <strong><%= link_to tag, tagged_path(tag: tag) %></strong>
+    <% end %>
+  </p>
+</div>
+
 
 <%= render 'tags', summary: @summary %>
 
