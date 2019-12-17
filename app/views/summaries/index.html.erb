@@ -1,18 +1,18 @@
 
-  <div class="category">
-    <%= link_to "Economics", tagged_path(tag: "Economics") %>
-    <%= link_to "Politics", tagged_path(tag: "Politics") %>
-    <%= link_to "Environment", tagged_path(tag: "Environment") %>
-    <%= link_to "Technology", tagged_path(tag: "Technology") %>
-    <%= link_to "Culture", tagged_path(tag: "Culture") %>
-    <%= link_to "Education", tagged_path(tag: "Education") %>
-    <%= link_to "Society", tagged_path(tag: "Society") %>
-  </div>
 
   <div class="dashboard">
     <div class="dashboard-title">
       <h1>My Digests</h1>
     </div>
+  <div class="category">
+    <%= link_to "Economics", tagged_path(tag: "Economics"), class:"btn btn-outline-dark" %>
+    <%= link_to "Politics", tagged_path(tag: "Politics"), class:"btn btn-outline-dark" %>
+    <%= link_to "Environment", tagged_path(tag: "Environment"), class:"btn btn-outline-dark" %>
+    <%= link_to "Technology", tagged_path(tag: "Technology"), class:"btn btn-outline-dark" %>
+    <%= link_to "Culture", tagged_path(tag: "Culture"), class:"btn btn-outline-dark" %>
+    <%= link_to "Education", tagged_path(tag: "Education"), class:"btn btn-outline-dark" %>
+    <%= link_to "Society", tagged_path(tag: "Society"), class:"btn btn-outline-dark" %>
+  </div>
 
     <div class="dashboard-container">
     <% @user.summaries.each do |summary| %>

@@ -5,11 +5,12 @@
   /* padding-right: 30px; */
   text-align: center;
   margin: 0 auto;
+  padding-top: 50px;
   h1 {
     line-height: 1.5em;
     text-align: center;
     text-transform: uppercase;
-    font-family: "Paytone One"
+    font-family: "Anton"
   }
 }
 
@@ -27,21 +28,20 @@
 }
 
 // .summarized-img {
-//   text-align: center;
-//   width: 200px;
+//   margin: 0 auto
+//   width: 40%;
 // }
 
 .related-sum-container h3 {
   text-align: center;
   font-family: "Anton";
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   width: 350px;
-  border-top: 1px solid black;
   margin: 0 auto;
   padding-bottom: 50px;
   padding-top: 60px;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .related-sum-container {
@@ -63,11 +63,11 @@
   }
 }
 
-.tag-list-input {
-  position: relative;
-  left: 35%;
-  right: 50%;
-}
+// .tag-list-input {
+//   position: relative;
+//   left: 35%;
+//   right: 50%;
+// }
 
 .related-sum-links {
   text-align: center;
@@ -86,5 +86,39 @@
     background-color: #576870;
     color: white;
     transition: 0.5s;
+  }
+}
+
+ // Media Queries
+
+ // iPad and Laptop
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+  .summarized-text {
+    column-count: 2;
+    padding: 40px;
+  }
+  .summarized-img {
+    width: 50%;
+  }
+}
+
+// Smartphone
+
+@media (min-width: 320px)
+and (max-width: 480px) {
+  .summarized-text {
+    column-count: 1;
+    padding: 10px;
+  }
+
+  .summarized-title {
+    width: 100%
+  }
+  .summarized-img {
+    width: 100%;
   }
 }
