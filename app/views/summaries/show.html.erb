@@ -40,44 +40,46 @@
 
 <div id="chartdiv">
   <script>
-      // Themes begin
-      am4core.useTheme(am4themes_moonrisekingdom);
-      am4core.useTheme(am4themes_animated);
+    am4core.useTheme(am4themes_animated);
 
-      // Themes end
-      var chart = am4core.create("chartdiv", am4plugins_wordCloud.WordCloud);
-      chart.fontFamily = "Courier New";
-      var series = chart.series.push(new am4plugins_wordCloud.WordCloudSeries());
-      series.randomness = 0.1;
-      series.rotationThreshold = 0.5;
+    am4core.useTheme(am4themes_animated);
+    var chart = am4core.create("chartdiv", am4plugins_wordCloud.WordCloud);
+    var series = chart.series.push(new am4plugins_wordCloud.WordCloudSeries());
 
-      series.data = <%= raw @summary.tag_cloud %>;
+    chart.fontFamily = "Courier New";
+    series.randomness = 0.1;
+    series.rotationThreshold = 0.5;
 
-      series.dataFields.word = "label";
-      series.dataFields.value = "count";
+    series.data = <%= raw @summary.tag_cloud %>;
 
-      series.heatRules.push({
-       "target": series.labels.template,
-       "property": "fill",
-       "min": am4core.color("#0000CC"),
-       "max": am4core.color("#CC00CC"),
-       "dataField": "value"
-      });
+    series.dataFields.word = "label";
+    series.dataFields.value = "count";
 
-      series.labels.template.url = "https://en.wikipedia.org/wiki/{word}";
-      series.labels.template.urlTarget = "_blank";
-      series.labels.template.tooltipText = "{word}: {value}";
+    series.heatRules.push({
+     "target": series.labels.template,
+     "property": "fill",
+     "min": am4core.color("#0000CC"),
+     "max": am4core.color("#CC00CC"),
+     "dataField": "value"
+    });
 
-      var hoverState = series.labels.template.states.create("hover");
-      hoverState.properties.fill = am4core.color("#FF0000");
+    series.labels.template.url = "https://en.wikipedia.org/wiki/{word}";
+    series.labels.template.urlTarget = "_blank";
+    series.labels.template.tooltipText = "{word}: {value}";
 
-      var subtitle = chart.titles.create();
-      subtitle.text = "(click to open Wikipedia)";
+    var hoverState = series.labels.template.states.create("hover");
+    hoverState.properties.fill = am4core.color("#FF0000");
 
-      var title = chart.titles.create();
-      title.text = "Most Popular Tags From Your article";
-      title.fontSize = 20;
-      title.fontWeight = "800";
+    var subtitle = chart.titles.create();
+    subtitle.text = "(click to open Wikipedia)";
+
+    var title = chart.titles.create();
+    title.text = "Most Popular Tags From Your article";
+    title.fontSize = 20;
+    title.fontWeight = "800";
+
+    series.colors = new am4core.ColorSet();
+    series.colors.passOptions = {};
   </script>
 </div>
 
