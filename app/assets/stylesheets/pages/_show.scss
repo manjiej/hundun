@@ -5,7 +5,7 @@
   /* padding-right: 30px; */
   text-align: center;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 100px;
   h1 {
     line-height: 1.5em;
     text-align: center;
@@ -15,14 +15,14 @@
 }
 
 .summarized-text {
-  column-count: 3;
+  column-count: 2;
   column-gap: 40px;
   justify-content: center;
   text-align: justify;
   margin: auto;
   padding: 50px 150px 50px 150px;
   p {
-    line-height: 2.2em;
+    line-height: 1.8em;
     font-family: "Zilla Slab"
   }
 }

@@ -2,6 +2,18 @@
   margin-top: 100px;
 }
 
+.tagged-tag p {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  a {
+    color: #999;
+  }
+  a:hover {
+    color: grey;
+    text-decoration: none;
+  }
+}
+
 .tagged-title {
   h1 {
   text-align: center;
@@ -19,30 +31,42 @@
   flex-wrap: wrap;
   font-family: "Quicksand";
   justify-content: center;
+  padding-top: 50px
 }
 
 .tagged-card {
   width: 600px;
-  margin: 30px;
-  border: 1px solid grey;
-  // border-radius: 15px 50px 30px;
-  margin-top: 85px;
-  padding: 20px;
+  margin: 34px;
+  border-bottom: 1px solid rgba(53, 77, 98, 0.3);
+  margin-top: 0px;
+  padding: 25px;
   position: relative;
   h3 {
-    font-size: 25px;
-    font-family: "Anton";
+    font-size: 30px;
+    font-family: "Lato";
+    font-weight: bold;
     text-align: center;
     padding-bottom: 40px;
+    letter-spacing: 0.5px;
+    line-height: 1.2em;
+    a {
+      color: rgb(53, 77, 98);
+    }
+    a:hover {
+      color: #5582aa;
+      text-decoration: none;
+    }
   }
   p {
-    font-size: 16px;
+    font-size: 19px;
     text-align: justify;
-    font-family: "Zilla Slab";
+    font-family: "Amiri";
+    margin-bottom: 1rem;
+    line-height: 1.5em;
     --lh: 2em;
-    --max-lines: 5;
+    --max-lines: 2;
     max-height: calc(var(--lh) * var(--max-lines));
-    overflow: scroll;
+    overflow: hidden;
   }
   a {
     color: black;
@@ -51,7 +75,25 @@
 }
 
 .tagged-text {
-  padding-bottom: 50px;
+  padding-bottom: 40px;
+  position: relative;
+  p::first-letter {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(53, 77, 98);
+  }
+}
+
+.ellipsis {
+  position: absolute;
+  right: 50%;
+  color: grey;
+}
+
+.tagged-site-name {
+   position: absolute;
+  bottom: 0;
+  left: 25px;
 }
 
 .tagged-links {
@@ -62,11 +104,6 @@
   a {
     color: black;
   }
-}
-
-.tagged-bottom {
-  position: absolute;
-  bottom: 0;
 }
 
 // Media Queries
