@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: #354D62;
+  background-color: #324B62;
   // background-color: transparent;
   // background-color: rgba(5, 5, 5, 0.05);
 }
@@ -14,12 +14,13 @@
 }
 
 .navbar-brand span {
-  color: white;
+  color: #D9F3F8;
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
   font-family: "Lato";
   letter-spacing: 0.5px;
+  margin-left: -7px;
 }
 
 .navbar-lewagon .navbar-brand img {

@@ -202,6 +202,9 @@ and (max-device-width : 1024px) {
     padding: 40px;
     text-align: center;
   }
+  .bg-img{
+    width: 742px;
+  }
 }
 
 // Smartphone
@@ -229,6 +232,6 @@ and (max-width: 480px) {
     text-align: center;
   }
   .bg-img {
-    width: 600px;
+    width: 300px;
   }
 }
