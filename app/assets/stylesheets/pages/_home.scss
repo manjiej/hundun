@@ -87,10 +87,7 @@
 .expect {
   text-align: center;
   background-color: #FFFFFF;
-  display: flex;
-  img {
-    height: auto;
-  }
+  padding: 100px;
   h1 {
     font-family: 'Anton';
     font-size: 50px;
@@ -98,24 +95,27 @@
     width: 230px;
     border-bottom: 3px solid black;
     margin: 0 auto;
+    margin-bottom: 50px;
     span {
       color: black;
     }
   }
 }
 
-.expect-right {
+.expect-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 500px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .expect-card {
   line-height: 2;
   font-family: 'Quicksand';
-  margin-top: 10px;
+  margin-top: 30px;
+  align-items: center;
+  width: 30%;
+  margin: 0 auto;
+
+
   h3 {
     padding-bottom: 10px;
     font-family: 'Francois One';
@@ -239,18 +239,17 @@
 and (min-device-width : 768px)
 and (max-device-width : 1024px) {
 
-  .expect {
-    display: block;
-    img {
-      width: 100%;
-    }
+  .expect-container {
+    flex-direction: column;
+  }
+  .expect-card {
+    width: 70%;
   }
   .banner-text {
     h1 {
       font-size: 58px;
     }
   }
-
 }
 
 // Smartphone
