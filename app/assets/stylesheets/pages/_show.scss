@@ -16,7 +16,7 @@
 }
 
 .summarized-info {
-  padding: 10px 250px 10px 250px;
+  padding: 40px 250px 10px 250px;
   font-family: "Lato";
   color: grey;
   i {
@@ -150,7 +150,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 35px;
+  padding-top: 78px;
+  border-top: 2px solid #c4c9ce;
+  border-bottom: 2px solid #c4c9ce;
+  width: 950px;
+  margin: 0 auto;
 }
 // .chart-bg-img {
 //   background-color: rgba(255, 0, 0, 0.5);
@@ -196,6 +200,13 @@ and (max-device-width : 1024px) {
   }
   .summarized-info {
     padding: 40px;
+    text-align: center;
+  }
+  .bg-img{
+    width: 742px;
+  }
+  .summarized-title {
+    width: 80%;
   }
 }
 
@@ -213,5 +224,17 @@ and (max-width: 480px) {
   }
   .summarized-img {
     width: 100%;
+  }
+  .related-sum-container {
+    h3 {
+      width: 370px;
+    }
+  }
+  .summarized-info {
+    padding: 23px;
+    text-align: center;
+  }
+  .bg-img {
+    width: 300px;
   }
 }

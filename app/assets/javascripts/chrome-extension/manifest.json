@@ -1,6 +1,6 @@
 {
   "name": "Hundun DIGEST",
-  "version": "1.2",
+  "version": "1.4",
   "description": "Get your digested web articles in 1-click with Hundun.",
   "manifest_version": 2,
   "background": {

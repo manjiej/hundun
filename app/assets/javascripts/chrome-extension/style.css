@@ -9,7 +9,7 @@ body {
 }
 
 button#send-data {
-  background: #354D62;
+  background-color: #324B62;
   padding: 10px;
   font-size: 1em;
   border: 0;
@@ -29,7 +29,7 @@ button#send-data:hover {
 }
 
 button#send-data-later {
-  background: #354D62;
+  background-color: #324B62;
   padding: 10px;
   font-size: 1em;
   border: 0;
@@ -70,6 +70,7 @@ button#send-data-later:hover {
 .extension-container p {
   font-size: 13px;
   color: #395477;
+  margin-top: 13px;
 }
 .extension-header {
   text-align: center;
