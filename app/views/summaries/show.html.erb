@@ -10,14 +10,24 @@
   <p><%= @summary.publish_date %></p>
 </div>
 
+<div class="shareSocial">
+  Share
+  <a title="Share on facebook" class="facebook" target="_blank" onclick="return fbs_click()" href="http://www.facebook.com/share.php?u=https://#" rel="nofollow"><i class="fab fa-facebook-f"></i></a>
+  <a class="twitter" title="Share on twitter" target="_blank" data-lang="en" data-via="your_screen_name" data-url="https://#" href="#"><i class="fab fa-twitter"></i></a>
+  <a class="email" title="Share by e-mail" href="mailto:?subject=Tool: Hundun(Digest articles quickly)&amp;body=Hundun Digest, by students%0A
+  from Le wagon%0A
+  https://#"><i class="far fa-envelope"></i></a>
+</div>
+
+
 <div class="summarized-text">
   <p><%= @summary.digest %></p>
 </div>
 
-<!-- <div class="summarized-img"> -->
-<!--   <img src="assets/jorge-garcia-9e5bnyDA_gs-unsplash.jpg"> -->
-  <!-- <img src="<%= @summary.image %>" alt="banner image"> -->
-<!-- </div> -->
+<div class="summarized-img">
+  <!-- <img src="assets/elcarito-MHNjEBeLTgw-unsplash.jpg"> -->
+  <img src="<%= @summary.image %>" alt="banner image">
+</div>
 
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
@@ -26,6 +36,13 @@
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 
 
+  <!-- Put Chart Div in bg-img -->
+  <!-- Make bg-img full width and give it a height -->
+  <!-- Make bg-img display: flex; justify-content: center; align-items: center; -->
+  <!-- Make bg-img background: url('your-url-here'); -->
+
+
+<div class="bg-img" style="background: url('https://images.unsplash.com/photo-1536514498073-50e69d39c6cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80');">
   <div id="chartdiv">
     <script>
       // Themes begin
@@ -68,6 +85,7 @@
       title.color= am4core.color("#FC7978");
     </script>
   </div>
+</div>
 
 <div class="related-sum-container">
 <h3>Other users also read those articles</h3>
