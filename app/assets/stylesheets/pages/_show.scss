@@ -69,47 +69,45 @@
   text-align: center;
     a {
     color: black;
-    font-family: "Fanwood Text"
+    font-family: "Fanwood Text";
   }
   p {
     margin: 0;
   }
 }
 
-// .tag-list-input {
-//   position: relative;
-//   left: 35%;
-//   right: 50%;
-// }
 
-.tag-list-input {
-  width: 500px;
+.tags-input form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.tags-input span {
   margin: 0 auto;
+}
+
+.tags-input input {
   font-family: 'Lato';
 }
 
-.tag-list-input form {
-  display: flex;
-  flex-direction: column;
-}
-
-.tag-list-input label {
-  font-weight: bold;
-  font-size: 27px;
-}
-
-.tag-list-input .btn {
-  text-align: center;
-  color: #354d62;
+.tags-input .btn {
+  color: black;
   text-decoration: none;
-  width: 50px;
-  font-size: 20px;
-  margin: 0 auto;
-  font-family: "Francois One"
 }
 
-.tag-list-input .btn:hover {
+.tags-input .btn:hover {
   color: #FC7978;
+}
+
+// .select2-results {
+//   // width: 40%;
+//   // margin: 0 auto;
+// }
+
+.select2-dropdown {
+  width: 40%;
+  margin: 0 auto;
 }
 
 .related-sum-links {
