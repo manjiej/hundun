@@ -95,26 +95,17 @@ class SummariesController < ApplicationController
     end
   end
 
-  def favorite
-
-  end
-
-
   def tagged
-    if params[:tag].present?
-      @summaries = Summary.tagged_with(params[:tag])
-    else
-      @summaries = Summary.all
+    respond_to do |format|
+      if params[:tag].present?
+        @summaries = Summary.tagged_with(params[:tag])
+        format.html { @summaries }
+        format.json { render json: Summary.tagged_with(params[:tag]) }
+        # else if params[:tag].present? && params[:format].present?
+      else
+        format.json { render json: Summary.all }
+      end
     end
-  end
-
-  def add_tags
-    @summary.tag_list.add(params[:tag])
-    @summary.save
-  end
-
-  def remove_tags
-    @summary.tag_list.remove(params[])
   end
 
 private
