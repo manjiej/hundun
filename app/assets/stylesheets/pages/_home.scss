@@ -53,34 +53,6 @@
   }
 }
 
-// Story Section
-
-.story {
-  h1 {
-    font-family: 'Anton';
-    font-size: 60px;
-    color: #354d62;
-    width: 180px;
-    margin: 0 auto;
-    border-bottom: 3px solid black;
-    span {
-      color: black;
-    }
-  }
-  p {
-    margin-top: 30px;
-    line-height: 2.5;
-    font-family: 'Quicksand';
-    color: black;
-  }
-}
-
-.story-text {
-    width: 560px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 100px 0;
-}
 
 // What to Expect Section
 
@@ -95,7 +67,7 @@
     width: 194px;
     border-bottom: 3px solid black;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     span {
       color: black;
     }
