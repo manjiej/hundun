@@ -14,7 +14,7 @@ ActsAsTaggableOn::Tag.destroy_all
 
 puts "Creating database..."
 
-category_list = ['Economics', 'Politics', 'Environment', 'Technology', 'Culture', 'Education', 'Society']
+category_list = ['Business', 'Culture', 'Economics', 'Education', 'Environment', 'Politics', 'Society', 'Science', 'Technology']
 
 category_list.each do |tag|
   ActsAsTaggableOn::Tag.new(:name => tag).save
