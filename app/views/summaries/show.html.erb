@@ -3,27 +3,22 @@
 </div>
 
 <div class="summarized-info">
-  <span><%= @summary.site_name %></span> | <span><%= @summary.publish_date %></span>
-</div>
-
-<div class="shareSocial">
-  Share
+  <span><%= @summary.site_name %></span> | <span><%= @summary.publish_date %></span> | <span>  Share on
   <a title="Share on facebook" class="facebook" target="_blank" onclick="return fbs_click()" href="http://www.facebook.com/share.php?u=https://#" rel="nofollow"><i class="fab fa-facebook-f"></i></a>
   <a class="twitter" title="Share on twitter" target="_blank" data-lang="en" data-via="your_screen_name" data-url="https://#" href="#"><i class="fab fa-twitter"></i></a>
   <a class="email" title="Share by e-mail" href="mailto:?subject=Tool: Hundun(Digest articles quickly)&amp;body=Hundun Digest, by students%0A
   from Le wagon%0A
-  https://#"><i class="far fa-envelope"></i></a>
+  https://#"><i class="far fa-envelope"></i></a></span>
 </div>
-
 
 <div class="summarized-text">
   <p><%= @summary.digest %></p>
 </div>
 
-<div class="summarized-img">
-  <!-- <img src="assets/elcarito-MHNjEBeLTgw-unsplash.jpg"> -->
+<!-- <div class="summarized-img">
+  <img src="assets/elcarito-MHNjEBeLTgw-unsplash.jpg">
   <img src="<%= @summary.image %>" alt="banner image">
-</div>
+</div> -->
 
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
@@ -64,7 +59,8 @@
        "dataField": "value"
       });
 
-      series.labels.template.url = "https://en.wikipedia.org/wiki/{words   series.labels.template.urlTarget = "_blank";
+      series.labels.template.url = "https://en.wikipedia.org/wiki/{words}";
+      series.labels.template.urlTarget = "_blank";
       series.labels.template.tooltipText = "{word}: {value}";
 
       var hoverState = series.labels.template.states.create("hover");
