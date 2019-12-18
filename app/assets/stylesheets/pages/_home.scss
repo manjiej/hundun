@@ -264,9 +264,14 @@ and (max-width: 480px) {
   }
   .expect {
     display: block;
-    img {
-      width: 100%;
-    }
+    padding: 0;
+    padding-top: 20px;
+  }
+  .expect-container {
+    flex-direction: column;
+  }
+  .expect-card {
+    width: 90%;
   }
   .banner-text {
     h1 {
