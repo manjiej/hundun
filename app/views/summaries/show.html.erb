@@ -2,12 +2,8 @@
   <h1><strong><%= @summary.title %></strong></h1>
 </div>
 
-<div class="summarized-sitename">
-  <p><%= @summary.site_name %></p>
-</div>
-
-<div class="summarized-datee">
-  <p><%= @summary.publish_date %></p>
+<div class="summarized-info">
+  <span><%= @summary.site_name %></span> | <span><%= @summary.publish_date %></span>
 </div>
 
 <div class="summarized-text">
@@ -51,8 +47,7 @@
        "dataField": "value"
       });
 
-      series.labels.template.url = "https://en.wikipedia.org/wiki/{word}";
-      series.labels.template.urlTarget = "_blank";
+      series.labels.template.url = "https://en.wikipedia.org/wiki/{words   series.labels.template.urlTarget = "_blank";
       series.labels.template.tooltipText = "{word}: {value}";
 
       var hoverState = series.labels.template.states.create("hover");
