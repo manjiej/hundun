@@ -1,21 +1,20 @@
 {
   "name": "Hundun DIGEST",
-  "version": "1.0",
-  "description": "Get your summarized web articles the fastest way with Hundun.",
+  "version": "1.2",
+  "description": "Get your digested web articles in 1-click with Hundun.",
   "manifest_version": 2,
   "background": {
     "scripts": ["popup.js", "background.js"]
   },
   "permissions": [
-    "activeTab", "tabs", "https://*/"
+    "activeTab", "tabs", "https://example.com/*"
   ],
   "browser_action": {
     "default_popup": "popup.html"
   },
   "icons": {
-    "16": "images/chrome-icon.png",
-    "32": "images/chrome-icon.png",
-    "48": "images/chrome-icon.png",
-    "128": "images/chrome-icon.png"
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
   }
 }

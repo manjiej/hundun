@@ -70,22 +70,20 @@
   </div>
 
 <div class="related-sum-container">
-<h3>Other users also read those articles...</h3>
+<h3>Other users also read those articles</h3>
 
   <div class="related-sum-articles">
       <% @related_summaries.each do |r| %>
         <p><%= link_to r.title, summary_path(id: r.id) %></p>
-        <br>
       <% end %>
   </div>
-  <p class = "tag" style="text-align: center; font-family: 'Fanwood Text';">
-    Find more about:
-    <% @summary.category_list.each do |tag| %>
+  <br>
+  <p class = "tag" style="text-align: center; font-family: 'Lato'; font-size: 20px;">
+    Find more about...<% @summary.category_list.each do |tag| %>
       <strong><%= link_to tag, tagged_path(tag: tag) %></strong>
     <% end %>
   </p>
 </div>
-
 
 <%= render 'tags', summary: @summary %>
 

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   get '/tagged', to: "summaries#tagged", as: :tagged
 
+  # get 'select2_autocompletes/:class_name'
+
+
   # resources :articles
 
   resources :summaries

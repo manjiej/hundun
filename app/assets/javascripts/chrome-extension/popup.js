@@ -43,8 +43,8 @@ const getTabUrl = () => {
 
 const fetchData = async () => {
   getTabUrl().then(tabUrl => {
-    const url = 'http://localhost:3000/summaries'
-    // const url = 'https://hundundigest.herokuapp.com/summaries'
+    // const url = 'http://localhost:3000/summaries'
+    const url = 'https://hundundigest.herokuapp.com/summaries'
     const body = JSON.stringify({"article_url": tabUrl})
     fetch(url, {
       method: 'POST',
@@ -57,11 +57,14 @@ const fetchData = async () => {
   })
 }
 
-button.addEventListener('click', () => {
-  const container = document.getElementById("popup-loader");
-  container.innerHTML = "<img src='https://image.noelshack.com/fichiers/2019/51/1/1576471668-spin-hundun.gif'>"
-  fetchData();
-});
+if (button) {
+  button.addEventListener('click', () => {
+    const container = document.getElementById("popup-loader");
+    container.innerHTML = "<img src='https://image.noelshack.com/fichiers/2019/51/1/1576471668-spin-hundun.gif'>"
+    fetchData();
+  });
+}
+
 
 
 // input.addEventListener('submit', (event) => {

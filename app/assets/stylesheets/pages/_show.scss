@@ -65,6 +65,9 @@
     color: black;
     font-family: "Fanwood Text"
   }
+  p {
+    margin: 0;
+  }
 }
 
 // .tag-list-input {
@@ -72,6 +75,36 @@
 //   left: 35%;
 //   right: 50%;
 // }
+
+.tag-list-input {
+  width: 500px;
+  margin: 0 auto;
+  font-family: 'Lato';
+}
+
+.tag-list-input form {
+  display: flex;
+  flex-direction: column;
+}
+
+.tag-list-input label {
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.tag-list-input .btn {
+  text-align: center;
+  color: #354d62;
+  text-decoration: none;
+  width: 50px;
+  font-size: 20px;
+  margin: 0 auto;
+  font-family: "Francois One"
+}
+
+.tag-list-input .btn:hover {
+  color: #FC7978;
+}
 
 .related-sum-links {
   text-align: center;
@@ -117,6 +150,8 @@
   margin: 0 auto;
   color: #FC7978;
 }
+
+
 
  // Media Queries
 
