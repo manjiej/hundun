@@ -2,14 +2,22 @@
   <h1><strong><%= @summary.title %></strong></h1>
 </div>
 
+<div class="summarized-sitename">
+  <p><%= @summary.site_name %></p>
+</div>
+
+<div class="summarized-datee">
+  <p><%= @summary.publish_date %></p>
+</div>
+
 <div class="summarized-text">
   <p><%= @summary.digest %></p>
 </div>
 
-
- <!--  <div class="summarized-img">
-    <img src="<%= @summary.image %>" alt="banner image">
-  </div> -->
+<!-- <div class="summarized-img"> -->
+<!--   <img src="assets/jorge-garcia-9e5bnyDA_gs-unsplash.jpg"> -->
+  <!-- <img src="<%= @summary.image %>" alt="banner image"> -->
+<!-- </div> -->
 
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
@@ -17,8 +25,9 @@
 <script src="https://www.amcharts.com/lib/4/themes/moonrisekingdom.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 
-<div id="chartdiv">
-  <script>
+
+  <div id="chartdiv">
+    <script>
       // Themes begin
       am4core.useTheme(am4themes_animated);
 
@@ -57,9 +66,8 @@
       title.fontSize = 20;
       title.fontWeight = "800";
       title.color= am4core.color("#FC7978");
->>>>>>> 429c865a7dc9c9b94186ecc5a9562a16fb6d581a
-  </script>
-</div>
+    </script>
+  </div>
 
 <div class="related-sum-container">
 <h3>Other users also read those articles...</h3>
