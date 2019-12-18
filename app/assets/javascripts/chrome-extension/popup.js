@@ -12,8 +12,8 @@ const getTabUrl = () => {
 
 const fetchData = async () => {
   getTabUrl().then(tabUrl => {
-    // const url = 'http://localhost:3000/summaries'
-    const url = 'https://hundundigest.herokuapp.com/summaries'
+    const url = 'http://localhost:3000/summaries'
+    // const url = 'https://hundundigest.herokuapp.com/summaries'
     const body = JSON.stringify({"article_url": tabUrl})
     fetch(url, {
       method: 'POST',
@@ -60,13 +60,31 @@ if (buttonTwo) {
 }
 
 const contextMenuItem = {
-  "id": "HUNDUN Digest",
   "title": "HUNDUN Digest",
+  "id": "HUNDUN Digest",
   "contexts": ["link"]
 };
 
-chrome.contextMenus.create(contextMenuItem);
+chrome.runtime.onInstalled.addListener(function() {
+  // When the app gets installed, set up the context menus
+  chrome.contextMenus.create(contextMenuItem);
+});
 
-chrome.contextMenus.addEventListener('onclick', () => {
-  fetchDataLater();
+chrome.contextMenus.onClicked.addListener((e) => {
+  // alert("I'm here")
+  // console.log(e.linkUrl)
+  const url = 'http://localhost:3000/summaries'
+    // const url = 'https://hundundigest.herokuapp.com/summaries'
+    const body = JSON.stringify({"article_url": e.linkUrl})
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body
+    }).then(response => response.json()).then((data) => {
+      console.log(data)
+      let redirectUrl = data[0].url
+      document.getElementById("popup-loader").style.display = 'none';
+      document.getElementById("success").style.display = 'block';
+    })
 })
+
