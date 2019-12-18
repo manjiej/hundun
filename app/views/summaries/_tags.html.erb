@@ -1,7 +1,6 @@
-<div class="tag-list-input">
 <%= simple_form_for(summary, remote: true) do |f| %>
-  <%= f.input :category_list, label: "Category", placeholder: "Please add the category separated using ' , '"%>
-  <%#= f.input :category_list, collection: User::LANGUAGE, prompt: :translate %>
-  <%= f.button :submit, "ADD", :class => "btn-link"%>
+  <%= f.hidden_field :category_list %>
+  <%= select_tag "category", options_from_collection_for_select(
+    ActsAsTaggableOn::Tag.all.map { |tag| tag }.sort_by { |tag| tag.name }, :name, :name), class: 'select2', multiple: "multiple" %>
+  <%= f.button :submit, "ADD", :class => "btn-link", :id => "submit-tag"%>
 <% end %>
-</div>
