@@ -1,33 +1,47 @@
 
+<div class="dashboard">
 
-  <div class="dashboard">
-    <div class="dashboard-title">
-      <h1>My Digests</h1>
-    </div>
+  <div class="dashboard-title">
+    <h1>My Digests</h1>
+  </div>
+
   <div class="category">
-    <%= link_to "Economics", tagged_path(tag: "Economics"), class:"btn btn-outline-dark" %>
-    <%= link_to "Politics", tagged_path(tag: "Politics"), class:"btn btn-outline-dark" %>
-    <%= link_to "Environment", tagged_path(tag: "Environment"), class:"btn btn-outline-dark" %>
-    <%= link_to "Technology", tagged_path(tag: "Technology"), class:"btn btn-outline-dark" %>
-    <%= link_to "Culture", tagged_path(tag: "Culture"), class:"btn btn-outline-dark" %>
-    <%= link_to "Education", tagged_path(tag: "Education"), class:"btn btn-outline-dark" %>
-    <%= link_to "Society", tagged_path(tag: "Society"), class:"btn btn-outline-dark" %>
+    <%# @user.summaries.each do |summary| %>
+      <!-- <p><%# summary.category_list.each do |tag| %>
+        <%#= link_to tag.name, tagged_path(tag: tag), class:"btn btn-outline-dark" %>
+      <%# end %></p> -->
+    <%#= link_to tag, tagged_path(tag: tag) %>
+    <%# end %>
+    <%#= link_to "Economics", tagged_path(tag: "Economics"), class:"btn btn-outline-dark" %>
+    <%#= link_to "Politics", tagged_path(tag: "Politics"), class:"btn btn-outline-dark" %>
+    <%#= link_to "Environment", tagged_path(tag: "Environment"), class:"btn btn-outline-dark" %>
+    <%#= link_to "Technology", tagged_path(tag: "Technology"), class:"btn btn-outline-dark" %>
+    <%#= link_to "Culture", tagged_path(tag: "Culture"), class:"btn btn-outline-dark" %>
+    <%#= link_to "Education", tagged_path(tag: "Education"), class:"btn btn-outline-dark" %>
+    <%#= link_to "Society", tagged_path(tag: "Society"), class:"btn btn-outline-dark" %>
   </div>
 
     <div class="dashboard-container">
     <% @user.summaries.each do |summary| %>
     <div class="dashboard-card">
-      <div class="dashboard-text">
-        <h3><%= summary.title %></h3>
-        <p><%= summary.text %></p>
-      </div>
-      <div class="stick-bottom">
-        <p>Tags: <% summary.category_list.each do |tag| %>
+        <div class="dashboard-tag">
+        <p><% summary.category_list.each do |tag| %>
           <%= link_to tag, tagged_path(tag: tag) %>
         <% end %></p>
+        </div>
+      <div class="dashboard-text">
+        <h3><%= link_to summary.title, summary %></h3>
+        <p><%= summary.text %></p>
+        <div class="ellipsis">
+          <p>...</p>
+        </div>
+      </div>
+        <div class="dashboard-site-name">
+          <p><i class="far fa-newspaper"></i> <%= summary.site_name %></p>
+        </div>
+      <div class="stick-bottom">
         <div class="dashboard-links">
-            <p><%= link_to 'Explore more', summary %></p>
-            <p><%= link_to 'Delete this summary', summary, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            <p><%= link_to 'Delete', summary, method: :delete, data: { confirm: 'Are you sure to delete it from your dashboard?' } %></p>
         </div>
       </div>
     </div>
@@ -38,4 +52,18 @@
     <%= link_to 'Import another article', new_summary_path %>
   </div>
 </div>
+
+<!-- <script>
+  $.ajax({
+    type: "POST",
+    url: "http://localhost:3000/summaries",
+    data: { id1: id, comment1: comment },
+    success: function(data) {
+        $("#feedback").html(data);
+        $('#feedback').fadeIn('slow', function() {
+            $('#feedback').fadeOut(4000);
+            window.location = "comment.php";
+        }
+ });
+</script> -->
 

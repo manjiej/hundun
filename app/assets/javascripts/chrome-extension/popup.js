@@ -57,11 +57,14 @@ const fetchData = async () => {
   })
 }
 
-button.addEventListener('click', () => {
-  const container = document.getElementById("popup-loader");
-  container.innerHTML = "<img src='https://image.noelshack.com/fichiers/2019/51/1/1576471668-spin-hundun.gif'>"
-  fetchData();
-});
+if (button) {
+  button.addEventListener('click', () => {
+    const container = document.getElementById("popup-loader");
+    container.innerHTML = "<img src='https://image.noelshack.com/fichiers/2019/51/1/1576471668-spin-hundun.gif'>"
+    fetchData();
+  });
+}
+
 
 
 // input.addEventListener('submit', (event) => {

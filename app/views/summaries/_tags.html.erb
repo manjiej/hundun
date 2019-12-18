@@ -1,16 +1,6 @@
-<!-- <div class="tag-list-input">
-    <%#= f.select :category_list, ActsAsTaggableOn::Tag.all.map { |r| [r.name, r.name, { class: 'select2', multiple: "multiple"}] }, include_blank: true %>
-      <%#= f.input :category_list, placeholder: t(:select_user_from_list),
-          default_class_name: :user, default_text_column: [:id, :firstname, :lastname] %>
-    <%# end %>
-</div>
- -->
-
 <%= simple_form_for(summary, remote: true) do |f| %>
-  <%= select_tag "timezone", options_from_collection_for_select(
-    ActsAsTaggableOn::Tag.all.map { |tag| tag }.sort_by { |tag| tag.name }, :name, :name), class: 'select2 tag-container', multiple: "multiple"%>
-    <%#= f.input :category_list%>
+  <%= f.hidden_field :category_list %>
+  <%= select_tag "category", options_from_collection_for_select(
+    ActsAsTaggableOn::Tag.all.map { |tag| tag }.sort_by { |tag| tag.name }, :name, :name), class: 'select2', multiple: "multiple" %>
   <%= f.button :submit, "Add the category", :class => "btn-outline-secondary", :id => "submit-tag"%>
 <% end %>
-
-<% @tags = [] %>

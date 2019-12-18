@@ -1,29 +1,38 @@
 
 
 .summarized-title {
-  width: 50%;
+  width: 65%;
   /* padding-right: 30px; */
   text-align: center;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 100px;
   h1 {
     line-height: 1.5em;
     text-align: center;
     text-transform: uppercase;
-    font-family: "Anton"
+    font-family: "Lato";
+    font-size: 55px;
   }
 }
 
 .summarized-text {
-  column-count: 3;
-  column-gap: 40px;
+  // column-count: 2;
+  // column-gap: 40px;
   justify-content: center;
   text-align: justify;
   margin: auto;
-  padding: 50px 150px 50px 150px;
+  padding: 50px 250px 50px 250px;
   p {
-    line-height: 2.2em;
-    font-family: "Zilla Slab"
+    line-height: 2.0em;
+    // font-family: "Zilla Slab";
+    font-weight: 400;
+    font-family: 'Fanwood Text';
+    font-size: 19px;
+  }
+  p::first-letter {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(53, 77, 98);
   }
 }
 
@@ -34,12 +43,13 @@
 
 .related-sum-container h3 {
   text-align: center;
-  font-family: "Anton";
+  font-family: "Lato";
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  width: 350px;
+  width: 400px;
   margin: 0 auto;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   padding-top: 60px;
   font-size: 40px;
 }
@@ -59,7 +69,7 @@
   text-align: center;
     a {
     color: black;
-    font-family: "Zilla Slab"
+    font-family: "Fanwood Text"
   }
 }
 
@@ -87,6 +97,14 @@
     color: white;
     transition: 0.5s;
   }
+}
+
+
+#chartdiv {
+  width: 80vw;
+  height: 600px;
+  margin: 0 auto;
+  color: #FC7978;
 }
 
  // Media Queries

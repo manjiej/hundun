@@ -2,6 +2,7 @@
   "name": "hundun",
   "private": true,
   "dependencies": {
+    "@amcharts/amcharts4": "^4.7.15",
     "@rails/webpacker": "^4.2.0",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
