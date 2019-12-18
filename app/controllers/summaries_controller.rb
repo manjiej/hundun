@@ -50,9 +50,9 @@ class SummariesController < ApplicationController
 
     @summary.digest = Summarize.digest(title, text)
     # @summary.article_author = Summarize.info(article_url)[:author]
-    @summary.publish_date = Summarize.info(article_url)[:publishDate]
     @summary.image = scraped_summary["images"][0]["url"]
     @summary.site_name = scraped_summary["siteName"]
+    @summary.publish_date = Summarize.info(article_url)[:publishDate]
 
     @summary.tag_cloud = Summarize.keyword(article_url)
 
