@@ -1,36 +1,5 @@
-// function listenClick() {
-//   const button = document.getElementById('send-data');
-//   button.addEventListener('click', () => {
-//     chrome.tabs.executeScript({
-//       file: "scripts/send-data.js"
-//     });
-//   })
-// }
-// listenClick();
-
-
-
-// function redirect () {
-//   window.open("http://localhost:3000/summaries/new")
-// }
-
-// button.addEventListener('click', redirect);
-
-// let vv = document.getElementById("summary_article_url");
-// let url = window.location.href;
-
-// function fetchData() {
-//   url = window.location.href;
-// }
-
-// chrome.browserAction.onClicked.addListener((tab) => {
-//   chrome.tabs.executeScript({
-//     code: 'vv.innerValue = url'
-//   });
-// });
-
 let button = document.querySelector("#send-data");
-
+let buttonTwo = document.querySelector("#send-data-later")
 
 const getTabUrl = () => {
   return new Promise(resolve => {
@@ -43,8 +12,8 @@ const getTabUrl = () => {
 
 const fetchData = async () => {
   getTabUrl().then(tabUrl => {
-    // const url = 'http://localhost:3000/summaries'
-    const url = 'https://hundundigest.herokuapp.com/summaries'
+    const url = 'http://localhost:3000/summaries'
+    // const url = 'https://hundundigest.herokuapp.com/summaries'
     const body = JSON.stringify({"article_url": tabUrl})
     fetch(url, {
       method: 'POST',
@@ -52,7 +21,7 @@ const fetchData = async () => {
       body
     }).then(response => response.json()).then((data) => {
       let redirectUrl = data[0].url
-      window.open(redirectUrl)
+      window.open(redirectUrl);
     })
   })
 }
@@ -65,10 +34,57 @@ if (button) {
   });
 }
 
+const fetchDataLater = async () => {
+  getTabUrl().then(tabUrl => {
+    const url = 'http://localhost:3000/summaries'
+    // const url = 'https://hundundigest.herokuapp.com/summaries'
+    const body = JSON.stringify({"article_url": tabUrl})
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body
+    }).then(response => response.json()).then((data) => {
+      let redirectUrl = data[0].url
+      document.getElementById("popup-loader").style.display = 'none';
+      document.getElementById("success").style.display = 'block';
+    })
+  })
+}
 
+if (buttonTwo) {
+  buttonTwo.addEventListener('click', () => {
+    const container = document.getElementById("popup-loader");
+    container.innerHTML = "<img src='https://image.noelshack.com/fichiers/2019/51/1/1576471668-spin-hundun.gif'>";
+    fetchDataLater();
+  });
+}
 
-// input.addEventListener('submit', (event) => {
-//   event.preventDefault();
-//   // postMessage(newMessage());
-//   sendData(fetchData());
-// });
+const contextMenuItem = {
+  "title": "HUNDUN Digest",
+  "id": "HUNDUN Digest",
+  "contexts": ["link"]
+};
+
+chrome.runtime.onInstalled.addListener(function() {
+  // When the app gets installed, set up the context menus
+  chrome.contextMenus.create(contextMenuItem);
+});
+
+chrome.contextMenus.onClicked.addListener((e) => {
+  // alert("I'm here")
+  // console.log(e.linkUrl)
+  const url = 'http://localhost:3000/summaries'
+    // const url = 'https://hundundigest.herokuapp.com/summaries'
+    const body = JSON.stringify({"article_url": e.linkUrl})
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body
+    }).then(response => response.json()).then((data) => {
+      console.log(data)
+      let redirectUrl = data[0].url
+      document.getElementById("popup-loader").style.display = 'none';
+      document.getElementById("success").style.display = 'block';
+    })
+})
+

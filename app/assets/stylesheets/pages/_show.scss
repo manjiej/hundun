@@ -15,6 +15,19 @@
   }
 }
 
+.summarized-info {
+  padding: 40px 250px 10px 250px;
+  font-family: "Lato";
+  color: grey;
+  i {
+    margin-left: 5px;
+    color: #354d62;
+  }
+  i:hover {
+    color: grey;
+  }
+}
+
 .summarized-text {
   // column-count: 2;
   // column-gap: 40px;
@@ -71,47 +84,45 @@
   text-align: center;
     a {
     color: black;
-    font-family: "Fanwood Text"
+    font-family: "Fanwood Text";
   }
   p {
     margin: 0;
   }
 }
 
-// .tag-list-input {
-//   position: relative;
-//   left: 35%;
-//   right: 50%;
-// }
 
-.tag-list-input {
-  width: 500px;
+.tags-input form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.tags-input span {
   margin: 0 auto;
+}
+
+.tags-input input {
   font-family: 'Lato';
 }
 
-.tag-list-input form {
-  display: flex;
-  flex-direction: column;
-}
-
-.tag-list-input label {
-  font-weight: bold;
-  font-size: 27px;
-}
-
-.tag-list-input .btn {
-  text-align: center;
-  color: #354d62;
+.tags-input .btn {
+  color: black;
   text-decoration: none;
-  width: 50px;
-  font-size: 20px;
-  margin: 0 auto;
-  font-family: "Francois One"
 }
 
-.tag-list-input .btn:hover {
+.tags-input .btn:hover {
   color: #FC7978;
+}
+
+// .select2-results {
+//   // width: 40%;
+//   // margin: 0 auto;
+// }
+
+.select2-dropdown {
+  width: 40%;
+  margin: 0 auto;
 }
 
 .related-sum-links {
@@ -139,7 +150,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 35px;
+  padding-top: 78px;
+  border-top: 2px solid #c4c9ce;
+  border-bottom: 2px solid #c4c9ce;
+  width: 950px;
+  margin: 0 auto;
 }
 // .chart-bg-img {
 //   background-color: rgba(255, 0, 0, 0.5);
@@ -183,6 +198,16 @@ and (max-device-width : 1024px) {
   .summarized-img {
     width: 50%;
   }
+  .summarized-info {
+    padding: 40px;
+    text-align: center;
+  }
+  .bg-img{
+    width: 742px;
+  }
+  .summarized-title {
+    width: 80%;
+  }
 }
 
 // Smartphone
@@ -199,5 +224,17 @@ and (max-width: 480px) {
   }
   .summarized-img {
     width: 100%;
+  }
+  .related-sum-container {
+    h3 {
+      width: 370px;
+    }
+  }
+  .summarized-info {
+    padding: 23px;
+    text-align: center;
+  }
+  .bg-img {
+    width: 300px;
   }
 }

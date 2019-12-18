@@ -9,7 +9,27 @@ body {
 }
 
 button#send-data {
-  background: #354D62;
+  background-color: #324B62;
+  padding: 10px;
+  font-size: 1em;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  outline: none !important;
+  font-family: "Quicksand";
+  margin-right: 5px;
+}
+
+button#send-data:hover {
+    background-color: #557189;
+    color: white;
+    transition: 0.5s;
+}
+
+button#send-data-later {
+  background-color: #324B62;
   padding: 10px;
   font-size: 1em;
   border: 0;
@@ -21,10 +41,17 @@ button#send-data {
   font-family: "Quicksand";
 }
 
-button#send-data:hover {
+button#send-data-later:hover {
     background-color: #557189;
     color: white;
     transition: 0.5s;
+}
+
+#success {
+  text-align: center;
+  color: #4e9e4a;
+  font-family: "Quicksand";
+  font-weight: bold;
 }
 
 .extension-container img {
@@ -42,7 +69,8 @@ button#send-data:hover {
 
 .extension-container p {
   font-size: 13px;
-  color: #7ea09f;
+  color: #395477;
+  margin-top: 13px;
 }
 .extension-header {
   text-align: center;

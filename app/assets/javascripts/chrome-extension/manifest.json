@@ -1,13 +1,14 @@
 {
   "name": "Hundun DIGEST",
-  "version": "1.2",
+  "version": "1.4",
   "description": "Get your digested web articles in 1-click with Hundun.",
   "manifest_version": 2,
   "background": {
-    "scripts": ["popup.js", "background.js"]
+    "scripts": ["popup.js", "background.js"],
+    "persistent": false
   },
   "permissions": [
-    "activeTab", "tabs", "https://example.com/*"
+    "activeTab", "tabs", "https://example.com/*", "contextMenus"
   ],
   "browser_action": {
     "default_popup": "popup.html"

@@ -53,79 +53,49 @@
   }
 }
 
-// Story Section
-
-.story {
-  h1 {
-    font-family: 'Anton';
-    font-size: 60px;
-    color: #354d62;
-    width: 180px;
-    margin: 0 auto;
-    border-bottom: 3px solid black;
-    span {
-      color: black;
-    }
-  }
-  p {
-    margin-top: 30px;
-    line-height: 2.5;
-    font-family: 'Quicksand';
-    color: black;
-  }
-}
-
-.story-text {
-    width: 560px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 100px 0;
-}
 
 // What to Expect Section
 
 .expect {
   text-align: center;
   background-color: #FFFFFF;
-  display: flex;
-  img {
-    height: auto;
-  }
+  padding: 100px;
   h1 {
     font-family: 'Anton';
     font-size: 50px;
     color: #354d62;
-    width: 230px;
+    width: 194px;
     border-bottom: 3px solid black;
     margin: 0 auto;
+    margin-bottom: 80px;
     span {
       color: black;
     }
   }
 }
 
-.expect-right {
+.expect-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 500px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .expect-card {
   line-height: 2;
   font-family: 'Quicksand';
-  margin-top: 10px;
+  margin-top: 30px;
+  align-items: center;
+  width: 30%;
+  margin: 0 auto;
+
+
   h3 {
     padding-bottom: 10px;
     font-family: 'Francois One';
     font-size: 25px;
     color: #354D62;
   }
-  i {
-    font-size: 25px;
-    padding-bottom: 25px;
-    color: #6A7E87
+  img {
+    margin-bottom: 25px;
   }
   p {
     color: black;
@@ -149,12 +119,9 @@
     line-height: 2;
     color: black;
   }
-  i {
-    font-size: 60px;
-    color: #354D62;
-  }
-  i:hover {
-    color: #6A7E87;
+  img {
+    height: 60px;
+    width: 60px;
   }
   .download {
     color: black;
@@ -239,18 +206,17 @@
 and (min-device-width : 768px)
 and (max-device-width : 1024px) {
 
-  .expect {
-    display: block;
-    img {
-      width: 100%;
-    }
+  .expect-container {
+    flex-direction: column;
+  }
+  .expect-card {
+    width: 70%;
   }
   .banner-text {
     h1 {
       font-size: 58px;
     }
   }
-
 }
 
 // Smartphone
@@ -265,9 +231,14 @@ and (max-width: 480px) {
   }
   .expect {
     display: block;
-    img {
-      width: 100%;
-    }
+    padding: 0;
+    padding-top: 20px;
+  }
+  .expect-container {
+    flex-direction: column;
+  }
+  .expect-card {
+    width: 90%;
   }
   .banner-text {
     h1 {
