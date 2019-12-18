@@ -3,11 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="../assets/images/favicon.ico">
-    <title>HUNDUN Digest</title>
+    <title><%= "HUNDUN Digest" %></title>
+    <meta name="description" content="Extract the summary of your web articles the fastest way. Develop the multi-dimensional thinking and enjoy the different angles different sources provide you with HUNDUN.">
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= favicon_link_tag "favicon-96x96.png"%>
+
+    <!-- Facebook -->
+    <meta property="og:title" content="HUNDUN Digest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Extract the summary of your web articles the fastest way. Develop the multi-dimensional thinking and enjoy the different angles different sources provide you with HUNDUN." />
+    <meta property="og:site_name" content="HUNDUN Digest" />
+    <meta property="og:image" content="assets/meta-image.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="assets/meta-image.png">
+    <meta name="twitter:image:src" content="assets/meta-image.png">
+    <meta name="twitter:title" content="HUNDUN Digest">
+    <meta name="twitter:description" content="Extract the summary of your web articles the fastest way. Develop the multi-dimensional thinking and enjoy the different angles different sources provide you with HUNDUN.">
+
     <link rel="stylesheet" type="text/css" href="loading-bar.css"/>
 
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
