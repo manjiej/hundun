@@ -34,7 +34,7 @@
   justify-content: center;
   text-align: justify;
   margin: auto;
-  padding: 50px 250px 50px 250px;
+  padding: 50px 250px 25px 250px;
   p {
     line-height: 2.0em;
     // font-family: "Zilla Slab";
@@ -46,6 +46,19 @@
     font-size: 50px;
     font-weight: bold;
     color: rgb(53, 77, 98);
+  }
+}
+
+.summarized-url {
+  padding: 0px 250px 5px 250px;
+  font-family: "Lato";
+  font-size: 18px;
+  a {
+    color: grey;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #324B62
   }
 }
 
