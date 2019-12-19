@@ -8,7 +8,7 @@
   <div class="category" id="cat-tag">
     <% category_list = ['Business', 'Culture', 'Economics', 'Education', 'Environment', 'Politics', 'Society', 'Science', 'Technology'] %>
     <% category_list.each do |cat| %>
-      <p class="btn btn-outline-dark"><%= cat %></p>
+      <%= link_to cat, tagged_path(tag: cat), class:"btn btn-outline-dark" %>
     <% end %>
   </div>
 
@@ -22,7 +22,7 @@
       </div>
       <div class="dashboard-text">
         <h3><%= link_to summary.title, summary %></h3>
-        <p><%= summary.text %></p>
+        <p><%= summary.digest %></p>
         <div class="ellipsis">
           <p><%=link_to "...", summary %></p>
         </div>
@@ -45,12 +45,15 @@
   </div>
 </div>
 
-<script>
+<!-- <script>
   const catTags = document.querySelectorAll('#cat-tag p')
 
   catTags.forEach((cat) => {
 
     cat.addEventListener('click', (event) => {
+      // 获取节点，判断是否有class；有，加tag；没有，移除tag
+
+
     // console.log(event.target["innerText"])
     fetch(`http://localhost:3000/tagged.json?tag=${event.target["innerText"]}`)
       .then(response => response.json())
@@ -71,7 +74,7 @@
     })
 
 </script>
-
+ -->
 
 
 <!-- <script>
