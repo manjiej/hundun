@@ -96,16 +96,17 @@ class SummariesController < ApplicationController
   end
 
   def tagged
-    respond_to do |format|
+    # respond_to do |format|
       if params[:tag].present?
         @summaries = Summary.tagged_with(params[:tag])
-        format.html { @summaries }
-        format.json { render json: Summary.tagged_with(params[:tag]) }
+        # format.html { @summaries }
+        # format.json { render json: Summary.tagged_with(params[:tag]) }
         # else if params[:tag].present? && params[:format].present?
       else
-        format.json { render json: Summary.all }
+        @summaries = Summary.all
+        # format.json { render json: Summary.all }
       end
-    end
+    # end
   end
 
 private
