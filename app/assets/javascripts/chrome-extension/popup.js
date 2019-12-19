@@ -60,7 +60,7 @@ if (buttonTwo) {
 }
 
 const contextMenuItem = {
-  "title": "HUNDUN Digest",
+  "title": "Crunch Later - HUNDUN",
   "id": "HUNDUN Digest",
   "contexts": ["link"]
 };
