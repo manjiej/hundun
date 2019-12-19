@@ -1,7 +1,7 @@
 {
-  "name": "Hundun DIGEST",
-  "version": "1.4",
-  "description": "Get your digested web articles in 1-click with Hundun.",
+  "name": "HUNDUN Digest",
+  "version": "1.5",
+  "description": "Get your digested web articles in 1-click with HUNDUN.",
   "manifest_version": 2,
   "background": {
     "scripts": ["popup.js", "background.js"],

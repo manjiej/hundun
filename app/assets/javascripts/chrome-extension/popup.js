@@ -12,8 +12,8 @@ const getTabUrl = () => {
 
 const fetchData = async () => {
   getTabUrl().then(tabUrl => {
-    const url = 'http://localhost:3000/summaries'
-    // const url = 'https://hundundigest.herokuapp.com/summaries'
+    // const url = 'http://localhost:3000/summaries'
+    const url = 'https://hundundigest.herokuapp.com/summaries'
     const body = JSON.stringify({"article_url": tabUrl})
     fetch(url, {
       method: 'POST',
@@ -36,8 +36,8 @@ if (button) {
 
 const fetchDataLater = async () => {
   getTabUrl().then(tabUrl => {
-    const url = 'http://localhost:3000/summaries'
-    // const url = 'https://hundundigest.herokuapp.com/summaries'
+    // const url = 'http://localhost:3000/summaries'
+    const url = 'https://hundundigest.herokuapp.com/summaries'
     const body = JSON.stringify({"article_url": tabUrl})
     fetch(url, {
       method: 'POST',
@@ -60,7 +60,7 @@ if (buttonTwo) {
 }
 
 const contextMenuItem = {
-  "title": "HUNDUN Digest",
+  "title": "Crunch Later - HUNDUN",
   "id": "HUNDUN Digest",
   "contexts": ["link"]
 };
@@ -73,8 +73,8 @@ chrome.runtime.onInstalled.addListener(function() {
 chrome.contextMenus.onClicked.addListener((e) => {
   // alert("I'm here")
   // console.log(e.linkUrl)
-  const url = 'http://localhost:3000/summaries'
-    // const url = 'https://hundundigest.herokuapp.com/summaries'
+  // const url = 'http://localhost:3000/summaries'
+    const url = 'https://hundundigest.herokuapp.com/summaries'
     const body = JSON.stringify({"article_url": e.linkUrl})
     fetch(url, {
       method: 'POST',
