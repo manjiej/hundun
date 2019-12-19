@@ -24,16 +24,21 @@
     margin: 5px;
     letter-spacing: 0.5px;
   }
+  p {
+    font-family: "Anton";
+    letter-spacing: 0.6px;
+    font-size: 20px;
+  }
 }
 
 .dashboard-text {
   padding-bottom: 40px;
   position: relative;
-  p::first-letter {
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(53, 77, 98);
-  }
+  // p::first-letter {
+  //   font-size: 30px;
+  //   font-weight: bold;
+  //   color: rgb(53, 77, 98);
+  // }
 }
 
 .dashboard-container {

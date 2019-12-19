@@ -3,6 +3,7 @@ import { previewImageOnFileSelect } from '../components/photo_preview';
 import { initSelect2 } from '../components/init_select2';
 import 'select2/dist/css/select2.css';
 
+console.log("hello from app/javascript/packs/application.js")
 
 previewImageOnFileSelect();
 initSelect2();
@@ -11,7 +12,7 @@ initSelect2();
 let search = document.querySelector('.select2-search__field')
 let choices = document.querySelectorAll('.select2-selection__choice') // Node Array
 const button = document.querySelector('#submit-tag')
-
+// const catTag = document.getElementById('cat-tag')
 // Add Event Listener
 // search.addEventListener('ValueChange', (event) => {
 //   choices.forEach((choice) => {
@@ -30,6 +31,12 @@ button.addEventListener('click', (event) => {
     console.log(tagChoicesSelected)
     document.querySelector('#summary_category_list').value = tagChoicesSelected.join();
 })
+
+
+// catTag.addEventListener('click', (event) => {
+//   console.log(event)
+// })
+
 
 // const saveResult = (event) => {
 //   console.log(event)

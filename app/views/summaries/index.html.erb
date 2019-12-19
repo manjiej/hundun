@@ -6,30 +6,25 @@
   </div>
 
   <div class="category" id="cat-tag">
-    <%= link_to "Business", tagged_path(tag: "Business"), class:"btn btn-outline-dark" %>
-    <%= link_to "Culture", tagged_path(tag: "Culture"), class:"btn btn-outline-dark" %>
-    <%= link_to "Economics", tagged_path(tag: "Economics"), class:"btn btn-outline-dark" %>
-    <%= link_to "Education", tagged_path(tag: "Education"), class:"btn btn-outline-dark" %>
-    <%= link_to "Environment", tagged_path(tag: "Environment"), class:"btn btn-outline-dark" %>
-    <%= link_to "Politics", tagged_path(tag: "Politics"), class:"btn btn-outline-dark" %>
-    <%= link_to "Society", tagged_path(tag: "Society"), class:"btn btn-outline-dark" %>
-    <%= link_to "Science", tagged_path(tag: "Science"), class:"btn btn-outline-dark" %>
-    <%= link_to "Technology", tagged_path(tag: "Technology"), class:"btn btn-outline-dark" %>
+    <% category_list = ['Business', 'Culture', 'Economics', 'Education', 'Environment', 'Politics', 'Society', 'Science', 'Technology'] %>
+    <% category_list.each do |cat| %>
+      <p class="btn btn-outline-dark"><%= cat %></p>
+    <% end %>
   </div>
 
-    <div class="dashboard-container">
-    <% @user.summaries.each do |summary| %>
+  <div class="dashboard-container">
+  <% @user.summaries.each do |summary| %>
     <div class="dashboard-card">
-        <div class="dashboard-tag">
+      <div class="dashboard-tag">
         <p><% summary.category_list.each do |tag| %>
           <%= link_to tag, tagged_path(tag: tag) %>
         <% end %></p>
-        </div>
+      </div>
       <div class="dashboard-text">
         <h3><%= link_to summary.title, summary %></h3>
         <p><%= summary.text %></p>
         <div class="ellipsis">
-          <p>...</p>
+          <p><%=link_to "...", summary %></p>
         </div>
       </div>
         <div class="dashboard-site-name">
@@ -37,17 +32,47 @@
         </div>
       <div class="stick-bottom">
         <div class="dashboard-links">
-            <p><%= link_to 'Delete', summary, method: :delete, data: { confirm: 'Are you sure to delete it from your dashboard?' } %></p>
+          <p><%= link_to 'Delete', summary, method: :delete, data: { confirm: 'Are you sure to delete it from your dashboard?' } %></p>
         </div>
       </div>
     </div>
       <% end %>
   </div>
+
     <br>
   <div class="dashboard-import">
     <%= link_to 'Import another article', new_summary_path %>
   </div>
 </div>
+
+<script>
+  const catTags = document.querySelectorAll('#cat-tag p')
+
+  catTags.forEach((cat) => {
+
+    cat.addEventListener('click', (event) => {
+    // console.log(event.target["innerText"])
+    fetch(`http://localhost:3000/tagged.json?tag=${event.target["innerText"]}`)
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+        const tags = data.length
+            document.querySelectorAll('.dashboard-card').forEach((e) => {
+              e.remove()
+            })
+            data.forEach((ele) => {
+              document.querySelector('.dashboard-container').insertAdjacentHTML(
+               "beforeend",
+               '<div class="dashboard-card"><div class="dashboard-tag"><p><a href="/tagged?tag='+event.target["innerText"]+'">'+ele.category_list+'</a></p></div><div class="dashboard-text"><h3><a href="/summaries/10">'+ ele.title+'</a></h3><p>'+ ele.digest+'</p><div class="ellipsis"><p><a href="/summaries/10">...</a></p></div></div><div class="dashboard-site-name"><p><i class="far fa-newspaper"></i> Fox News</p></div><div class="stick-bottom"><div class="dashboard-links"><p><a data-confirm="Are you sure to delete it from your dashboard?" rel="nofollow" data-method="delete" href="/summaries/10">Delete</a></p></div></div></div>');
+            })
+
+        })
+      })
+    })
+
+</script>
+
+
 
 <!-- <script>
   $.ajax({
