@@ -96,6 +96,42 @@
   left: 25px;
 }
 
+.stick-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 20px;
+  visibility: hidden;
+  a {
+    font-weight: bold;
+  }
+}
+
+.tagged-card:hover > .stick-bottom {
+  visibility: visible;
+}
+
+.tagged-delete {
+  display: flex;
+  justify-content: center;
+  a {
+    padding-right: 25px;
+    font-size: 13px;
+    color: rgb(53, 77, 98);
+    text-align: center;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #5582aa;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+    letter-spacing: 0.15px;
+    font-family: "Lato"
+  }
+}
+
 .tagged-links {
   font-family: "Anton";
   text-align: center;

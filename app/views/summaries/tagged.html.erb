@@ -23,6 +23,11 @@
         <div class="tagged-site-name">
           <p><i class="far fa-newspaper"></i> CNN</p>
         </div>
+        <div class="stick-bottom">
+        <div class="tagged-delete">
+          <p><%= link_to 'Delete', summary, method: :delete, data: { confirm: 'Are you sure to delete it from your dashboard?' } %></p>
+        </div>
+      </div>
     </div>
     <% end %>
 
