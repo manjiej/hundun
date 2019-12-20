@@ -18,7 +18,7 @@ button#send-data {
   color: white;
   font-weight: bold;
   outline: none !important;
-  font-family: "Open Sans";
+  /*font-family: "Open Sans";*/
   margin-right: 5px;
 }
 
@@ -38,7 +38,7 @@ button#send-data-later {
   color: white;
   font-weight: bold;
   outline: none !important;
-  font-family: "Open Sans";
+  /*font-family: "Open Sans";*/
 }
 
 button#send-data-later:hover {
@@ -50,7 +50,7 @@ button#send-data-later:hover {
 #success {
   text-align: center;
   color: #4e9e4a;
-  font-family: "Open Sans";
+  /*font-family: "Open Sans";*/
   font-weight: bold;
 }
 
@@ -60,7 +60,7 @@ button#send-data-later:hover {
 }
 
 .extension-container {
-  font-family: "Open Sans";
+  /*font-family: "Open Sans";*/
 }
 
 .extension-container h2 {

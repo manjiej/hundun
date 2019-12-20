@@ -116,17 +116,14 @@
 }
 
 .tags-input input {
-  font-family: 'Lato';
+  font-family: 'Montserrat';
 }
 
 .tags-input .btn {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
-.tags-input .btn:hover {
-  color: #FC7978;
-}
 
 // .select2-results {
 //   // width: 40%;
@@ -136,6 +133,25 @@
 .select2-dropdown {
   width: 40%;
   margin: 0 auto;
+}
+
+.add-btn {
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+    input {
+    background-color: #354D62;
+    width: 65px;
+    margin: 0 auto;
+    font-family: 'Montserrat';
+    padding: 8px;
+    text-decoration: none;
+    }
+  input:hover {
+    background-color: #576870;
+    color: white;
+    transition: 0.5s;
+  }
 }
 
 .related-sum-links {

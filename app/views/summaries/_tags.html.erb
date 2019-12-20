@@ -4,7 +4,10 @@
     <%= f.hidden_field :category_list %>
     <%= select_tag "category", options_from_collection_for_select(
       ActsAsTaggableOn::Tag.all.map { |tag| tag }.sort_by { |tag| tag.name }, :name, :name), class: 'select2', multiple: "multiple" ,style: "width: 40%; margin: 0 auto;"%>
-    <%= f.button :submit, "ADD", :class => "btn-link", :id => "submit-tag", style: "font-family: 'Lato'"%>
+      <div class="add-btn">
+
+    <%= f.button :submit, "Add", :class => "btn-link", :id => "submit-tag"%>
+      </div>
   <% end %>
 
 </div>
