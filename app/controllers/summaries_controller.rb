@@ -61,7 +61,7 @@ class SummariesController < ApplicationController
 
     respond_to do |format|
       if @summary.save
-        format.json { render json: ["title": @summary.title, "text": @summary.text, "url": "https://hundun.io/summaries/#{@summary.id}", "image": "https://i.guim.co.uk/img/media/5e1ef6b193b314b29c8ed6b04472f51908ceb355/334_278_2639_1583/master/2639.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=beec8327bfdc6099c9feed3cc76a74ef"] }
+        format.json { render json: ["title": @summary.title, "text": @summary.text, "url": "https://www.hundun.io/summaries/#{@summary.id}", "image": "https://i.guim.co.uk/img/media/5e1ef6b193b314b29c8ed6b04472f51908ceb355/334_278_2639_1583/master/2639.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=beec8327bfdc6099c9feed3cc76a74ef"] }
         format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
         format.js
       else
