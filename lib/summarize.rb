@@ -20,7 +20,7 @@ class Summarize
   end
 
   def self.scrape url
-    response = Net::HTTP.get(URI("https://api.diffbot.com/v3/article?token=606d0b61d6cf355ed6024deabc955e33&url=#{URI.encode(url)}"))
+    response = Net::HTTP.get(URI("https://api.diffbot.com/v3/article?token=f2053cd1511c3b4c46345eeba5a634ab&url=#{URI.encode(url)}"))
     parsed_res = JSON.parse(response)
     parsed_res["objects"][0]
   end
