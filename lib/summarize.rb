@@ -20,7 +20,7 @@ class Summarize
   end
 
   def self.scrape url
-    response = Net::HTTP.get(URI("https://api.diffbot.com/v3/article?token=f2053cd1511c3b4c46345eeba5a634ab&url=#{URI.encode(url)}"))
+    response = Net::HTTP.get(URI("https://api.diffbot.com/v3/article?token=a00edbe9025e886088f90b5642617651&url=#{URI.encode(url)}"))
     parsed_res = JSON.parse(response)
     parsed_res["objects"][0]
   end
@@ -35,13 +35,13 @@ class Summarize
   #   JSON.parse(response.body)["summary"]
   # end
   def self.digest(title, text)
-    client = AylienTextApi::Client.new(app_id: "be9a83d3", app_key: "206c497a0db2ce007a91b7743a581900")
+    client = AylienTextApi::Client.new(app_id: "20899059", app_key: "432a122614389fc3f8abf458d02ba93a")
     summary = client.summarize(title: title, text: text, sentences_number: 4)
     summary[:sentences].join(" ")
   end
 
   def self.info url
-    client = AylienTextApi::Client.new(app_id: "be9a83d3", app_key: "206c497a0db2ce007a91b7743a581900")
+    client = AylienTextApi::Client.new(app_id: "20899059", app_key: "432a122614389fc3f8abf458d02ba93a")
     extract = client.extract(url: url, best_image: false)
     extract
   end
